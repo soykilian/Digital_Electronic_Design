@@ -1,0 +1,10 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/DSED/DSED_Group6/lab4_2_1/lab4_2_1/lab4_2_1.srcs/sources_1/new/d_ff.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity d_ff
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/DSED/DSED_Group6/lab4_2_1/lab4_2_1/lab4_2_1.srcs/sources_1/new/d_latch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity d_latch
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/DSED/DSED_Group6/lab4_2_1/lab4_2_1/lab4_2_1.srcs/sources_1/new/dn_ff.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity dn_ff
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/DSED/DSED_Group6/lab4_2_1/lab4_2_1/lab4_2_1.srcs/sources_1/new/lab4_2_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab4_2_1
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/DSED/DSED_Group6/lab4_2_1/lab4_2_1/lab4_2_1.srcs/sim_1/new/lab_4_2_1_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab_4_2_1_tb

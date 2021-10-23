@@ -1,0 +1,99 @@
+/*
+
+Vivado v2017.2 (64-bit)
+SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+
+Process ID: 11656
+License: Customer
+
+Current time: 	10/13/21 1:33:55 PM CEST
+Time zone: 	Central European Time (Europe/Paris)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 6
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 146 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2017.2/tps/win64/jre
+JVM executable location: 	C:/Xilinx/Vivado/2017.2/tps/win64/jre/bin/java.exe
+Java library paths: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o;C:/WINDOWS/Sun/Java/bin;C:/WINDOWS/system32;C:/WINDOWS;C:/Xilinx/Vivado/2017.2/bin;C:/Xilinx/Vivado/2017.2/lib/win64.o;C:/Xilinx/Vivado/2017.2/tps/win64/jre/bin/server;C:/Xilinx/Vivado/2017.2/tps/win64/jre/bin;C:/Xilinx/Vivado/2017.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2017.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado_HLS/2017.2/bin;C:/Program Files (x86)/Common Files/Oracle/Java/javapath;C:/Program Files (x86)/Intel/Intel(R) Management Engine Components/iCLS/;C:/Program Files/Intel/Intel(R) Management Engine Components/iCLS/;C:/Windows/system32;C:/Windows;C:/Windows/System32/Wbem;C:/Windows/System32/WindowsPowerShell/v1.0/;C:/Windows/System32/OpenSSH/;C:/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL;C:/Program Files/Intel/Intel(R) Management Engine Components/DAL;C:/Program Files (x86)/Intel/Intel(R) Management Engine Components/IPT;C:/Program Files/Intel/Intel(R) Management Engine Components/IPT;C:/Python34;C:/Python34/Scripts;C:/Program Files/Acer ProShield/;C:/Program Files/Acer ProShield/x86;C:/Users/dsed/AppData/Local/Microsoft/WindowsApps;;C:/Xilinx/Vivado/2017.2/tps/mingw/6.2.0/win64.o/nt/bin;C:/Xilinx/Vivado/2017.2/tps/mingw/6.2.0/win64.o/nt/libexec/gcc/x86_64-w64-mingw32/6.2.0;.
+
+User name: 	dsed
+User home directory: C:/Users/dsed
+User working directory: E:/DSED/DSED_Group6/lab4_2_1/lab4_2_1
+User country: 	ES
+User language: 	es
+User locale: 	es_ES
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2017.2
+RDI_DATADIR: C:/Xilinx/Vivado/2017.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2017.2/bin
+
+User preferences location: C:/Users/dsed/AppData/Roaming/Xilinx/Vivado
+Vivado preferences directory: C:/Users/dsed/AppData/Roaming/Xilinx/Vivado/2017.2/vivado.xml
+Vivado layouts directory: C:/Users/dsed/AppData/Roaming/Xilinx/Vivado/2017.2/layouts
+PlanAhead jar location: 	C:/Xilinx/Vivado/2017.2/lib/classes/planAhead.jar
+Vivado Look & Feel: 	[Synthetica - the extended Synth Look and Feel. - ui.g.i.H]
+Engine tmp dir: 	E:/DSED/DSED_Group6/lab4_2_1/lab4_2_1/.Xil/Vivado-11656-pc-b042-04
+
+GUI allocated memory:	178 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 551 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: E:\DSED\DSED_Group6\lab4_2_1\lab4_2_1\lab4_2_1.xpr. Version: Vivado v2017.2 
+// bs:g (cg:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project E:/DSED/DSED_Group6/lab4_2_1/lab4_2_1/lab4_2_1.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 54 MB (+54287kb) [00:00:05]
+// [Engine Memory]: 512 MB (+385153kb) [00:00:05]
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 59 MB (+2201kb) [00:00:06]
+// Tcl Message: open_project E:/DSED/DSED_Group6/lab4_2_1/lab4_2_1/lab4_2_1.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'. 
+// Project name: lab4_2_1; location: E:/DSED/DSED_Group6/lab4_2_1/lab4_2_1; part: xc7a100tcsg324-1
+// [GUI Memory]: 63 MB (+812kb) [00:00:07]
+// [Engine Memory]: 561 MB (+24735kb) [00:00:07]
+dismissDialog("Open Project"); // bs:g (cg:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 564 MB. GUI used memory: 40 MB. Current time: 10/13/21 1:33:57 PM CEST
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 281 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab4_2_1(Behavioral) (lab4_2_1.vhd)]", 1, true); // B:i (D:JPanel, cg:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 3, true); // B:i (D:JPanel, cg:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 3, true, false, false, false, false, true); // B:i (D:JPanel, cg:JFrame) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, lab_4_2_1_tb(Behavioral) (lab_4_2_1_tb.vhd)]", 5, true); // B:i (D:JPanel, cg:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, lab_4_2_1_tb(Behavioral) (lab_4_2_1_tb.vhd)]", 5, true, false, false, false, false, true); // B:i (D:JPanel, cg:JFrame) - Double Click - Node
+selectCodeEditor("lab_4_2_1_tb.vhd", 213, 240); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("lab_4_2_1_tb.vhd", 279, 204); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "lab_4_2_1_tb.vhd", 'c'); // bI:J (JPanel:JComponent, cg:JFrame)
+// [GUI Memory]: 66 MB (+223kb) [00:05:41]
+// [GUI Memory]: 70 MB (+737kb) [00:06:56]
+// Elapsed time: 134 seconds
+selectCodeEditor("lab_4_2_1_tb.vhd", 179, 430); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("lab_4_2_1_tb.vhd", 171, 448); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("lab_4_2_1_tb.vhd", 163, 440); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "lab_4_2_1_tb.vhd", 'c'); // bI:J (JPanel:JComponent, cg:JFrame)
+// [GUI Memory]: 75 MB (+1059kb) [00:08:53]
+// [GUI Memory]: 79 MB (+214kb) [00:09:08]
+// [GUI Memory]: 83 MB (+869kb) [00:11:28]
+// [GUI Memory]: 88 MB (+242kb) [00:22:37]

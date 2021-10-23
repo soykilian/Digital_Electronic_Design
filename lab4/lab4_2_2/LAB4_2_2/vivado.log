@@ -1,0 +1,151 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Thu Oct 14 22:40:56 2021
+# Process ID: 10888
+# Current directory: C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/LAB4_2_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7808 C:\Users\mv\Downloads\lab4-20211014T204009Z-001\lab4\lab4_2_2\LAB4_2_2\LAB4_2_2.xpr
+# Log file: C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/LAB4_2_2/vivado.log
+# Journal file: C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/LAB4_2_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/LAB4_2_2/LAB4_2_2.xpr
+INFO: [Project 1-313] Project file moved from 'E:/DSED/DSED_Group6/lab4_2_2/LAB4_2_2' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 836.402 ; gain = 93.684
+update_compile_order -fileset sources_1
+close_project
+create_project lab4_3_1 C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1 -part xc7a100tcsg324-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
+file mkdir C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.srcs/sources_1/new
+close [ open C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.srcs/sources_1/new/4_bit_register.vhd w ]
+add_files C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.srcs/sources_1/new/4_bit_register.vhd
+add_files -fileset constrs_1 -norecurse C:/Users/mv/Downloads/Nexys4DDR_Master.xdc
+update_compile_order -fileset sources_1
+close [ open C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.srcs/sources_1/new/fourbit_register.vhd w ]
+add_files C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.srcs/sources_1/new/fourbit_register.vhd
+remove_files  C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.srcs/sources_1/new/4_bit_register.vhd
+file delete -force C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.srcs/sources_1/new/4_bit_register.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Thu Oct 14 23:04:54 2021] Launched synth_1...
+Run output will be captured here: C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.2
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/mv/Downloads/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [C:/Users/mv/Downloads/Nexys4DDR_Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 1155.336 ; gain = 254.348
+launch_runs impl_1 -jobs 4
+[Thu Oct 14 23:06:05 2021] Launched impl_1...
+Run output will be captured here: C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.runs/impl_1/runme.log
+close_design
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/LAB4_2_2/.Xil/Vivado-10888-DESKTOP-Q4GMU0O/dcp4/fourbit_register.xdc]
+Finished Parsing XDC File [C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/LAB4_2_2/.Xil/Vivado-10888-DESKTOP-Q4GMU0O/dcp4/fourbit_register.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1570.441 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1570.441 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+reset_run impl_1
+launch_runs impl_1 -jobs 4
+[Thu Oct 14 23:07:42 2021] Launched impl_1...
+Run output will be captured here: C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.runs/impl_1/runme.log
+refresh_design
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/LAB4_2_2/.Xil/Vivado-10888-DESKTOP-Q4GMU0O/dcp10/fourbit_register.xdc]
+Finished Parsing XDC File [C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/LAB4_2_2/.Xil/Vivado-10888-DESKTOP-Q4GMU0O/dcp10/fourbit_register.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1615.238 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1615.238 ; gain = 0.000
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Oct 14 23:17:34 2021] Launched synth_1...
+Run output will be captured here: C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.runs/synth_1/runme.log
+[Thu Oct 14 23:17:34 2021] Launched impl_1...
+Run output will be captured here: C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Oct 14 23:18:56 2021] Launched synth_1...
+Run output will be captured here: C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.runs/synth_1/runme.log
+[Thu Oct 14 23:18:57 2021] Launched impl_1...
+Run output will be captured here: C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Oct 14 23:22:10 2021] Launched synth_1...
+Run output will be captured here: C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.runs/synth_1/runme.log
+[Thu Oct 14 23:22:10 2021] Launched impl_1...
+Run output will be captured here: C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : Jun 15 2017-18:53:26
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1615.238 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A4BA34A
+set_property PROGRAM.FILE {C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.runs/impl_1/fourbit_register.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab4_2_2/lab4_3_1/lab4_3_1.runs/impl_1/fourbit_register.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292A4BA34A
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 14 23:30:54 2021...

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1634329606">
+  <File Type="PLACE-DCP" Name="my_count_placed.dcp"/>
+  <File Type="PA-DCP" Name="my_count.dcp"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="my_count_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="my_count_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="my_count_power_routed.rpx"/>
+  <File Type="PA-TCL" Name="my_count.tcl"/>
+  <File Type="OPT-HWDEF" Name="my_count.hwdef"/>
+  <File Type="RDI-RDI" Name="my_count.vdi"/>
+  <File Type="OPT-DCP" Name="my_count_opt.dcp"/>
+  <File Type="OPT-DRC" Name="my_count_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="my_count_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="my_count_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="my_count_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="my_count_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-IO" Name="my_count_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="my_count_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="my_count_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="my_count_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="my_count_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="my_count_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="my_count_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="my_count_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="my_count_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="my_count_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="my_count_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="my_count_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="my_count_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="my_count_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="my_count_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="my_count_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="my_count_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="my_count_drc_routed.pb"/>
+  <File Type="BG-BIN" Name="my_count.bin"/>
+  <File Type="ROUTE-DRC-RPX" Name="my_count_drc_routed.rpx"/>
+  <File Type="BG-DRC" Name="my_count.drc"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="my_count_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MSK" Name="my_count.msk"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="my_count_methodology_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="my_count.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="my_count_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="my_count_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="my_count_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="my_count_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="my_count_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="my_count_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="my_count_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="my_count_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="my_count_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="my_count_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="my_count_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="my_count_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="my_count_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="my_count_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="my_count_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="my_count.bit"/>
+  <File Type="BITSTR-RBT" Name="my_count.rbt"/>
+  <File Type="BITSTR-NKY" Name="my_count.nky"/>
+  <File Type="BITSTR-BMM" Name="my_count_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="my_count.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="my_count.sysdef"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/my_count.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../project_1/project_1.srcs/sources_1/new/my_count.vhd"/>
+        <Attr Name="ImportTime" Val="1634331702"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="my_count"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../../Nexys4DDR_Master.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
