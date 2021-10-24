@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/vivado/lab3/lab3_3_1/lab3_3_1.srcs/sources_1/new/rom_mult.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity rom_mult
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/vivado/labe2/lab3_4_1/lab3_4_1.srcs/sources_1/new/rom_mult_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity rom_mult_tb

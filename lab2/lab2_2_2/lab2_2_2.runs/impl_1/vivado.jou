@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Wed Sep 22 13:48:04 2021
+# Process ID: 1388
+# Current directory: E:/DSED/DSED_Group6/lab2_2_2/lab2_2_2.runs/impl_1
+# Command line: vivado.exe -log lab2_2_2.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source lab2_2_2.tcl -notrace
+# Log file: E:/DSED/DSED_Group6/lab2_2_2/lab2_2_2.runs/impl_1/lab2_2_2.vdi
+# Journal file: E:/DSED/DSED_Group6/lab2_2_2/lab2_2_2.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source lab2_2_2.tcl -notrace
