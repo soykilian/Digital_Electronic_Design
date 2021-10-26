@@ -32,7 +32,8 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity param_adder is
-    generic (data_width : integer := 4);
+    generic (data_width : integer := 4;
+               delay : time := 10 ns);
     --generic (out_delay : time := 5 ns);
     Port ( cin : in STD_LOGIC;
            a : in STD_LOGIC_VECTOR ((data_width - 1) downto 0);
@@ -49,8 +50,8 @@ signal a_ext, b_ext, sum_ext : unsigned((data_width + 1) downto 0);
 begin
 a_ext <= unsigned('0' & a & '1');
 b_ext <= unsigned('0' & b& cin);
-sum_ext <= a_ext + b_ext;
-cout <= sum_ext(data_width + 1);
+sum_ext <= a_ext + b_ext after delay;
+cout <= sum_ext(data_width + 1) after delay;
 s <= std_logic_vector (sum_ext(data_width downto 1));
 
 
