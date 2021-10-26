@@ -2,13 +2,13 @@
 <GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1634329606">
   <File Type="PLACE-DCP" Name="my_count_placed.dcp"/>
   <File Type="PA-DCP" Name="my_count.dcp"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="my_count_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="my_count_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="my_count_power_routed.rpx"/>
   <File Type="PA-TCL" Name="my_count.tcl"/>
-  <File Type="OPT-HWDEF" Name="my_count.hwdef"/>
+  <File Type="INIT-TIMING" Name="my_count_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="my_count_methodology_drc_opted.rpt"/>
   <File Type="RDI-RDI" Name="my_count.vdi"/>
   <File Type="OPT-DCP" Name="my_count_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="my_count.hwdef"/>
   <File Type="OPT-DRC" Name="my_count_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="my_count_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="my_count_pwropt.dcp"/>
@@ -32,14 +32,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="my_count_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="my_count_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="my_count_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="my_count.bin"/>
   <File Type="ROUTE-DRC-RPX" Name="my_count_drc_routed.rpx"/>
-  <File Type="BG-DRC" Name="my_count.drc"/>
+  <File Type="BG-BIN" Name="my_count.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="my_count_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="my_count.msk"/>
+  <File Type="BG-DRC" Name="my_count.drc"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="my_count_methodology_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="my_count.bgn"/>
+  <File Type="BITSTR-MSK" Name="my_count.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="my_count_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="my_count.bgn"/>
   <File Type="ROUTE-PWR" Name="my_count_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="my_count_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="my_count_route_status.rpt"/>
@@ -79,7 +79,7 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../../Nexys4DDR_Master.xdc">
+    <File Path="$PPRDIR/../../../../Downloads/Nexys4DDR_Master.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -90,9 +90,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

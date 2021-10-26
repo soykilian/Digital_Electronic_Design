@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1634329516">
-  <File Type="RDS-PROPCONSTRS" Name="my_count_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="my_count.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="my_count_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="my_count.vds"/>
   <File Type="RDS-UTIL" Name="my_count_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="my_count_utilization_synth.pb"/>
@@ -26,7 +26,7 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../../Nexys4DDR_Master.xdc">
+    <File Path="$PPRDIR/../../../../Downloads/Nexys4DDR_Master.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -37,9 +37,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

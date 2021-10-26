@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sat Oct 23 18:21:21 2021">
+<application name="pa" timeStamp="Tue Oct 26 12:54:47 2021">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="0dd2ea5c47354cf0a665e7962843fab9" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -22,7 +22,8 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="CustomizeCore" value="2" type="JavaHandler"/>
 <property name="EditDelete" value="3" type="JavaHandler"/>
 <property name="NewProject" value="2" type="JavaHandler"/>
-<property name="RecustomizeCore" value="1" type="JavaHandler"/>
+<property name="OpenProject" value="1" type="JavaHandler"/>
+<property name="RecustomizeCore" value="3" type="JavaHandler"/>
 <property name="RunSynthesis" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
@@ -30,7 +31,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="AbstractCombinedPanel_REMOVE_SELECTED_ELEMENTS" value="2" type="GuiResourceData"/>
 <property name="AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN" value="2" type="GuiResourceData"/>
 <property name="AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES" value="1" type="GuiResourceData"/>
-<property name="BaseDialog_OK" value="15" type="GuiResourceData"/>
+<property name="BaseDialog_OK" value="16" type="GuiResourceData"/>
 <property name="ConstraintsChooserPanel_ADD_EXISTING_OR_CREATE_NEW_CONSTRAINTS" value="1" type="GuiResourceData"/>
 <property name="ConstraintsChooserPanel_ADD_FILES" value="2" type="GuiResourceData"/>
 <property name="ConstraintsChooserPanel_ADD_FILES_BELOW_TO_THIS_CONSTRAINT_SET" value="1" type="GuiResourceData"/>
@@ -39,16 +40,17 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="CreateSrcFileDialog_FILE_NAME" value="5" type="GuiResourceData"/>
 <property name="CreateSrcFileDialog_FILE_TYPE" value="4" type="GuiResourceData"/>
 <property name="DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS" value="42" type="GuiResourceData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="62" type="GuiResourceData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="78" type="GuiResourceData"/>
 <property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="12" type="GuiResourceData"/>
 <property name="GettingStartedView_CREATE_NEW_PROJECT" value="1" type="GuiResourceData"/>
 <property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="1" type="GuiResourceData"/>
 <property name="MainMenuMgr_EXPORT" value="1" type="GuiResourceData"/>
-<property name="MainMenuMgr_FILE" value="2" type="GuiResourceData"/>
-<property name="MainMenuMgr_OPEN_RECENT_PROJECT" value="1" type="GuiResourceData"/>
+<property name="MainMenuMgr_FILE" value="4" type="GuiResourceData"/>
+<property name="MainMenuMgr_OPEN_RECENT_PROJECT" value="2" type="GuiResourceData"/>
 <property name="PACommandNames_ADD_SOURCES" value="4" type="GuiResourceData"/>
 <property name="PACommandNames_AUTO_UPDATE_HIER" value="4" type="GuiResourceData"/>
 <property name="PACommandNames_NEW_PROJECT" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_OPEN_PROJECT" value="1" type="GuiResourceData"/>
 <property name="PAViews_CODE" value="4" type="GuiResourceData"/>
 <property name="PAViews_IP_CATALOG" value="1" type="GuiResourceData"/>
 <property name="PartChooser_BOARDS" value="4" type="GuiResourceData"/>
@@ -61,9 +63,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SrcMenu_IP_HIERARCHY" value="2" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="6" type="GuiMode"/>
+<property name="GuiMode" value="8" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="3" type="TclMode"/>
+<property name="TclMode" value="4" type="TclMode"/>
 </item>
 </section>
 </application>

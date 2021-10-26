@@ -1,0 +1,533 @@
+
+*** Running vivado
+    with args -log counter5_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source counter5_1.tcl
+
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source counter5_1.tcl -notrace
+Command: synth_design -top counter5_1 -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 1072 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 309.270 ; gain = 73.055
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'counter5_1' [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/counter5_1.vhd:43]
+	Parameter COUNT_SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'one_sec_pulse' declared at 'C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:34' bound to instance 'U1' of component 'one_sec_pulse' [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/counter5_1.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'one_sec_pulse' [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:40]
+INFO: [Synth 8-3491] module 'clk_wiz_5_1' declared at 'C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.runs/synth_1/.Xil/Vivado-7708-DESKTOP-Q4GMU0O/realtime/clk_wiz_5_1_stub.v:5' bound to instance 'UUT' of component 'clk_wiz_5_1' [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_5_1' [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.runs/synth_1/.Xil/Vivado-7708-DESKTOP-Q4GMU0O/realtime/clk_wiz_5_1_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_5_1' (1#1) [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.runs/synth_1/.Xil/Vivado-7708-DESKTOP-Q4GMU0O/realtime/clk_wiz_5_1_stub.v:5]
+WARNING: [Synth 8-614] signal 'en' is read in the process but is not in the sensitivity list [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:63]
+INFO: [Synth 8-256] done synthesizing module 'one_sec_pulse' (2#1) [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'counter5_1' (3#1) [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/counter5_1.vhd:43]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 349.602 ; gain = 113.387
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 349.602 ; gain = 113.387
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.runs/synth_1/.Xil/Vivado-7708-DESKTOP-Q4GMU0O/dcp3/clk_wiz_5_1_in_context.xdc] for cell 'U1/UUT'
+Finished Parsing XDC File [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.runs/synth_1/.Xil/Vivado-7708-DESKTOP-Q4GMU0O/dcp3/clk_wiz_5_1_in_context.xdc] for cell 'U1/UUT'
+Parsing XDC File [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/counter5_1_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/counter5_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 648.809 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.runs/synth_1/.Xil/Vivado-7708-DESKTOP-Q4GMU0O/dcp3/clk_wiz_5_1_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.runs/synth_1/.Xil/Vivado-7708-DESKTOP-Q4GMU0O/dcp3/clk_wiz_5_1_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for U1/UUT. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/counter5_1.vhd:60]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     25 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               25 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module counter5_1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module one_sec_pulse 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     25 Bit       Adders := 1     
++---Registers : 
+	               25 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     25 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (U1/reg_state_reg[5]) is unused and will be removed from module counter5_1.
+WARNING: [Synth 8-3332] Sequential element (U1/reg_state_reg[4]) is unused and will be removed from module counter5_1.
+WARNING: [Synth 8-3332] Sequential element (U1/reg_state_reg[3]) is unused and will be removed from module counter5_1.
+WARNING: [Synth 8-3332] Sequential element (U1/reg_state_reg[2]) is unused and will be removed from module counter5_1.
+WARNING: [Synth 8-3332] Sequential element (U1/reg_state_reg[1]) is unused and will be removed from module counter5_1.
+WARNING: [Synth 8-3332] Sequential element (U1/reg_state_reg[0]) is unused and will be removed from module counter5_1.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'U1/UUT/clk_out1' to pin 'U1/UUT/bbstub_clk_out1/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+Found timing loop:
+     0: i_9/i_30/O (GATE_2_8_AND)
+     1: i_9/i_30/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__2 /O[0] (CARRY4)
+     3: i_9/\U1/plusOp_carry__2 /S[0] (CARRY4)
+     4: i_9/i_30/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_30"
+Found timing loop:
+     0: i_9/i_34/O (GATE_2_8_AND)
+     1: i_9/i_34/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__1 /O[0] (CARRY4)
+     3: i_9/\U1/plusOp_carry__1 /S[0] (CARRY4)
+     4: i_9/i_34/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_34"
+Found timing loop:
+     0: i_9/i_38/O (GATE_2_8_AND)
+     1: i_9/i_38/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__0 /O[0] (CARRY4)
+     3: i_9/\U1/plusOp_carry__0 /S[0] (CARRY4)
+     4: i_9/i_38/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_38"
+Found timing loop:
+     0: i_9/i_42/O (GATE_2_8_AND)
+     1: i_9/i_42/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry /O[0] (CARRY4)
+     3: i_9/\U1/plusOp_carry /S[0] (CARRY4)
+     4: i_9/i_42/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_42"
+Found timing loop:
+     0: i_9/i_43/O (GATE_2_8_AND)
+     1: i_9/i_43/I1 (GATE_2_8_AND)
+     2: i_9/i_65/O (INV)
+     3: i_9/i_65/I (INV)
+     4: i_9/i_43/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_43"
+Found timing loop:
+     0: i_9/i_41/O (GATE_2_8_AND)
+     1: i_9/i_41/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry /O[1] (CARRY4)
+     3: i_9/\U1/plusOp_carry /S[1] (CARRY4)
+     4: i_9/i_41/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_41"
+Found timing loop:
+     0: i_9/i_40/O (GATE_2_8_AND)
+     1: i_9/i_40/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry /O[2] (CARRY4)
+     3: i_9/\U1/plusOp_carry /S[2] (CARRY4)
+     4: i_9/i_40/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_40"
+Found timing loop:
+     0: i_9/i_39/O (GATE_2_8_AND)
+     1: i_9/i_39/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry /O[3] (CARRY4)
+     3: i_9/\U1/plusOp_carry /S[3] (CARRY4)
+     4: i_9/i_39/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_39"
+Found timing loop:
+     0: i_9/i_37/O (GATE_2_8_AND)
+     1: i_9/i_37/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__0 /O[1] (CARRY4)
+     3: i_9/\U1/plusOp_carry__0 /S[1] (CARRY4)
+     4: i_9/i_37/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_37"
+Found timing loop:
+     0: i_9/i_36/O (GATE_2_8_AND)
+     1: i_9/i_36/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__0 /O[2] (CARRY4)
+     3: i_9/\U1/plusOp_carry__0 /S[2] (CARRY4)
+     4: i_9/i_36/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_36"
+Found timing loop:
+     0: i_9/i_35/O (GATE_2_8_AND)
+     1: i_9/i_35/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__0 /O[3] (CARRY4)
+     3: i_9/\U1/plusOp_carry__0 /S[3] (CARRY4)
+     4: i_9/i_35/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_35"
+Found timing loop:
+     0: i_9/i_33/O (GATE_2_8_AND)
+     1: i_9/i_33/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__1 /O[1] (CARRY4)
+     3: i_9/\U1/plusOp_carry__1 /S[1] (CARRY4)
+     4: i_9/i_33/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_33"
+Found timing loop:
+     0: i_9/i_32/O (GATE_2_8_AND)
+     1: i_9/i_32/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__1 /O[2] (CARRY4)
+     3: i_9/\U1/plusOp_carry__1 /S[2] (CARRY4)
+     4: i_9/i_32/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_32"
+Found timing loop:
+     0: i_9/i_31/O (GATE_2_8_AND)
+     1: i_9/i_31/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__1 /O[3] (CARRY4)
+     3: i_9/\U1/plusOp_carry__1 /S[3] (CARRY4)
+     4: i_9/i_31/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_31"
+Found timing loop:
+     0: i_9/i_29/O (GATE_2_8_AND)
+     1: i_9/i_29/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__2 /O[1] (CARRY4)
+     3: i_9/\U1/plusOp_carry__2 /S[1] (CARRY4)
+     4: i_9/i_29/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_29"
+Found timing loop:
+     0: i_9/i_28/O (GATE_2_8_AND)
+     1: i_9/i_28/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__2 /O[2] (CARRY4)
+     3: i_9/\U1/plusOp_carry__2 /S[2] (CARRY4)
+     4: i_9/i_28/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_28"
+Found timing loop:
+     0: i_9/\U1/plusOp_carry__2 /O[3] (CARRY4)
+     1: i_9/\U1/plusOp_carry__2 /S[3] (CARRY4)
+     2: i_9/i_27/O (GATE_2_8_AND)
+     3: i_9/i_27/I1 (GATE_2_8_AND)
+     4: i_9/\U1/plusOp_carry__2 /O[3] (CARRY4)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from S[3] -to O[3] i_9/\U1/plusOp_carry__2 "
+Found timing loop:
+     0: i_9/i_26/O (GATE_2_8_AND)
+     1: i_9/i_26/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__3 /O[0] (CARRY4)
+     3: i_9/\U1/plusOp_carry__3 /S[0] (CARRY4)
+     4: i_9/i_26/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_26"
+Found timing loop:
+     0: i_9/i_25/O (GATE_2_8_AND)
+     1: i_9/i_25/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__3 /O[1] (CARRY4)
+     3: i_9/\U1/plusOp_carry__3 /S[1] (CARRY4)
+     4: i_9/i_25/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_25"
+Found timing loop:
+     0: i_9/i_24/O (GATE_2_8_AND)
+     1: i_9/i_24/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__3 /O[2] (CARRY4)
+     3: i_9/\U1/plusOp_carry__3 /S[2] (CARRY4)
+     4: i_9/i_24/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_24"
+Found timing loop:
+     0: i_9/\U1/plusOp_carry__3 /O[3] (CARRY4)
+     1: i_9/\U1/plusOp_carry__3 /S[3] (CARRY4)
+     2: i_9/i_23/O (GATE_2_8_AND)
+     3: i_9/i_23/I1 (GATE_2_8_AND)
+     4: i_9/\U1/plusOp_carry__3 /O[3] (CARRY4)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from S[3] -to O[3] i_9/\U1/plusOp_carry__3 "
+Found timing loop:
+     0: i_9/\U1/plusOp_carry__4 /O[0] (CARRY4)
+     1: i_9/\U1/plusOp_carry__4 /S[0] (CARRY4)
+     2: i_9/i_22/O (GATE_2_8_AND)
+     3: i_9/i_22/I1 (GATE_2_8_AND)
+     4: i_9/\U1/plusOp_carry__4 /O[0] (CARRY4)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from S[0] -to O[0] i_9/\U1/plusOp_carry__4 "
+Found timing loop:
+     0: i_9/i_21/O (GATE_2_8_AND)
+     1: i_9/i_21/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__4 /O[1] (CARRY4)
+     3: i_9/\U1/plusOp_carry__4 /S[1] (CARRY4)
+     4: i_9/i_21/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_21"
+Found timing loop:
+     0: i_9/i_20/O (GATE_2_8_AND)
+     1: i_9/i_20/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__4 /O[2] (CARRY4)
+     3: i_9/\U1/plusOp_carry__4 /S[2] (CARRY4)
+     4: i_9/i_20/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_20"
+Found timing loop:
+     0: i_9/i_19/O (GATE_2_8_AND)
+     1: i_9/i_19/I1 (GATE_2_8_AND)
+     2: i_9/\U1/plusOp_carry__4 /O[3] (CARRY4)
+     3: i_9/\U1/plusOp_carry__4 /S[3] (CARRY4)
+     4: i_9/i_19/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/one_sec_pulse.vhd:60]
+Inferred a: "set_disable_timing -from I1 -to O i_9/i_19"
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+Found timing loop:
+     0: i_45/O (LUT2)
+     1: i_45/I1 (LUT2)
+     2: i_23/O (LUT1)
+     3: i_23/I0 (LUT1)
+     4: i_45/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/new/counter5_1.vhd:34]
+Inferred a: "set_disable_timing -from I1 -to O i_45"
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry /O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry /O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry /O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry /O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__0 /O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__0 /O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__0 /O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__0 /O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__1 /O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__1 /O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__1 /O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__1 /O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__2 /O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__2 /O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__2 /O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__3 /O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__3 /O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__3 /O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__4 /O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__4 /O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \U1/plusOp_carry__4 /O[3]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through plusOp_carry_i_1/O'
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_5_1   |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |clk_wiz_5_1 |     1|
+|2     |CARRY4      |     8|
+|3     |LUT1        |     1|
+|4     |LUT2        |    30|
+|5     |LUT3        |     4|
+|6     |LUT6        |    21|
+|7     |FDRE        |    27|
+|8     |IBUF        |     3|
+|9     |OBUF        |     8|
++------+------------+------+
+
+Report Instance Areas: 
++------+---------+--------------+------+
+|      |Instance |Module        |Cells |
++------+---------+--------------+------+
+|1     |top      |              |   103|
+|2     |  U1     |one_sec_pulse |    63|
++------+---------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 648.809 ; gain = 412.594
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 26 critical warnings and 28 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 648.809 ; gain = 113.387
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 648.809 ; gain = 412.594
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+22 Infos, 29 Warnings, 26 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 648.809 ; gain = 420.297
+INFO: [Common 17-1381] The checkpoint 'C:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.runs/synth_1/counter5_1.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 648.809 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 26 13:52:35 2021...
