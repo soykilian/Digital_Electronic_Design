@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
--- Date        : Tue Oct 26 12:43:21 2021
+-- Date        : Tue Oct 26 12:43:20 2021
 -- Host        : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/mv/Documents/dsde/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/ip/clk_wiz_5_1/clk_wiz_5_1_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top clk_wiz_5_1 -prefix
+--               clk_wiz_5_1_ clk_wiz_5_1_stub.vhdl
 -- Design      : clk_wiz_5_1
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1

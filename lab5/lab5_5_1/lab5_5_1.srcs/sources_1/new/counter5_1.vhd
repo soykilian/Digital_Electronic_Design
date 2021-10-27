@@ -38,6 +38,8 @@ entity counter5_1 is
            rst : in STD_LOGIC;
            en : in STD_LOGIC;
            up_down : in STD_LOGIC);
+attribute use_dsp48: string;
+attribute use_dsp48 of counter5_1: entity is "yes";
 end counter5_1;
 
 architecture Behavioral of counter5_1 is
@@ -57,6 +59,9 @@ U1: one_sec_pulse port map
 process (pulse)
 begin
     if (pulse'event and pulse = '1') then
+        if (rst = '1') then
+            count <= (others => '0');
+        end if;
         if ( en = '1' and up_down = '1') then
             if (count < 2**(COUNT_SIZE - 1)) then
                 count <= count + 1;

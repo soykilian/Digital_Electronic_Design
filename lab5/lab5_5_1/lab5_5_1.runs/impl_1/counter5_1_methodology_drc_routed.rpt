@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Tue Oct 26 13:53:30 2021
-| Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
+| Date         : Wed Oct 27 13:40:26 2021
+| Host         : pc-b042-04 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file counter5_1_methodology_drc_routed.rpt -rpx counter5_1_methodology_drc_routed.rpx
 | Design       : counter5_1
 | Device       : xc7a100tcsg324-1
@@ -23,140 +23,26 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 35
-+-----------+------------------+------------------------------------------------+------------+
-| Rule      | Severity         | Description                                    | Violations |
-+-----------+------------------+------------------------------------------------+------------+
-| TIMING-23 | Critical Warning | Combinatorial loop found                       | 25         |
-| TIMING-6  | Warning          | No common primary clock between related clocks | 2          |
-| TIMING-17 | Warning          | Non-clocked sequential cell                    | 8          |
-+-----------+------------------+------------------------------------------------+------------+
+             Violations found: 5
++-----------+----------+------------------------------------------------+------------+
+| Rule      | Severity | Description                                    | Violations |
++-----------+----------+------------------------------------------------+------------+
+| SYNTH-12  | Warning  | DSP input not registered                       | 1          |
+| SYNTH-13  | Warning  | combinational multiplier                       | 1          |
+| TIMING-6  | Warning  | No common primary clock between related clocks | 2          |
+| TIMING-17 | Warning  | Non-clocked sequential cell                    | 1          |
++-----------+----------+------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-TIMING-23#1 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry/S[0] and U1/plusOp_carry/O[0] to disable the timing loop
+SYNTH-12#1 Warning
+DSP input not registered  
+DSP instance plusOp is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
 Related violations: <none>
 
-TIMING-23#2 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry/S[1] and U1/plusOp_carry/O[1] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#3 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry/S[2] and U1/plusOp_carry/O[2] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#4 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry/S[3] and U1/plusOp_carry/O[3] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#5 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__0/S[0] and U1/plusOp_carry__0/O[0] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#6 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__0/S[1] and U1/plusOp_carry__0/O[1] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#7 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__0/S[2] and U1/plusOp_carry__0/O[2] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#8 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__0/S[3] and U1/plusOp_carry__0/O[3] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#9 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__1/S[0] and U1/plusOp_carry__1/O[0] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#10 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__1/S[1] and U1/plusOp_carry__1/O[1] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#11 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__1/S[2] and U1/plusOp_carry__1/O[2] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#12 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__1/S[3] and U1/plusOp_carry__1/O[3] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#13 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__2/S[0] and U1/plusOp_carry__2/O[0] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#14 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__2/S[1] and U1/plusOp_carry__2/O[1] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#15 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__2/S[2] and U1/plusOp_carry__2/O[2] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#16 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__2_i_1/I5 and U1/plusOp_carry__2_i_1/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#17 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__3/S[0] and U1/plusOp_carry__3/O[0] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#18 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__3/S[1] and U1/plusOp_carry__3/O[1] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#19 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__3/S[2] and U1/plusOp_carry__3/O[2] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#20 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__3_i_1/I5 and U1/plusOp_carry__3_i_1/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#21 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__4/S[1] and U1/plusOp_carry__4/O[1] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#22 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__4/S[2] and U1/plusOp_carry__4/O[2] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#23 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__4/S[3] and U1/plusOp_carry__4/O[3] to disable the timing loop
-Related violations: <none>
-
-TIMING-23#24 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry__4_i_4/I5 and U1/plusOp_carry__4_i_4/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#25 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between U1/plusOp_carry_i_1/I0 and U1/plusOp_carry_i_1/O to disable the timing loop
+SYNTH-13#1 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance minusOp.
 Related violations: <none>
 
 TIMING-6#1 Warning
@@ -171,42 +57,7 @@ Related violations: <none>
 
 TIMING-17#1 Warning
 Non-clocked sequential cell  
-The clock pin count_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#2 Warning
-Non-clocked sequential cell  
-The clock pin count_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#3 Warning
-Non-clocked sequential cell  
-The clock pin count_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#4 Warning
-Non-clocked sequential cell  
-The clock pin count_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#5 Warning
-Non-clocked sequential cell  
-The clock pin count_reg[4]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#6 Warning
-Non-clocked sequential cell  
-The clock pin count_reg[5]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#7 Warning
-Non-clocked sequential cell  
-The clock pin count_reg[6]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#8 Warning
-Non-clocked sequential cell  
-The clock pin count_reg[7]/C is not reached by a timing clock
+The clock pin plusOp/CLK is not reached by a timing clock
 Related violations: <none>
 
 

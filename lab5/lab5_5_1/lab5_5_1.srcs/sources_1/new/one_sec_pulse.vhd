@@ -43,7 +43,7 @@ Port (clk_in1: in std_logic;
       reset : in std_logic;
       clk_out1: out std_logic); 
       end component;
-signal reg_state, next_state: unsigned(24 downto 0);
+signal reg_state, next_state: unsigned(23 downto 0);
 signal clk_5: std_logic;
 signal en: std_logic;
 begin
@@ -57,15 +57,6 @@ begin
         reg_state <= next_state;
     end if;
     end process;
-en <= '1' when (reg_state < 5000000) else '0';
-next_state <= next_state + 1 when (reg_state < 10000000) else (others => '0');
-
-process (clk_5)
-begin
-if (en = '1') then
-    pulse <= '1';
-else
-    pulse <= '0';
-end if;
-end process;
+pulse <= '1' when (reg_state = 5000000) else '0';
+next_state <= reg_state + 1 when (reg_state < 5000000) else (others => '0');
 end Behavioral; 
