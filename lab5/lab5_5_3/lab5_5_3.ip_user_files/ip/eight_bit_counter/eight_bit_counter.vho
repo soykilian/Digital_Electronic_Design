@@ -56,8 +56,9 @@ COMPONENT eight_bit_counter
   PORT (
     CLK : IN STD_LOGIC;
     CE : IN STD_LOGIC;
+    SCLR : IN STD_LOGIC;
     UP : IN STD_LOGIC;
-    Q : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+    Q : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -70,6 +71,7 @@ your_instance_name : eight_bit_counter
   PORT MAP (
     CLK => CLK,
     CE => CE,
+    SCLR => SCLR,
     UP => UP,
     Q => Q
   );

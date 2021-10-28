@@ -2,11 +2,11 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Thu Oct 28 10:26:17 2021
-# Process ID: 5752
-# Current directory: C:/Users/mv/Documents/dsde/lab5/lab5_5_3/lab5_5_3.runs/eight_bit_counter_synth_1
+# Start of session at: Thu Oct 28 12:44:37 2021
+# Process ID: 2380
+# Current directory: C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab5/lab5_5_3/lab5_5_3.runs/eight_bit_counter_synth_1
 # Command line: vivado.exe -log eight_bit_counter.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source eight_bit_counter.tcl
-# Log file: C:/Users/mv/Documents/dsde/lab5/lab5_5_3/lab5_5_3.runs/eight_bit_counter_synth_1/eight_bit_counter.vds
-# Journal file: C:/Users/mv/Documents/dsde/lab5/lab5_5_3/lab5_5_3.runs/eight_bit_counter_synth_1\vivado.jou
+# Log file: C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab5/lab5_5_3/lab5_5_3.runs/eight_bit_counter_synth_1/eight_bit_counter.vds
+# Journal file: C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab5/lab5_5_3/lab5_5_3.runs/eight_bit_counter_synth_1\vivado.jou
 #-----------------------------------------------------------
 source eight_bit_counter.tcl -notrace

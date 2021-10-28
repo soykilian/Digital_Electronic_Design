@@ -55,10 +55,11 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 eight_bit_counter your_instance_name (
-  .CLK(CLK),  // input wire CLK
-  .CE(CE),    // input wire CE
-  .UP(UP),    // input wire UP
-  .Q(Q)      // output wire [6 : 0] Q
+  .CLK(CLK),    // input wire CLK
+  .CE(CE),      // input wire CE
+  .SCLR(SCLR),  // input wire SCLR
+  .UP(UP),      // input wire UP
+  .Q(Q)        // output wire [7 : 0] Q
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

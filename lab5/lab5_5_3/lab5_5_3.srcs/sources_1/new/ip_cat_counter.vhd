@@ -44,27 +44,27 @@ architecture Behavioral of ip_cat_counter is
 --Binary counter --
 component one_sec_pulse is
     Port ( clk : in STD_LOGIC;
-    reset : in STD_LOGIC;
    pulse : out STD_LOGIC);
    end component;
 component eight_bit_counter 
 Port (
     CLK : in std_logic;
     CE : in std_logic;
+    SCLR : IN STD_LOGIC;
     UP : in std_logic;
-    Q : out std_logic_vector(6 downto 0)
+    Q : out std_logic_vector(7 downto 0)
 );
     end component;    
 
 signal pulse : std_logic;
 begin
 U1: one_sec_pulse port map 
-( reset => rst,
-    clk => clk,
+(   clk => clk,
     pulse => pulse);
 U2 : eight_bit_counter port map
-(   clk  => clk,
+(   clk  => pulse,
     ce => en,
+    sclr => rst,
     up => up_down,
     q => q
 );

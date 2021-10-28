@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/mv/Documents/dsde/lab5/lab5_5_3/lab5_5_3.runs/eight_bit_counter_synth_1'
+HD_PWD='C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab5/lab5_5_3/lab5_5_3.runs/eight_bit_counter_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

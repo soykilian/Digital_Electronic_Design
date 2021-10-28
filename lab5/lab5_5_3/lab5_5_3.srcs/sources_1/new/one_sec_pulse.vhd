@@ -34,7 +34,6 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity one_sec_pulse is
     Port ( clk : in STD_LOGIC;
-        reset : in STD_LOGIC;
        pulse : out STD_LOGIC);
 end one_sec_pulse;
 
@@ -43,7 +42,6 @@ architecture Behavioral of one_sec_pulse is
 component clk_wiz_0 
 Port (
        clk_in1 : in std_logic;
-       reset : in std_logic;
        clk_out1 : out std_logic
 );
 end component;
@@ -53,7 +51,6 @@ signal en: std_logic;
 begin
 UUT: clk_wiz_0 port map (
               clk_in1 => clk,
-              reset => reset,
               clk_out1 => clk_5);
 process(clk_5)
 begin

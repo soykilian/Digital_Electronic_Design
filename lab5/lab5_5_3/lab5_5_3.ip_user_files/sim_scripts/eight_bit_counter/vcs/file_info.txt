@@ -1,5 +1,5 @@
-xpm_cdc.sv,systemverilog,xil_defaultlib,../../../../../../../../../../Xilinx/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,
-xpm_VCOMP.vhd,vhdl,xpm,../../../../../../../../../../Xilinx/Vivado/2017.2/data/ip/xpm/xpm_VCOMP.vhd,
+xpm_cdc.sv,systemverilog,xil_defaultlib,../../../../../../../../../../../Xilinx/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,
+xpm_VCOMP.vhd,vhdl,xpm,../../../../../../../../../../../Xilinx/Vivado/2017.2/data/ip/xpm/xpm_VCOMP.vhd,
 xbip_utils_v3_0_vh_rfs.vhd,vhdl,xbip_utils_v3_0_7,../../../ipstatic/hdl/xbip_utils_v3_0_vh_rfs.vhd,
 c_reg_fd_v12_0_vh_rfs.vhd,vhdl,c_reg_fd_v12_0_3,../../../ipstatic/hdl/c_reg_fd_v12_0_vh_rfs.vhd,
 xbip_dsp48_wrapper_v3_0_vh_rfs.vhd,vhdl,xbip_dsp48_wrapper_v3_0_4,../../../ipstatic/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd,
