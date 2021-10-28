@@ -35,18 +35,18 @@ entity ip_cat_counter is
     Port ( clk : in STD_LOGIC;
            en : in STD_LOGIC;
            rst : in STD_LOGIC;
+           up_down : in std_logic;
            q : out STD_LOGIC_VECTOR (7 downto 0));
 end ip_cat_counter;
 
 architecture Behavioral of ip_cat_counter is
-component clk_wiz_0 
-Port (
-       clk_in1 : in std_logic;
-       reset : in std_logic;
-       clk_out1 : out std_logic
-);
-end component;
+
 --Binary counter --
+component one_sec_pulse is
+    Port ( clk : in STD_LOGIC;
+    reset : in STD_LOGIC;
+   pulse : out STD_LOGIC);
+   end component;
 component eight_bit_counter 
 Port (
     CLK : in std_logic;
@@ -55,8 +55,19 @@ Port (
     Q : out std_logic_vector(6 downto 0)
 );
     end component;    
---5 Mhz clock --
+
+signal pulse : std_logic;
 begin
+U1: one_sec_pulse port map 
+( reset => rst,
+    clk => clk,
+    pulse => pulse);
+U2 : eight_bit_counter port map
+(   clk  => clk,
+    ce => en,
+    up => up_down,
+    q => q
+);
 
 
 end Behavioral;
