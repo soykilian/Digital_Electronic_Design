@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1635420885">
-  <File Type="PWROPT-DRC" Name="multiple3_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="multiple3_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="multiple3_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="multiple3_power_routed.rpx"/>
   <File Type="PA-TCL" Name="multiple3.tcl"/>
-  <File Type="OPT-HWDEF" Name="multiple3.hwdef"/>
+  <File Type="INIT-TIMING" Name="multiple3_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="multiple3_methodology_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="multiple3_drc_pwropted.rpt"/>
   <File Type="RDI-RDI" Name="multiple3.vdi"/>
   <File Type="OPT-DCP" Name="multiple3_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="multiple3.hwdef"/>
   <File Type="OPT-DRC" Name="multiple3_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="multiple3_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="multiple3_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="multiple3_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="multiple3_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="multiple3_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="multiple3.bin"/>
   <File Type="ROUTE-DRC-RPX" Name="multiple3_drc_routed.rpx"/>
-  <File Type="BG-DRC" Name="multiple3.drc"/>
+  <File Type="BG-BIN" Name="multiple3.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="multiple3_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="multiple3.msk"/>
+  <File Type="BG-DRC" Name="multiple3.drc"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="multiple3_methodology_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="multiple3.bgn"/>
+  <File Type="BITSTR-MSK" Name="multiple3.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="multiple3_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="multiple3.bgn"/>
   <File Type="ROUTE-PWR" Name="multiple3_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="multiple3_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="multiple3_route_status.rpt"/>
@@ -81,9 +81,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

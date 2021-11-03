@@ -1,4 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab6/multiple3/multiple3.srcs/sources_1/new/multiple3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/dsed/DSED_6/Digital_Electronic_Design/lab6/multiple3/multiple3.srcs/sources_1/new/multiple3.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity multiple3
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab6/multiple3/multiple3.srcs/sim_1/new/tb_multiple3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/dsed/DSED_6/Digital_Electronic_Design/lab6/multiple3/multiple3.srcs/sim_1/new/tb_multiple3.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity tb_multiple3

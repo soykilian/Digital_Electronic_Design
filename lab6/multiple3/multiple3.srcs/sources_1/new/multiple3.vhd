@@ -40,7 +40,7 @@ entity multiple3 is
 end multiple3;
 
 architecture Behavioral of multiple3 is
-type state_type is (idle, n1, n2, n3);
+type state_type is (idle, n1, n2);
 signal state, next_state : state_type; 
 begin
 SYNC_PROC : process(clk)
@@ -54,8 +54,9 @@ begin
      end if;
 end process;
 
-NEXT_ST_PROCESS : process(state, clk)
+NEXT_ST_PROCESS : process(state,a)
 begin
+next_state<= state;
     case (state) is
         when idle =>
             if ( a = '1') then
@@ -67,10 +68,9 @@ begin
              end if;
          when n2 =>
             if (a = '1') then
-                next_state <= n3;
+                next_state <= idle;
             end if;
-          when n3 => 
-              next_state <= idle;
+
           end case;
 end process;
 
@@ -80,12 +80,14 @@ begin
 out_mealy <= '0';
     case (state) is
         when idle =>
+            if(a = '0') then
+                out_mealy <= '1';
+            end if;
         when n1 =>
         when n2 =>
             if (a = '1') then
                 out_mealy <= '1';
              end if;
-        when n3 =>
      end case;
 end process;
 
@@ -95,10 +97,9 @@ begin
 out_moore<= '0';
     case (state) is
         when idle =>
+            out_moore <= '1';
         when n1 => 
         when n2 =>
-        when n3 => 
-            out_moore <= '1';
      end case;
 end process;
 
