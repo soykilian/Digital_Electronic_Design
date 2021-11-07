@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Oct 27 13:39:36 2021
-| Host         : pc-b042-04 running 64-bit major release  (build 9200)
+| Date         : Wed Nov  3 18:47:02 2021
+| Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command      : report_utilization -file counter5_1_utilization_synth.rpt -pb counter5_1_utilization_synth.pb
 | Design       : counter5_1
 | Device       : 7a100tcsg324-1
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   47 |     0 |     63400 |  0.07 |
-|   LUT as Logic          |   47 |     0 |     63400 |  0.07 |
+| Slice LUTs*             |   45 |     0 |     63400 |  0.07 |
+|   LUT as Logic          |   45 |     0 |     63400 |  0.07 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |   24 |     0 |    126800 |  0.02 |
-|   Register as Flip Flop |   24 |     0 |    126800 |  0.02 |
+| Slice Registers         |   32 |     0 |    126800 |  0.03 |
+|   Register as Flip Flop |   32 |     0 |    126800 |  0.03 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 24    |          Yes |       Reset |            - |
+| 32    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -77,12 +77,11 @@ Table of Contents
 3. DSP
 ------
 
-+----------------+------+-------+-----------+-------+
-|    Site Type   | Used | Fixed | Available | Util% |
-+----------------+------+-------+-----------+-------+
-| DSPs           |    2 |     0 |       240 |  0.83 |
-|   DSP48E1 only |    2 |       |           |       |
-+----------------+------+-------+-----------+-------+
++-----------+------+-------+-----------+-------+
+| Site Type | Used | Fixed | Available | Util% |
++-----------+------+-------+-----------+-------+
+| DSPs      |    0 |     0 |       240 |  0.00 |
++-----------+------+-------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -147,16 +146,16 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
+| FDRE     |   32 |        Flop & Latch |
 | LUT1     |   24 |                 LUT |
-| FDRE     |   24 |        Flop & Latch |
-| LUT6     |   16 |                 LUT |
+| LUT6     |    9 |                 LUT |
 | OBUF     |    8 |                  IO |
+| LUT5     |    7 |                 LUT |
 | CARRY4   |    6 |          CarryLogic |
-| LUT4     |    3 |                 LUT |
-| LUT2     |    3 |                 LUT |
+| LUT4     |    4 |                 LUT |
+| LUT2     |    4 |                 LUT |
+| LUT3     |    3 |                 LUT |
 | IBUF     |    3 |                  IO |
-| DSP48E1  |    2 |    Block Arithmetic |
-| LUT3     |    1 |                 LUT |
 +----------+------+---------------------+
 
 

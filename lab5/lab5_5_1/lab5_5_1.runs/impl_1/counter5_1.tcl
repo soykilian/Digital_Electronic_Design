@@ -47,20 +47,19 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir E:/DSED/DSED_Group6/lab5_5_1/lab5_5_1.cache/wt [current_project]
-  set_property parent.project_path E:/DSED/DSED_Group6/lab5_5_1/lab5_5_1.xpr [current_project]
-  set_property ip_output_repo E:/DSED/DSED_Group6/lab5_5_1/lab5_5_1.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab5/lab5_5_1/lab5_5_1.cache/wt [current_project]
+  set_property parent.project_path C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab5/lab5_5_1/lab5_5_1.xpr [current_project]
+  set_property ip_output_repo C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab5/lab5_5_1/lab5_5_1.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_CDC [current_project]
-  add_files -quiet E:/DSED/DSED_Group6/lab5_5_1/lab5_5_1.runs/synth_1/counter5_1.dcp
-  read_ip -quiet E:/DSED/DSED_Group6/lab5_5_1/lab5_5_1.srcs/sources_1/ip/clk_wiz_5_1/clk_wiz_5_1.xci
-  set_property is_locked true [get_files E:/DSED/DSED_Group6/lab5_5_1/lab5_5_1.srcs/sources_1/ip/clk_wiz_5_1/clk_wiz_5_1.xci]
-  read_xdc E:/DSED/DSED_Group6/lab5_5_1/Nexys4DDR_Master.xdc
+  add_files -quiet C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab5/lab5_5_1/lab5_5_1.runs/synth_1/counter5_1.dcp
+  read_ip -quiet C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/ip/clk_wiz_5_1/clk_wiz_5_1.xci
+  set_property is_locked true [get_files C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab5/lab5_5_1/lab5_5_1.srcs/sources_1/ip/clk_wiz_5_1/clk_wiz_5_1.xci]
+  read_xdc C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab5/lab5_5_1/Nexys4DDR_Master.xdc
   link_design -top counter5_1 -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -129,25 +128,6 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
-  unset ACTIVE_STEP 
-}
-
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES XPM_CDC [current_project]
-  catch { write_mem_info -force counter5_1.mmi }
-  write_bitstream -force counter5_1.bit 
-  catch {write_debug_probes -no_partial_ltxfile -quiet -force debug_nets}
-  catch {file copy -force debug_nets.ltx counter5_1.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

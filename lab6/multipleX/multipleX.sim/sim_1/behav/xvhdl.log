@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab6/multipleX/multipleX.srcs/sources_1/new/multipleX.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity multipleX
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab6/multipleX/multipleX.srcs/sim_1/new/tb_multiplex.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_multiplex

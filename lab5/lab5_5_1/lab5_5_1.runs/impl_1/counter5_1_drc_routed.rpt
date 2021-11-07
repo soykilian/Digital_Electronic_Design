@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Oct 27 13:40:25 2021
-| Host         : pc-b042-04 running 64-bit major release  (build 9200)
+| Date         : Wed Nov  3 18:48:01 2021
+| Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command      : report_drc -file counter5_1_drc_routed.rpt -pb counter5_1_drc_routed.pb -rpx counter5_1_drc_routed.rpx
 | Design       : counter5_1
 | Device       : xc7a100tcsg324-1
@@ -24,13 +24,11 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 5
+             Violations found: 3
 +-------------+----------+-------------------------------------------------------------+------------+
 | Rule        | Severity | Description                                                 | Violations |
 +-------------+----------+-------------------------------------------------------------+------------+
 | CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1          |
-| DPIP-1      | Warning  | Input pipelining                                            | 1          |
-| DPOP-1      | Warning  | PREG Output pipelining                                      | 1          |
 | PDRC-153    | Warning  | Gated clock check                                           | 1          |
 | PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 1          |
 +-------------+----------+-------------------------------------------------------------+------------+
@@ -50,25 +48,19 @@ Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_des
 Refer to the device configuration user guide for more information.
 Related violations: <none>
 
-DPIP-1#1 Warning
-Input pipelining  
-DSP plusOp input plusOp/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPOP-1#1 Warning
-PREG Output pipelining  
-DSP minusOp output minusOp/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
 PDRC-153#1 Warning
 Gated clock check  
-Net U1/CLK is a gated clock net sourced by a combinational pin U1/plusOp_i_3/O, cell U1/plusOp_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net U1/CLK is a gated clock net sourced by a combinational pin U1/count[7]_i_4/O, cell U1/count[7]_i_4. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT U1/plusOp_i_3 is driving clock pin of 1 cells. This could lead to large hold time violations. First few involved cells are:
-    plusOp {DSP48E1}
+A LUT U1/count[7]_i_4 is driving clock pin of 8 cells. This could lead to large hold time violations. First few involved cells are:
+    count_reg[0] {FDRE}
+    count_reg[1] {FDRE}
+    count_reg[2] {FDRE}
+    count_reg[3] {FDRE}
+    count_reg[4] {FDRE}
 
 Related violations: <none>
 

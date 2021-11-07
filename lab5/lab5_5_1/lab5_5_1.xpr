@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="20" Path="E:/DSED/DSED_Group6/lab5_5_1/lab5_5_1.xpr">
+<Project Version="7" Minor="20" Path="C:/Users/mv/Documents/DSED/Digital_Electronic_Design/lab5/lab5_5_1/lab5_5_1.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="4f91f456067a43a2a2955c9ea33801da"/>
