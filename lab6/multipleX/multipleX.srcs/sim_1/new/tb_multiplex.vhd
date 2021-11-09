@@ -71,11 +71,11 @@ port map (
     end process;
      process
     begin
+            A <= '0';
         wait for 10ns;
         start <= '1';
         wait for 30 ns;
         start <= '0';
-        A <= '0';
         wait for 40 ns;
         A <= '1';
         wait for 40 ns;

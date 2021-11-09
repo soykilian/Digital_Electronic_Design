@@ -58,21 +58,14 @@ end process;
 process(start, finish, state_reg, a, n_state)
 begin
 state_next <= idle;
---out_moore <= '0';
---out_mealy <= '0';
 n_next <= n_state;
 case state_reg is
     when idle =>
     if (start = '1') then
         n_next <= module;
         state_next <= operation;
-  --      out_mealy <= '1';
     end if;
     when operation =>
-    --if (n_state = module) then
-      --  out_moore <= '1';
-        --out_mealy <= '1';
-     --end if;
      if (finish = '1') then
         state_next <= idle;
      else
@@ -87,13 +80,14 @@ case state_reg is
      state_next <= operation;
      end case;
  end process;    
+ 
   -- mealy_output logic--
-  process(state_reg, n_state, a)
+  process(state_reg, n_state, a, start)
  begin
  out_mealy <= '0';
  case state_reg is
  when idle =>
-    if (a = '0') then
+    if (start = '1') then
         out_mealy <= '1';
        end if;
  when  operation =>
@@ -105,13 +99,14 @@ case state_reg is
      end if;
      end case;
      end process;
+     
 --moore_output logic--
 process(state_reg, n_state)
 begin
 out_moore <= '0';
 case state_reg is
 when idle =>
-    out_moore <= '1';
+    out_moore <= '0';
 when operation =>
     if (n_state = module) then
           out_moore <= '1';
