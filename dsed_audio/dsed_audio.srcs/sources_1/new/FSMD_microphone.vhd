@@ -78,9 +78,9 @@ state_next <= state_reg;
     case state_reg is
         when idle =>
             if(reset = '0') then
-                if ((0 <= cuenta_reg and cuenta_reg <= 105) or (150 <= cuenta_reg and cuenta_reg <= 255)) then
+                if ((0 <= cuenta_next and cuenta_next <= 105) or (150 <= cuenta_next and cuenta_next <= 255)) then
                     state_next <= data1;
-                 elsif (106 <= cuenta_reg  and cuenta_reg <= 149) then
+                 elsif (106 <= cuenta_next  and cuenta_next <= 149) then
                     state_next <= data2;
                  elsif (cuenta_reg = 299) then
                         state_next <= new_cycle;
@@ -89,13 +89,7 @@ state_next <= state_reg;
                 end if;
             end if;
         when data2 =>
-            state_next <= ready_dato2;
-        when ready_dato2 =>
-            if (fst_cycle_reg = '1' and cuenta_reg = 106) then
-                state_next <= reg_dato2;
-             else
-                state_next <= not_ready;
-             end if;
+            state_next <= idle;
         when new_cycle =>
             state_next <= ready_dato1;
         when  cuenta_sum =>
@@ -111,10 +105,12 @@ state_next <= state_reg;
         end case;      
 end process;
 
-Mealyprocess : process(state_reg, cuenta_reg, micro_data, fst_cycle_reg, dato1_reg, dato2_reg)
+Mealyprocess : process(state_reg, cuenta_reg, micro_data, fst_cycle_reg, dato1_reg, dato2_reg, sample_out_reg)
 begin
 dato1_next <= dato1_reg;
 dato2_next <= dato2_reg;
+sample_out_next <= sample_out_reg;
+sample_out_ready <= '0';
     case state_reg is
         when idle =>
         when data1 =>
@@ -126,10 +122,13 @@ dato2_next <= dato2_reg;
             if (micro_data = '1') then
                 dato1_next <= dato1_reg + 1;
             end if;
-        when ready_dato2 =>
             if (cuenta_reg = 106) then
                 dato2_next <= (others => '0');
-             end if;
+                if (fst_cycle_reg = '1') then
+                    sample_out_ready <= enable_4_cycles;
+                    sample_out_next <= std_logic_vector(dato2_reg);
+                 end if;
+            end if;
         when new_cycle =>
             if (micro_data = '1') then
                 dato2_next <= dato2_reg + 1;
@@ -153,14 +152,9 @@ fst_cycle_next <= fst_cycle_reg;
             cuenta_next <= cuenta_reg + 1;
          when data2 =>
             cuenta_next <= cuenta_reg + 1;
-          when reg_dato2 =>
-            sample_out_next <= std_logic_vector(dato2_reg);
-            sample_out_ready <= enable_4_cycles;
           when reg_dato1=>
               sample_out_next <= std_logic_vector(dato1_reg);
               sample_out_ready <= enable_4_cycles;
-           when not_ready =>
-                sample_out_ready <= '0';
             when new_cycle =>
                 cuenta_next <= (others => '0');
                 fst_cycle_next <= '1';
