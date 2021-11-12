@@ -2,12 +2,12 @@
 # Webtalk v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Wed Nov 10 14:23:30 2021
-# Process ID: 1236
+# Start of session at: Fri Nov 12 14:03:38 2021
+# Process ID: 12552
 # Current directory: C:/Users/dsed/DSED_6/dsed_audio/dsed_audio.sim/sim_1/behav
-# Command line: wbtcv.exe -mode batch -source C:/Users/dsed/DSED_6/dsed_audio/dsed_audio.sim/sim_1/behav/xsim.dir/en_4_cycles_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source C:/Users/dsed/DSED_6/dsed_audio/dsed_audio.sim/sim_1/behav/xsim.dir/fsmd_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/dsed/DSED_6/dsed_audio/dsed_audio.sim/sim_1/behav/webtalk.log
 # Journal file: C:/Users/dsed/DSED_6/dsed_audio/dsed_audio.sim/sim_1/behav\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/dsed/DSED_6/dsed_audio/dsed_audio.sim/sim_1/behav/xsim.dir/en_4_cycles_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Wed Nov 10 14:23:31 2021...
+source C:/Users/dsed/DSED_6/dsed_audio/dsed_audio.sim/sim_1/behav/xsim.dir/fsmd_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Nov 12 14:03:39 2021...
