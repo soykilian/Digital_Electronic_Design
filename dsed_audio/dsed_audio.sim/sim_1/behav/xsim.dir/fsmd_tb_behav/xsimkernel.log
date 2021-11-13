@@ -1,7 +1,0 @@
-Running: xsim.dir/fsmd_tb_behav/xsimk.exe -simmode gui -wdb fsmd_tb_behav.wdb -simrunnum 0 -socket 53922
-Design successfully loaded
-Design Loading Memory Usage: 6056 KB (Peak: 6056 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 9012 KB (Peak: 9012 KB)
-Simulation CPU Usage: 31 ms
