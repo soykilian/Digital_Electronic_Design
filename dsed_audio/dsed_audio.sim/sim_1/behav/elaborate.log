@@ -12,6 +12,7 @@ Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package xil_defaultlib.package_dsed
 Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.en_4_cycles [en_4_cycles_default]
 Compiling architecture behavioral of entity xil_defaultlib.FSMD_microphone [fsmd_microphone_default]
 Compiling architecture behavioral of entity xil_defaultlib.fsmd_tb
 Built simulation snapshot fsmd_tb_behav

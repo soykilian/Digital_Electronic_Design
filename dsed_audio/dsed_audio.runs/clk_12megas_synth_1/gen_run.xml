@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="clk_12megas_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1635944137">
-  <File Type="PA-TCL" Name="clk_12megas.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="clk_12megas_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="clk_12megas.tcl"/>
   <File Type="RDS-RDS" Name="clk_12megas.vds"/>
   <File Type="RDS-UTIL" Name="clk_12megas_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="clk_12megas_utilization_synth.pb"/>

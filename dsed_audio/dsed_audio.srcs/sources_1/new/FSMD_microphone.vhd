@@ -39,19 +39,18 @@ Port ( clk_12megas : in STD_LOGIC;
         micro_data : in STD_LOGIC;
         sample_out : out STD_LOGIC_VECTOR (sample_size-1 downto 0);
         sample_out_ready : out STD_LOGIC);
-
---  Port ( );
 end FSMD_microphone;
 
 architecture Behavioral of FSMD_microphone is
-type state is (idle, data1, data2, continue);
+type state is (data1, data2, continue);
 signal state_reg, state_next : state;
 signal sample_out_reg, sample_out_next : STD_LOGIC_VECTOR (sample_size-1 downto 0);
+signal sample_out_ready_reg, sample_out_ready_next: std_logic;
 signal dato1_reg, dato1_next, dato2_reg, dato2_next : unsigned(sample_size - 1 downto 0);
 signal cuenta_reg, cuenta_next : unsigned(8 downto 0);
 signal fst_cycle_reg, fst_cycle_next : std_logic;
 begin
-clk_process : process(clk_12megas)
+clk_process : process(clk_12megas, enable_4_cycles)
 begin
     if rising_edge(clk_12megas) then
         if (reset = '1') then
@@ -60,13 +59,15 @@ begin
             dato2_reg <= (others=>'0');
             fst_cycle_reg <= '0';
             sample_out_reg <=  (others => '0');
-        else
+            state_reg <= continue;
+        elsif (enable_4_cycles = '1') then
             state_reg <= state_next;
             fst_cycle_reg <= fst_cycle_next;
             dato1_reg <= dato1_next;
             dato2_reg <= dato2_next;
             cuenta_reg <= cuenta_next;
             sample_out_reg <= sample_out_next;
+            sample_out_ready_reg <= sample_out_ready_next;
         end if;    
     end if;
 end process;
@@ -76,18 +77,10 @@ process(state_reg, cuenta_reg, fst_cycle_reg )
 begin
 state_next <= state_reg;
     case state_reg is
-    when idle =>
-        if ((0 <= cuenta_reg and cuenta_reg <= 105) or (150 <= cuenta_reg and cuenta_reg <= 255)) then
-            state_next <= continue;
-        elsif ( 106 <= cuenta_reg and cuenta_reg <= 149) then
-            state_next<= data2;
-        else
-            state_next <= data1;
-        end if;
     when continue =>
-        if (cuenta_next = 105) then
+        if (cuenta_next = 104) then
             state_next <= data2;
-        elsif ( cuenta_next = 256) then
+        elsif ( cuenta_next = 255) then
             state_next <= data1;
         end if;
      when  data2 =>
@@ -96,7 +89,7 @@ state_next <= state_reg;
         end if;
       when data1 =>
         if (cuenta_next = 299) then
-            state_next <= idle;
+            state_next <= continue;
         end if;
         
     end case;
@@ -109,30 +102,29 @@ begin
 dato1_next <= dato1_reg;
 dato2_next <= dato2_reg;
 sample_out_next <= sample_out_reg;
-sample_out_ready <= '0';
+sample_out_ready_next <= '0';
 cuenta_next <= cuenta_reg + 1;
 fst_cycle_next <= fst_cycle_reg;
     case state_reg is
-        when idle =>
         when continue =>
-    
             if (micro_data = '1') then
                 dato1_next <= dato1_reg + 1; 
                 dato2_next <= dato2_reg + 1; 
             end if;
-            if (cuenta_next = 256) then
+            if (cuenta_next = 255) then
                 sample_out_next <= std_logic_vector(dato1_reg);
-                sample_out <= std_logic_vector(dato1_reg);
+                --sample_out <= std_logic_vector(dato1_reg);
                 dato1_next <= (others => '0');
-                sample_out_ready <= '1';
+                sample_out_ready_next <= '1';
             else
-                sample_out_ready <= '0';
+                sample_out_ready_next <= '0';
             end if;
             when data1 =>
-            if (cuenta_reg = 299) then
+            if (cuenta_next = 299) then
                 fst_cycle_next <= '1';
                 cuenta_next <= (others => '0');
             else
+            
                 cuenta_next <= cuenta_reg + 1;
             end if;
             if (micro_data = '1') then
@@ -142,14 +134,15 @@ fst_cycle_next <= fst_cycle_reg;
             if (micro_data = '1') then
                 dato1_next <= dato1_reg + 1;
             end if;
-            if (cuenta_next = 106) then
+            if (cuenta_next = 105) then
                 dato2_next <= (others => '0');
                 if (fst_cycle_reg = '1') then
-                    sample_out_ready <= enable_4_cycles;
                     sample_out_next <= std_logic_vector(dato2_reg);
+                    sample_out_ready_next <= enable_4_cycles;
                  end if;
             end if;
     end case;
 end process;
-
+sample_out <= sample_out_reg;
+sample_out_ready <= sample_out_ready_reg;
 end Behavioral;

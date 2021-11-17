@@ -37,8 +37,17 @@ end fsmd_tb;
 
 architecture Behavioral of fsmd_tb is
 constant clk_period : time := 83.33 ns;
+component en_4_cycles is
+Port (
+    clk_12megas : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    clk_3megas: out STD_LOGIC;
+    en_2_cycles: out STD_LOGIC;
+    en_4_cycles : out STD_LOGIC);
+    end component;
 component fsmd_microphone is
-Port ( clk_12megas : in STD_LOGIC;
+Port (
+        clk_12megas : in STD_LOGIC;
         reset : in STD_LOGIC;
         enable_4_cycles : in STD_LOGIC;
         micro_data : in STD_LOGIC;
@@ -46,6 +55,7 @@ Port ( clk_12megas : in STD_LOGIC;
         sample_out_ready : out STD_LOGIC);
 end component;
 signal micro_data, clk, enable_4_cycles, reset: std_logic;
+signal en2_cycles, en4_cycles, clk_3megas : std_logic;
 --output signals--
 signal sample_data : std_logic_vector(sample_size - 1 downto 0);
 signal sample_out_ready : std_logic;
@@ -62,22 +72,32 @@ begin
             begin
             reset <= '1';
             wait for 90 ns;
-            micro_data <= '1';
             reset <= '0';
-            enable_4_cycles <= '0';
-            wait for 900 ns;
-            enable_4_cycles <= '1';
+            micro_data <= '1';
+            wait for 10 us;
+            micro_data <= '0';
+            wait for 5 us;
+            micro_data <= '1';
+            wait for 2 us;
+            micro_data<= '0';
+            wait for 500 ns;
+            micro_data<= '1';  
             wait for 50 ms;
             reset <= '1';
             wait for clk_period;
             reset <='0';
             end process;
-            
-U1 : fsmd_microphone port map (
+U1 : en_4_cycles port map(
+                                   clk_12megas => clk,
+                                   reset => reset,
+                                   clk_3megas => clk_3megas,
+                                   en_2_cycles => en2_cycles, 
+                                   en_4_cycles => en4_cycles);
+U2 : fsmd_microphone port map (
                 clk_12megas => clk,
                 micro_data => micro_data,
                 reset => reset,
-                enable_4_cycles => enable_4_cycles,
+                enable_4_cycles => en4_cycles,
                 sample_out => sample_data,
                 sample_out_ready => sample_out_ready
 );

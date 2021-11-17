@@ -72,10 +72,45 @@ Port ( clk_12megas : in STD_LOGIC;
         sample_out : out STD_LOGIC_VECTOR (sample_size-1 downto 0);
         sample_out_ready : out STD_LOGIC);
 end component;
-signal enable_4_cycles : std_logic;
+
+component pwm is 
+Port(
+    clk_12megas: in std_logic;
+    reset: in std_logic;
+    en_2_cycles: in std_logic;
+    sample_in: in std_logic_vector(sample_size-1 downto 0);
+    sample_request: out std_logic;
+    pwm_pulse: out std_logic
+);
+end component;
+--Intermediate signals--
+signal en4_cycles, en2_cycles, clk_3mhz : std_logic;
+
 begin
---U1 : en_4_cycles port map(
-     --       clk_12megas => clk_12megas;
+U1 : en_4_cycles port map(
+           clk_12megas => clk_12megas,
+           reset => reset,
+           clk_3megas => clk_3mhz,
+           en_2_cycles => en2_cycles,
+           en_4_cycles => en4_cycles);
+U2: fsmd_microphone port map (
+            clk_12megas => clk_12megas,
+            reset => reset,
+            enable_4_cycles => en4_cycles,
+            micro_data => micro_data,
+            sample_out => sample_out,
+            sample_out_ready => sample_out_ready
+);
+U3: pwm port map(
+            clk_12megas => clk_12megas,
+            reset => reset,
+            en_2_cycles => en2_cycles,
+            sample_in => sample_in,
+            sample_request => sample_request,
+            pwm_pulse => jack_pwm
+);           
+           
+           
             
 --);
 
