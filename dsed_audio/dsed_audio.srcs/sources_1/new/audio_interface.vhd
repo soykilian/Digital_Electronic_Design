@@ -85,6 +85,7 @@ Port(
 end component;
 --Intermediate signals--
 signal en4_cycles, en2_cycles, clk_3mhz : std_logic;
+signal enable_microphone, enable_pwm : std_logic;
 
 begin
 U1 : en_4_cycles port map(
@@ -96,7 +97,7 @@ U1 : en_4_cycles port map(
 U2: fsmd_microphone port map (
             clk_12megas => clk_12megas,
             reset => reset,
-            enable_4_cycles => en4_cycles,
+            enable_4_cycles => enable_microphone,
             micro_data => micro_data,
             sample_out => sample_out,
             sample_out_ready => sample_out_ready
@@ -104,12 +105,13 @@ U2: fsmd_microphone port map (
 U3: pwm port map(
             clk_12megas => clk_12megas,
             reset => reset,
-            en_2_cycles => en2_cycles,
+            en_2_cycles => enable_pwm,
             sample_in => sample_in,
             sample_request => sample_request,
             pwm_pulse => jack_pwm
 );           
-           
+enable_microphone <= en4_cycles and record_enable;
+enable_pwm <= en2_cycles and play_enable;
            
             
 --);
