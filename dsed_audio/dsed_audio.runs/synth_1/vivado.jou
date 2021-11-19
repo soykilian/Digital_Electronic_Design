@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Fri Nov 19 14:18:01 2021
+# Process ID: 832
+# Current directory: C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1
+# Command line: vivado.exe -log controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source controller.tcl
+# Log file: C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/controller.vds
+# Journal file: C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source controller.tcl -notrace

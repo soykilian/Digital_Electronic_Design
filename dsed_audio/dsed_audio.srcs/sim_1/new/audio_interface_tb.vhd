@@ -21,6 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use work.package_dsed.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -58,9 +59,67 @@ Port ( clk_12megas : in STD_LOGIC;
         jack_sd : out STD_LOGIC;
         jack_pwm : out STD_LOGIC);
         end component;
-signal resetr, clk, record_enable, micro_data, play_enable: std_logic;
-signal sample_in : std_logic_vector(sample_zise -1 downto 0);
+signal reset, clk, record_enable, micro_data, play_enable: std_logic;
+signal sample_in : std_logic_vector(sample_size -1 downto 0);
+--output signals--
+
 begin
+DUT : audio_interface port map (
+                        record_enable => record_enable,
+                        reset => reset,
+                        clk_12megas => clk,
+                        micro_data => micro_data,
+                        play_enable => play_enable,
+                        sample_in => sample_in,
+                        micro_clk => open,
+                        jack_sd => open,
+                        jack_pwm => open,
+                        sample_request => open,
+                        micro_LR => open,
+                        sample_out => open,
+                        sample_out_ready => open
+                        
+                        );
+clk_process : process 
+begin
+        clk <= '1';
+        wait for clk_period/2;
+        clk <= '0';
+        wait for clk_period/2;
+end process;
+
+--input logics--
+
+        
+process
+begin
+        reset <= '1';
+        play_enable <='1';
+        record_enable <='1';
+        micro_data <= '0';
+        sample_in <= (others => '1');
+        wait for 90 ns;
+        reset <= '0';
+        micro_data <= '1';
+        sample_in <= (others => '0');
+        wait for 10 us;
+        sample_in <= (others => '1');
+        micro_data <= '0';
+        wait for 5 us;
+        micro_data <= '1';
+        sample_in <= (others => '0');
+        wait for 2 us;
+        micro_data<= '0';
+        sample_in <= (others => '1');
+        wait for 500 ns;
+        sample_in <= "11010011";
+        micro_data<= '1';
+        wait for 50 ms;
+        reset <= '1';
+        wait for clk_period;
+        reset <='0';
+end process;
+
 
 
 end Behavioral;

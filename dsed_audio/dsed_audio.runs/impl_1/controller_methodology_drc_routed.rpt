@@ -1,0 +1,66 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Fri Nov 19 14:25:58 2021
+| Host         : pc-b042-04 running 64-bit major release  (build 9200)
+| Command      : report_methodology -file controller_methodology_drc_routed.rpt -rpx controller_methodology_drc_routed.rpx
+| Design       : controller
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 6
++-----------+----------+------------------------------------------------+------------+
+| Rule      | Severity | Description                                    | Violations |
++-----------+----------+------------------------------------------------+------------+
+| TIMING-6  | Warning  | No common primary clock between related clocks | 2          |
+| TIMING-18 | Warning  | Missing input or output delay                  | 4          |
++-----------+----------+------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-6#1 Warning
+No common primary clock between related clocks  
+The clocks clk_out1_clk_12megas and clk_out1_clk_12megas_1 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_out1_clk_12megas] -to [get_clocks clk_out1_clk_12megas_1]
+Related violations: <none>
+
+TIMING-6#2 Warning
+No common primary clock between related clocks  
+The clocks clk_out1_clk_12megas_1 and clk_out1_clk_12megas are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_out1_clk_12megas_1] -to [get_clocks clk_out1_clk_12megas]
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on micro_data relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on reset relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on jack_pwm relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on micro_clk relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+Related violations: <none>
+
+

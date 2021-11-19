@@ -60,7 +60,9 @@ begin
         end if;
         end process;
     r_next <= r_reg + 1 when (r_reg < 300) else (others => '0');
-    buf_next <= '1' when (r_reg = unsigned(sample_in)) else '0';
+    buf_next <= '0' when (unsigned(sample_in) = 0) else
+                '1' when (r_reg <= unsigned(sample_in)) else
+                '0';
     sample_request <= '1' when (r_next = 299) else '0';
     pwm_pulse <= buf_reg;  
 end Behavioral;
