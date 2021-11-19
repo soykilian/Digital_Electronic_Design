@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Fri Nov 19 14:25:58 2021
-| Host         : pc-b042-04 running 64-bit major release  (build 9200)
+| Date         : Fri Nov 19 16:42:12 2021
+| Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command      : report_methodology -file controller_methodology_drc_routed.rpt -rpx controller_methodology_drc_routed.rpx
 | Design       : controller
 | Device       : xc7a100tcsg324-1
@@ -23,13 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 6
-+-----------+----------+------------------------------------------------+------------+
-| Rule      | Severity | Description                                    | Violations |
-+-----------+----------+------------------------------------------------+------------+
-| TIMING-6  | Warning  | No common primary clock between related clocks | 2          |
-| TIMING-18 | Warning  | Missing input or output delay                  | 4          |
-+-----------+----------+------------------------------------------------+------------+
+             Violations found: 7
++-----------+----------+-------------------------------------------------+------------+
+| Rule      | Severity | Description                                     | Violations |
++-----------+----------+-------------------------------------------------+------------+
+| TIMING-6  | Warning  | No common primary clock between related clocks  | 2          |
+| TIMING-18 | Warning  | Missing input or output delay                   | 4          |
+| XDCC-5    | Warning  | User Non-Timing constraint/property overwritten | 1          |
++-----------+----------+-------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -61,6 +62,13 @@ Related violations: <none>
 TIMING-18#4 Warning
 Missing input or output delay  
 An output delay is missing on micro_clk relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+Related violations: <none>
+
+XDCC-5#1 Warning
+User Non-Timing constraint/property overwritten  
+A new XDC property PACKAGE_PIN on jack_pwm overrides a previous user property.
+New Source: C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/constrs_1/imports/dsed_audio/Nexys4DDR_Master.xdc (Line: 46)
+Previous Source: C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/constrs_1/imports/dsed_audio/Nexys4DDR_Master.xdc (Line: 33)
 Related violations: <none>
 
 

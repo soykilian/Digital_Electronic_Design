@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Fri Nov 19 14:25:59 2021
-| Host         : pc-b042-04 running 64-bit major release  (build 9200)
+| Date         : Fri Nov 19 16:42:13 2021
+| Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -warn_on_violation -max_paths 10 -file controller_timing_summary_routed.rpt -rpx controller_timing_summary_routed.rpx
 | Design       : controller
 | Device       : 7a100t-csg324

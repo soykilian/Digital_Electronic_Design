@@ -6,5 +6,23 @@ Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
-ERROR: [XSIM 43-3356]  Could not open file xsim.dir/controller_tb_behav/xsim.type for writing.
-ERROR: [XSIM 43-3915] Encountered a fatal error. Cannot continue. Exiting... 
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package xil_defaultlib.package_dsed
+Compiling package ieee.numeric_std
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=49.87...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_12_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_12
+Compiling architecture behavioral of entity xil_defaultlib.en_4_cycles [en_4_cycles_default]
+Compiling architecture behavioral of entity xil_defaultlib.FSMD_microphone [fsmd_microphone_default]
+Compiling architecture behavioral of entity xil_defaultlib.pwm [pwm_default]
+Compiling architecture behavioral of entity xil_defaultlib.audio_interface [audio_interface_default]
+Compiling architecture behavioral of entity xil_defaultlib.controller [controller_default]
+Compiling architecture behavioral of entity xil_defaultlib.controller_tb
+Built simulation snapshot controller_tb_behav

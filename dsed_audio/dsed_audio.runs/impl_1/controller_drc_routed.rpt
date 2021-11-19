@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Fri Nov 19 14:25:57 2021
-| Host         : pc-b042-04 running 64-bit major release  (build 9200)
+| Date         : Fri Nov 19 16:42:12 2021
+| Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command      : report_drc -file controller_drc_routed.rpt -pb controller_drc_routed.pb -rpx controller_drc_routed.rpx
 | Design       : controller
 | Device       : xc7a100tcsg324-1
