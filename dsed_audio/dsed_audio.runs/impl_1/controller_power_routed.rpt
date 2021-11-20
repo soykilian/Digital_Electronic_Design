@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Fri Nov 19 16:42:13 2021
+| Date             : Sat Nov 20 12:08:32 2021
 | Host             : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command          : report_power -file controller_power_routed.rpt -pb controller_power_summary_routed.pb -rpx controller_power_routed.rpx
 | Design           : controller
@@ -51,7 +51,7 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        8 |       --- |             --- |
 | Slice Logic    |    <0.001 |      169 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       77 |     63400 |            0.12 |
+|   LUT as Logic |    <0.001 |       76 |     63400 |            0.12 |
 |   Register     |    <0.001 |       53 |    126800 |            0.04 |
 |   CARRY4       |    <0.001 |        2 |     15850 |            0.01 |
 |   Others       |     0.000 |        9 |       --- |             --- |
