@@ -1,6 +1,6 @@
 Vivado Simulator 2017.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto c17a5ddc1cd444e3afc95d5baeadfe9e --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot controller_tb_behav xil_defaultlib.controller_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto c17a5ddc1cd444e3afc95d5baeadfe9e --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot filter_tb_behav xil_defaultlib.filter_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -10,19 +10,9 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
-Compiling package xil_defaultlib.package_dsed
 Compiling package ieee.numeric_std
-Compiling package vl.vl_types
-Compiling module xil_defaultlib.glbl
-Compiling module unisims_ver.IBUF
-Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=49.87...
-Compiling module unisims_ver.BUFG
-Compiling module xil_defaultlib.clk_wiz_12_clk_wiz
-Compiling module xil_defaultlib.clk_wiz_12
-Compiling architecture behavioral of entity xil_defaultlib.en_4_cycles [en_4_cycles_default]
-Compiling architecture behavioral of entity xil_defaultlib.FSMD_microphone [fsmd_microphone_default]
-Compiling architecture behavioral of entity xil_defaultlib.pwm [pwm_default]
-Compiling architecture behavioral of entity xil_defaultlib.audio_interface [audio_interface_default]
-Compiling architecture behavioral of entity xil_defaultlib.controller [controller_default]
-Compiling architecture behavioral of entity xil_defaultlib.controller_tb
-Built simulation snapshot controller_tb_behav
+Compiling package xil_defaultlib.package_dsed
+Compiling architecture behavioral of entity xil_defaultlib.mux8 [mux8_default]
+Compiling architecture behavioral of entity xil_defaultlib.fir_implementation [fir_implementation_default]
+Compiling architecture behavioral of entity xil_defaultlib.filter_tb
+Built simulation snapshot filter_tb_behav

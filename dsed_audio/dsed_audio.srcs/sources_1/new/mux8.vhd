@@ -33,13 +33,13 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity mux8 is
 Port(
+    in_0 : IN signed(sample_size - 1 downto 0);
     in_1 : IN signed(sample_size - 1 downto 0);
     in_2 : IN signed(sample_size - 1 downto 0);
     in_3 : IN signed(sample_size - 1 downto 0);
     in_4 : IN signed(sample_size - 1 downto 0);
     in_5 : IN signed(sample_size - 1 downto 0);
     in_6 : IN signed(sample_size - 1 downto 0);
-    in_7 : IN signed(sample_size - 1 downto 0);
     ctrl : IN STD_LOGIC_VECTOR(2 downto 0);
     output : OUT signed(sample_size - 1 downto 0) 
 );
@@ -50,12 +50,12 @@ architecture Behavioral of mux8 is
 
 begin
     with ctrl select output <=
-    in_1 when "000",
-    in_2 when "001",
-    in_3 when "010",
-    in_4 when "011",
-    in_5 when "100",
-    in_6 when "101",
-    in_7 when "110",
+    in_0 when "000",
+    in_1 when "001",
+    in_2 when "010",
+    in_3 when "011",
+    in_4 when "100",
+    in_5 when "101",
+    in_6 when "110",
     in_1 when OTHERS;
 end Behavioral;
