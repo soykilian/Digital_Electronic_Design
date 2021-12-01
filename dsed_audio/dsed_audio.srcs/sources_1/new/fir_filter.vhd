@@ -124,6 +124,7 @@ port map (
         ctrl3 => ctrl_sig,
         sample_out_ready =>  Sample_Out_ready
 );
+
 UUT_data_route : fir_implementation
 port map(
         clk => clk,
