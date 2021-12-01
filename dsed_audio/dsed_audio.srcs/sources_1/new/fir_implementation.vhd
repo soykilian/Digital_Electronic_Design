@@ -45,6 +45,7 @@ Port(
     x2 : in signed(sample_size -1 downto 0);
     x3 : in signed(sample_size -1 downto 0);
     x4 : in signed(sample_size -1 downto 0);
+    ctrl : in std_logic_vector(2 downto 0);
     y : out signed(sample_size - 1 downto 0)
     
 );
@@ -60,7 +61,7 @@ signal m_res1, m_res2, m_res3 : signed(sample_size - 1 downto 0);
 --signal for the adder output--
 signal add : signed(sample_size -1 downto 0);
 --ctrl signals
-signal ctrl3_state, ctrl3_next: std_logic_vector(2 downto 0);
+--signal ctrl3_state, ctrl3_next: std_logic_vector(2 downto 0);
 type state is (continue, reg_3, ctrl_res, reg_1);
 signal state_reg, state_next : state; 
 
@@ -86,16 +87,16 @@ begin
             r1_state <= (others => '0');
             r2_state <= (others => '0');
             r3_state <= (others => '0');
-            ctrl3_state <= (others => '0');
+          --  ctrl3_state <= (others => '0');
         else
          r1_state <= r1_next;
          r2_state <= r2_next;
          r3_state <= r3_next;
-         ctrl3_state <= ctrl3_next;
+        -- ctrl3_state <= ctrl3_next;
          end if;
             end if;
 end process;
-ctrl3_next <= std_logic_vector(unsigned(ctrl3_state) + 1) when (ctrl3_state < "110") else (others => '0');
+--ctrl3_next <= std_logic_vector(unsigned(ctrl3_state) + 1) when (ctrl3_state < "110") else (others => '0');
 UUT_M1 : mux8 port map(
     in_0 => c0,
     in_1 => c1,
@@ -105,7 +106,7 @@ UUT_M1 : mux8 port map(
     in_5 => (others => '0'),
     in_6 => (others => '0'),
     output => m_res1,
-    ctrl => ctrl3_state);
+    ctrl => ctrl);
     
 UUT_M2 : mux8 port map
         (in_0 => x0,
@@ -114,9 +115,10 @@ UUT_M2 : mux8 port map
         in_3 => x3,
         in_4 => x4,
         in_5 => (others => '0'),
-        in_6 => (others => '0'),
+        in_6 => 
+        (others => '0'),
         output => m_res2,
-        ctrl => ctrl3_state);
+        ctrl => ctrl);
 UUT_M3 : mux8 port map(
                 in_0 => (others => '0'),
                 in_1 => r3_state(2 * sample_size - 2 downto sample_size - 1),
@@ -126,12 +128,12 @@ UUT_M3 : mux8 port map(
                 in_5 => add,
                 in_6 => add,
                 output => m_res3,
-                ctrl => ctrl3_state);        
+                ctrl => ctrl);        
 
 r3_next <= m_res1 * m_res2;
 add <= r1_state + r2_state; --puede que haga falta un if
 r1_next <= m_res3;
 r2_next <= r3_state(2 * sample_size - 2 downto sample_size - 1);
-
+y <= add;
 end Behavioral;
 
