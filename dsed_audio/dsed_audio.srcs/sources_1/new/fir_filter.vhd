@@ -78,7 +78,7 @@ signal c_0, c_1, c_2, c_3, c_4 : signed(sample_size - 1 downto 0);
 signal x_0, x_1, x_2, x_3, x_4 : signed(sample_size - 1 downto 0);
  
 begin
-process(clk)
+process(clk, sample_in_enable)
 begin
     if (rising_edge(clk)) then
         if (reset = '1') then

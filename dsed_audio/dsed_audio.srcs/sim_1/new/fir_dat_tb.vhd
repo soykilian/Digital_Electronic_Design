@@ -17,7 +17,8 @@
 -- Additional Comments:
 -- 
 ----------------------------------------------------------------------------------
-
+-- COmo sample in enable lo puse con el reloj entonces nunca pilla clk event junto con sample in enable = '1' por lo que no se carga las entradas en nignun momento
+--- arregla la generacion de enable reina
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -40,18 +41,19 @@ end fir_dat_tb;
 architecture Behavioral of fir_dat_tb is
 -- Clock signal declaration
 signal clk : std_logic := '1';
-signal reset            : std_logic;
-signal sample_in_enable : std_logic;
+signal reset            : std_logic := '0';
+signal sample_in_enable : std_logic := '0';
 -- Declaration of the reading signal
 signal Sample_In : signed(7 downto 0) := (others => '0');
-signal filter_select    : std_logic;
+signal filter_select    : std_logic := '0';
 signal sample_out       : signed (7 downto 0);
 signal sample_out_ready : std_logic;
+
 signal con : std_logic := '1';
 FILE out_file : text;
 -- Clock period definitions
 signal sample_out_ml : integer ;
-constant clk_period : time := 10 ns;
+constant clk_period : time := 167 ns;
     component fir_filter port (
     clk : in STD_LOGIC;
     reset : in STD_LOGIC;
@@ -65,7 +67,7 @@ BEGIN
 -- Clock statement
 clk <= not clk after clk_period/2;
 read_process : PROCESS (clk)
-FILE in_file : text OPEN read_mode IS "C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/sample_in.dat";
+FILE in_file : text OPEN read_mode IS "C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/sample_in.dat";
 VARIABLE in_line : line;
 VARIABLE in_int : integer;
 VARIABLE in_read_ok : BOOLEAN;
@@ -85,9 +87,9 @@ variable out_line : line;
 begin
 if (con = '1')then 
 if (filter_select='0') then
-    file_open(out_file,"C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/sample_out_lp.dat", write_mode);
+    file_open(out_file,"C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/sample_out_lp.dat", write_mode);
 else
-    file_open(out_file,"C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/sample_out_hp.dat", write_mode);
+    file_open(out_file,"C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/sample_out_hp.dat", write_mode);
 end if;
 end if;
 con <= '0';
@@ -100,13 +102,22 @@ end process;
 stimuli : process
 begin
     reset <= '1';
+
     wait for 20 ns;
     reset <= '0';
-    filter_select <= '0';
-    
-    sample_in_enable <= '1';
     wait;
     end process;
+    
+enable_process : process(clk, sample_in)
+    begin
+    if (sample_in'event) then
+        sample_in_enable <= '1';    
+    else
+        sample_in_enable <= '0' ; --esta solo medio ciclo
+    end if;
+    end process;
+
+
   ff :   fir_filter
       port map (
           clk                 => clk,
