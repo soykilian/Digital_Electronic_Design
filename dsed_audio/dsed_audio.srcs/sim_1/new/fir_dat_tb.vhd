@@ -42,12 +42,13 @@ architecture Behavioral of fir_dat_tb is
 -- Clock signal declaration
 signal clk : std_logic := '1';
 signal reset            : std_logic := '0';
-signal sample_in_enable : std_logic := '0';
+signal sample_in_enable : std_logic := '1';
 -- Declaration of the reading signal
 signal Sample_In : signed(7 downto 0) := (others => '0');
 signal filter_select    : std_logic := '0';
 signal sample_out       : signed (7 downto 0);
 signal sample_out_ready : std_logic;
+signal counter_state, counter_next : unsigned(2 downto 0):= (others => '0');
 
 signal con : std_logic := '1';
 FILE out_file : text;
@@ -67,16 +68,18 @@ BEGIN
 -- Clock statement
 clk <= not clk after clk_period/2;
 read_process : PROCESS (clk)
-FILE in_file : text OPEN read_mode IS "C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/sample_in.dat";
+FILE in_file : text OPEN read_mode IS "C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/sample_in.dat";
 VARIABLE in_line : line;
 VARIABLE in_int : integer;
 VARIABLE in_read_ok : BOOLEAN;
 BEGIN
 if (clk'event and clk = '1') then
 if NOT endfile(in_file) then
+if (sample_in_enable = '1')then
 ReadLine(in_file,in_line);
 Read(in_line, in_int, in_read_ok);
-sample_in <= to_signed(in_int, 8); -- 8 = the bit width
+sample_in <= to_signed(in_int, 8);
+end if; -- 8 = the bit width
 else
 assert false report "Simulation Finished" severity failure;
 end if;
@@ -87,9 +90,9 @@ variable out_line : line;
 begin
 if (con = '1')then 
 if (filter_select='0') then
-    file_open(out_file,"C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/sample_out_lp.dat", write_mode);
+    file_open(out_file,"C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/sample_out_lp.dat", write_mode);
 else
-    file_open(out_file,"C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/sample_out_hp.dat", write_mode);
+    file_open(out_file,"C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/sample_out_hp.dat", write_mode);
 end if;
 end if;
 con <= '0';
@@ -102,22 +105,18 @@ end process;
 stimuli : process
 begin
     reset <= '1';
-
     wait for 20 ns;
     reset <= '0';
     wait;
     end process;
-    
-enable_process : process(clk, sample_in)
-    begin
-    if (sample_in'event) then
-        sample_in_enable <= '1';    
-    else
-        sample_in_enable <= '0' ; --esta solo medio ciclo
-    end if;
-    end process;
-
-
+enable : process (clk)
+begin
+if (rising_edge(clk)) then
+    counter_state <= counter_next;
+end if;
+end process;
+sample_in_enable <= '1' when (counter_state = 7) else '0';
+counter_next <= "000" when(counter_state = 7) else counter_state + 1; 
   ff :   fir_filter
       port map (
           clk                 => clk,
@@ -128,7 +127,7 @@ enable_process : process(clk, sample_in)
           sample_out          => sample_out,
           sample_out_ready    => sample_out_ready
       );
-      
+    
 
 
 end Behavioral;
