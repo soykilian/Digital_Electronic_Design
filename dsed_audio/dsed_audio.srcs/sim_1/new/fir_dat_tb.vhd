@@ -45,7 +45,7 @@ signal reset            : std_logic := '0';
 signal sample_in_enable : std_logic := '1';
 -- Declaration of the reading signal
 signal Sample_In : signed(7 downto 0) := (others => '0');
-signal filter_select    : std_logic := '0';
+signal filter_select    : std_logic := '1';
 signal sample_out       : signed (7 downto 0);
 signal sample_out_ready : std_logic;
 signal counter_state, counter_next : unsigned(2 downto 0):= (others => '0');
@@ -68,7 +68,7 @@ BEGIN
 -- Clock statement
 clk <= not clk after clk_period/2;
 read_process : PROCESS (clk)
-FILE in_file : text OPEN read_mode IS "C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/sample_in.dat";
+FILE in_file : text OPEN read_mode IS "C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/sample_in.dat";
 VARIABLE in_line : line;
 VARIABLE in_int : integer;
 VARIABLE in_read_ok : BOOLEAN;
@@ -90,9 +90,9 @@ variable out_line : line;
 begin
 if (con = '1')then 
 if (filter_select='0') then
-    file_open(out_file,"C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/sample_out_lp.dat", write_mode);
+    file_open(out_file,"C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/sample_out_lp.dat", write_mode);
 else
-    file_open(out_file,"C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/sample_out_hp.dat", write_mode);
+    file_open(out_file,"C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/sample_out_hp.dat", write_mode);
 end if;
 end if;
 con <= '0';

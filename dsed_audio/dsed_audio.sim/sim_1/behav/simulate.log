@@ -1,5 +1,0 @@
-Vivado Simulator 2017.2
-Time resolution is 1 ps
-Failure: Simulation Finished
-Time: 15386879 ns  Iteration: 0  Process: /fir_dat_tb/read_process  File: C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sim_1/new/fir_dat_tb.vhd
-$finish called at time : 15386879 ns : File "C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sim_1/new/fir_dat_tb.vhd" Line 84
