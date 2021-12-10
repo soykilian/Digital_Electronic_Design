@@ -87,6 +87,7 @@ case state_reg is
         ctrl3 <= "101";
         state_next <= s_6;
     when s_6 =>
+        state_next <= s_0;
         ctrl3 <= "110";
         sample_out_ready <= '1';
     end case;    
