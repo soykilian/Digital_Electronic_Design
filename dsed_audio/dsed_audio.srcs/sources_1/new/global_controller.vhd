@@ -33,29 +33,28 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity global_controller is
 Port (
-    clk_12mhz : in STD_LOGIC;
+    clk_sys : in STD_LOGIC;
     reset : in STD_LOGIC;
     clear : in STD_LOGIC;
+    rec_enable : in STD_LOGIC;
+    play_enable : in STD_LOGIC; 
+    fil : in STD_LOGIC_VECTOR(1 downto 0);
     micro_clk : out STD_LOGIC;
     micro_data : in STD_LOGIC;
     micro_LR : out STD_LOGIC;
     --To/From the mini-jack
     jack_sd : out STD_LOGIC;
     jack_pwm : out STD_LOGIC;
-    ready : out STD_LOGIC ; --led for waiting NOP
-    rec_enable : in STD_LOGIC;
-    play_enable : in STD_LOGIC;   
-    fil : in STD_LOGIC_VECTOR(1 downto 0)
-
+    ready : out STD_LOGIC  --led for waiting NOP
 );
 end global_controller;
 
 architecture Behavioral of global_controller is
---component clk_wiz_12 is
---Port ( clk_in1 : in std_logic;
- --      clk_out1 :out std_logic
---);
---end component;
+component clk_wiz_12 is
+Port ( clk_in1 : in std_logic;
+      clk_out1 :out std_logic
+);
+end component;
 
 component audio_interface 
 Port ( clk_12megas : in STD_LOGIC;
@@ -99,9 +98,10 @@ signal reset_sys : std_logic;
 signal  rec_audio, play_audio, mem_en : std_logic;
 signal fil_enable, fil_lp : std_logic;
 signal data_micro, s_sample_out : std_logic_vector(sample_size - 1 downto 0);
-signal data_ram, s_sample_in : std_logic_vector(sample_size - 1 downto 0);
-
-signal write_en, s_ena: std_logic;
+signal data_ram, reg_sample_in, next_sample_in : std_logic_vector(sample_size - 1 downto 0);
+--clock signal--
+signal clk_12mhz : std_logic;
+signal write_en,s_sample_request, s_ena: std_logic;
 signal s_wea : std_logic_vector(0 downto 0);
 type state is (idle, rep, rec); ---filter y clear
 signal state_reg, state_next : state;
@@ -116,11 +116,12 @@ if (rising_edge(clk_12mhz)) then
     state_reg <= state_next;
     addra_reg <= addra_next;
     stack_reg <= stack_next;
+    reg_sample_in<= next_sample_in;
     end if;
 end if;     
 end process;
 
-process(state_reg, play_enable, rec_enable, addra_reg)
+process( state_reg, play_enable, rec_enable, addra_reg, write_en, s_sample_out, data_ram,s_sample_request, reg_sample_in )
 begin
 state_next <= state_reg;
 addra_next <= addra_reg;
@@ -130,7 +131,7 @@ s_wea <= "0";
 rec_audio <= '0';
 play_audio <= '0';
 data_micro<= (others => '0');
-data_ram<= (others => '0');
+next_sample_in <= (others => '0');
 case state_reg is
     when idle =>
     ready <= '1';
@@ -154,20 +155,23 @@ case state_reg is
             state_next <= idle;
             end if;
         when rep =>
-            addra_next<= std_logic_vector(unsigned(addra_reg) + 1);
-        if (play_enable = '1') then 
+         if (play_enable = '1') then 
             play_audio <= '1';
             s_ena <= '1';
-            s_sample_in <= data_ram;
+            next_sample_in <= data_ram;
+            if (s_sample_request = '1') then     
+                addra_next<= std_logic_vector(unsigned(addra_reg) + 1);
+
+             end if;
          else
             state_next <= idle;
         end if;  
 end case;
 end process;
---U1: clk_wiz_12 port map(
-     --   clk_in1 => clk_sys,
-      --  clk_out1 => clk_12mhz
---);
+U1: clk_wiz_12 port map(
+        clk_in1 => clk_sys,
+       clk_out1 => clk_12mhz
+);
 U2 : audio_interface port map(
         clk_12megas => clk_12mhz,
         reset => reset,
@@ -178,9 +182,9 @@ U2 : audio_interface port map(
         micro_LR => micro_LR,
         jack_sd => jack_sd,
         sample_out => s_sample_out,
-        sample_in => s_sample_in,
+        sample_in => reg_sample_in,
         jack_pwm => jack_pwm,
-        sample_request => open,
+        sample_request => s_sample_request,
         sample_out_ready => write_en
 );
 U3 : blk_mem_gen_0 port map(

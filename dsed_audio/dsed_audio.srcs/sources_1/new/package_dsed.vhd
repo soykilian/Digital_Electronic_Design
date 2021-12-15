@@ -43,6 +43,7 @@ constant c1hp : signed := "11100110";
 constant c2hp : signed := "01001101";
 constant c3hp : signed := "11100110";
 constant c4hp : signed := "11111111";
+--constant max_memory 
 
 --  Port ( );
 end package_dsed;

@@ -40,55 +40,42 @@ Port ( clk_12megas : in STD_LOGIC;
 end en_4_cycles;
 
 architecture Behavioral of en_4_cycles is
-signal clk_3 : std_logic;
-signal count3, count3_next, count_4_en, count4_next : unsigned(2 downto 0);
-signal count_2_en, count2_next : unsigned (1 downto 0);
+signal count_reg, count_next: unsigned(1 downto 0);
+
 begin
 --Generate a 3 MHz clock with a 50% duty cycle--
 CLK_3_PROCESS : process(clk_12megas)
 begin
-    if (rising_edge(clk_12megas)) then
-        if (reset = '1') then
-            count3<= (others =>'0');
-         else
-            count3 <= count3_next;
-        end if ;
-        end if;
+    if (reset = '1') then
+        count_reg <= "00";
+    elsif (rising_edge(clk_12megas)) then
+        count_reg <= count_next;
+     end if;
 end process ;
-count3_next <= count3 + 1 when (count3 < 3) else (others => '0') ;
-clk_3megas <= '1' when (count3 > 1) else '0';
 
---Generate an enable signal every two cyles--
-
-EN_2_CYCLES_PROCESS : process (clk_12megas)
-begin 
-    if rising_edge(clk_12megas) then
-        if (reset ='1') then
-        count_2_en <= (others => '0');
-        else
-        count_2_en <= count2_next;
-        end if;
-        end if;
-end process;
---Next state logic--
-count2_next <= count_2_en + 1 when (count_2_en < 2) else (others =>'0');
---Activate enable--
-en_2_cycles <= '1' when (count_2_en = 2) else '0';
-
-EN_4_CYCLES_PROCESS : process (clk_12megas)
-begin 
-    if rising_edge(clk_12megas) then
-        if (reset ='1') then
-            count_4_en <= (others => '0');
-         else
-        count_4_en <= count4_next;
-        end if;
-        end if;
-    
+count_next <= count_reg + 1;
+process(count_reg)
+begin
+case count_reg is
+    when "00" =>
+        clk_3megas <= '0';
+        en_2_cycles <= '1';
+        en_4_cycles <= '0';
+     when "01" =>
+        clk_3megas <= '1';
+        en_2_cycles <= '0';
+        en_4_cycles <= '1';
+     when "10"=>
+         clk_3megas <= '1';
+         en_2_cycles <= '1';
+         en_4_cycles <= '0';
+     when  others =>
+         clk_3megas <= '0';
+        en_2_cycles <= '0';
+        en_4_cycles <= '0';
+    end case;
 end process;
 
-count4_next <= count_4_en + 1 when (count_4_en < 4) else (others =>'0');
---Activate enable--
-en_4_cycles <= '1' when (count_4_en = 4) else '0';
---reset the count--
+
+--Generate an enable signal every two cyles-
 end Behavioral;

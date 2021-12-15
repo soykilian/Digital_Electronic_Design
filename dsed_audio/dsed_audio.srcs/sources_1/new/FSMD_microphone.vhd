@@ -67,7 +67,6 @@ begin
             dato2_reg <= dato2_next;
             cuenta_reg <= cuenta_next;
             sample_out_reg <= sample_out_next;
-            sample_out_ready_reg <= sample_out_ready_next;
         end if;    
     end if;
 end process;
@@ -102,7 +101,7 @@ begin
 dato1_next <= dato1_reg;
 dato2_next <= dato2_reg;
 sample_out_next <= sample_out_reg;
-sample_out_ready_next <= '0';
+sample_out_ready_reg <= '0';
 
 cuenta_next <= cuenta_reg + 1;
 fst_cycle_next <= fst_cycle_reg;
@@ -116,7 +115,7 @@ fst_cycle_next <= fst_cycle_reg;
                 sample_out_next <= std_logic_vector(dato1_reg);
                 --sample_out <= std_logic_vector(dato1_reg);
                 dato1_next <= (others => '0');
-                sample_out_ready_next <= '1';
+                sample_out_ready_reg <= enable_4_cycles;
             else
                 sample_out_ready_next <= '0';
             end if;
@@ -139,7 +138,7 @@ fst_cycle_next <= fst_cycle_reg;
                 dato2_next <= (others => '0');
                 if (fst_cycle_reg = '1') then
                     sample_out_next <= std_logic_vector(dato2_reg);
-                    sample_out_ready_next <= enable_4_cycles;
+                    sample_out_ready_reg <= enable_4_cycles;
                  end if;
             end if;
     end case;

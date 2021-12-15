@@ -38,7 +38,7 @@ end one_rec_tb;
 
 architecture Behavioral of one_rec_tb is
 component global_controller Port (
-    clk_12mhz : in STD_LOGIC;
+    clk_sys : in STD_LOGIC;
     reset : in STD_LOGIC;
     clear : in STD_LOGIC;
         micro_clk : out STD_LOGIC;
@@ -51,12 +51,13 @@ component global_controller Port (
     rec_enable : in STD_LOGIC;
     play_enable : in STD_LOGIC;   
     fil : in STD_LOGIC_VECTOR(1 downto 0)
-
 );
 end component;
+
+
 signal clk,rst, micro_data,rec_en, play_en, clear: std_logic := '0';
 signal fil : std_logic_vector(1 downto 0) := (others =>'0');
-constant clk_period : time := 83.33 ns;
+constant clk_period : time := 10 ns;
 signal micro_clk, micro_LR, jack_sd, jack_pwm, ready : std_logic := '0';
 
 begin
@@ -66,30 +67,21 @@ begin
 rst <= '1';
 wait for 90 ns;
 rst <= '0';
-micro_data <= '1';
+micro_data <= '0';
 rec_en <= '1';
-wait for 500 ns;
-micro_data <= '0';
-wait for 100 ns;
+wait for 500 us;
 micro_data <= '1';
-wait for 1 us;
-micro_data <= '0';
-wait for 700 ns;
-micro_data <= '1';
-wait for 200 ns;
-micro_data<= '0';
-wait for 350 ns;
-micro_data <= '1';
-wait for 300 ns;
+wait for 500 us;
 rec_en <= '0';
 wait for 2 us;
 play_en <= '1';
-wait for 5 us;
+wait for  900 us;
 play_en <= '0';
+wait;
 end process;
 
 U1 : global_controller port map (
-    clk_12mhz => clk, 
+    clk_sys => clk, 
     reset => rst,
     clear => clear,
     fil => fil,

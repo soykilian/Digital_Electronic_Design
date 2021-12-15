@@ -45,24 +45,40 @@ end pwm;
 architecture Behavioral of pwm is
 signal r_reg, r_next : unsigned(8 downto 0);
 signal buf_reg, buf_next : std_logic;
-
+signal sample_req_reg, sample_req_next: std_logic;
 begin
-    process (clk_12megas, reset, en_2_cycles)
+    process (clk_12megas, reset)
     begin
         if(reset = '1') then
             r_reg <= (others => '0');
             buf_reg <= '0';
+            sample_req_reg <= '0';
         elsif (rising_edge(clk_12megas)) then
+            if (sample_req_reg = '1') then
+                sample_req_reg <= '0';
+             else
+                sample_req_reg <= sample_req_next;
+             end if;
             if(en_2_cycles = '1') then
                 r_reg <= r_next;
                 buf_reg <= buf_next;
              end if;
         end if;
         end process;
-    r_next <= r_reg + 1 when (r_reg < 300) else (others => '0');
-    buf_next <= '0' when (unsigned(sample_in) = 0) else
-                '1' when (r_reg <= unsigned(sample_in)) else
-                '0';
-    sample_request <= '1' when (r_next = 299) else '0';
-    pwm_pulse <= buf_reg;  
+   process(r_reg, sample_in)
+   begin
+   sample_req_next <= '0';
+   r_next <= r_reg + 1;
+    if (r_reg = 299)then
+        sample_req_next <= '1';
+        r_next <= (others => '0');
+    end if;
+    if (r_reg <  unsigned(sample_in) or unsigned(sample_in) = 0) then
+        buf_next <= '1';
+     else
+        buf_next <= '0';
+    end if;
+    end process;
+    pwm_pulse <= buf_reg; 
+    sample_request <= sample_req_reg;
 end Behavioral;
