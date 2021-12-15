@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../dsed_audio.srcs/sources_1/new/package_dsed.vhd"
+vhdl xil_defaultlib  "../../../dsed_audio.srcs/sources_1/new/FSMD_microphone.vhd"
+vhdl xil_defaultlib  "../../../dsed_audio.srcs/sources_1/new/audio_interface.vhd"
+vhdl xil_defaultlib  "../../../dsed_audio.srcs/sources_1/new/en_4_cycles.vhd"
+vhdl xil_defaultlib  "../../../dsed_audio.srcs/sources_1/new/global_controller.vhd"
+vhdl xil_defaultlib  "../../../dsed_audio.srcs/sources_1/new/pwm.vhd"
+vhdl xil_defaultlib  "../../../dsed_audio.srcs/sim_1/new/one_rec_tb.vhd"
+
+# Do not sort compile order
+nosort
