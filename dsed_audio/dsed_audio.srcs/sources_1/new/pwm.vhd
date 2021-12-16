@@ -69,14 +69,13 @@ begin
    begin
    sample_req_next <= '0';
    r_next <= r_reg + 1;
+   buf_next <= '0';
     if (r_reg = 299)then
         sample_req_next <= '1';
         r_next <= (others => '0');
     end if;
     if (r_reg <  unsigned(sample_in) or unsigned(sample_in) = 0) then
         buf_next <= '1';
-     else
-        buf_next <= '0';
     end if;
     end process;
     pwm_pulse <= buf_reg; 

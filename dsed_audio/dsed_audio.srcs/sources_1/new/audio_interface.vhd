@@ -115,7 +115,7 @@ U3: pwm port map(
             sample_request => sample_request,
             pwm_pulse => jack_pwm
 );           
-jack_sd <= '1';
+jack_sd <= '1'; 
 micro_LR <= '1';
 micro_clk <= clk_3mhz;
 enable_microphone <= en4_cycles and record_enable;

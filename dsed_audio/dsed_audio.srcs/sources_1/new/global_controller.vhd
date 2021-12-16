@@ -101,17 +101,20 @@ signal data_micro, s_sample_out : std_logic_vector(sample_size - 1 downto 0);
 signal data_ram, reg_sample_in, next_sample_in : std_logic_vector(sample_size - 1 downto 0);
 --clock signal--
 signal clk_12mhz : std_logic;
-signal write_en,s_sample_request, s_ena: std_logic;
+signal s_sample_ready ,s_sample_request, s_ena: std_logic;
 signal s_wea : std_logic_vector(0 downto 0);
-type state is (idle, rep, rec); ---filter y clear
+type state is (idle, rep, rec, clr);
 signal state_reg, state_next : state;
 signal addra_reg , addra_next, stack_reg, stack_next: std_logic_vector (18 downto 0);
+--gnal  addrec_reg,addrec_next  :std_logic_vector(18 downto 0);
 begin
 process (clk_12mhz)
 begin
 if (rising_edge(clk_12mhz)) then
     if (reset = '1') then
         state_reg <= idle;
+            addra_reg <= (others=>'0');
+        stack_reg <= (others=>'0');
     else
     state_reg <= state_next;
     addra_reg <= addra_next;
@@ -121,7 +124,7 @@ if (rising_edge(clk_12mhz)) then
 end if;     
 end process;
 
-process( state_reg, play_enable, rec_enable, addra_reg, write_en, s_sample_out, data_ram,s_sample_request, reg_sample_in )
+process( state_reg, play_enable, rec_enable, addra_reg, s_sample_ready, s_sample_out, data_ram,s_sample_request, reg_sample_in)
 begin
 state_next <= state_reg;
 addra_next <= addra_reg;
@@ -136,22 +139,31 @@ case state_reg is
     when idle =>
     ready <= '1';
     ---para solo grabar un unico audio ---
-    addra_next <= (others=>'0');
+    --addra_next <= (others=>'0');
         if (play_enable = '1') then
+            addra_next <= (others=>'0');
             state_next <= rep;
         elsif (rec_enable = '1') then
             state_next <= rec;
+            addra_next  <= stack_reg;
+            if (unsigned(stack_reg) >= 524287) then
+                state_next<= idle; --no se permite seguir grabando aunque la señal de control lo indique
+            end if;
+        elsif (clear = '1') then
+            state_next <= clr;
         end if;
       when rec =>
         if (rec_enable = '1') then
             rec_audio <= '1';
             data_micro <= s_sample_out;
-            if (write_en = '1') then
+            if (s_sample_ready = '1') then
                 s_ena <= '1';
                 s_wea <= "1";
-                addra_next <= std_logic_vector(unsigned(addra_reg) + 1);
+                addra_next <= std_logic_vector(unsigned(addra_reg)+ 1);
+                --para que no sobreescriba lo grabado--
+                stack_next <= addra_reg;
             end if;
-         else
+         elsif(rec_enable = '0' or unsigned(stack_reg) >= 524287 )then 
             state_next <= idle;
             end if;
         when rep =>
@@ -160,12 +172,20 @@ case state_reg is
             s_ena <= '1';
             next_sample_in <= data_ram;
             if (s_sample_request = '1') then     
+                --como esta puesto ahora, reproduce desde cero siempre--
                 addra_next<= std_logic_vector(unsigned(addra_reg) + 1);
-
              end if;
-         else
+         elsif (play_enable = '0' or unsigned(addra_reg) >= 524287) then
             state_next <= idle;
-        end if;  
+        end if;
+        when clr =>
+            stack_next <= (others => '0');
+            addra_next <= (others => '0');
+            if (clear = '0') then
+                state_next <= idle;
+            end if;
+            
+        
 end case;
 end process;
 U1: clk_wiz_12 port map(
@@ -185,7 +205,7 @@ U2 : audio_interface port map(
         sample_in => reg_sample_in,
         jack_pwm => jack_pwm,
         sample_request => s_sample_request,
-        sample_out_ready => write_en
+        sample_out_ready => s_sample_ready
 );
 U3 : blk_mem_gen_0 port map(
             clka => clk_12mhz,

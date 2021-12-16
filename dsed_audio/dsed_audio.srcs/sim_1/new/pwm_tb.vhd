@@ -65,7 +65,7 @@ signal en2_cycles, en4_cycles, clk_3megas : std_logic;
 signal pwm_pulse, sample_request :std_logic;
 signal sample_in: std_logic_vector (sample_size - 1 downto 0);
 ---------
-
+signal play_enable : std_logic;
 begin
 clk_process :process
         begin
@@ -80,7 +80,10 @@ begin
 reset <= '1';
 wait for 100 ns;
 reset <='0';
-wait for 1000 ms;
+play_enable<= '1';
+wait for 1 ms;
+play_enable <= '0';
+wait for 250 us;
 end process;
 sample_in <= "11111111";
 U1 : en_4_cycles port map(
@@ -92,7 +95,7 @@ U1 : en_4_cycles port map(
 U2: pwm port map(
                         clk_12megas => clk,
                         reset => reset,
-                        en_2_cycles => en2_cycles,
+                        en_2_cycles => en2_cycles and play_enable,
                         sample_in => sample_in,
                         sample_request => sample_request,
                         pwm_pulse => pwm_pulse
