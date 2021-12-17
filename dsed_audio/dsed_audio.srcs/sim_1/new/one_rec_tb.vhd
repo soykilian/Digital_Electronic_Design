@@ -37,29 +37,31 @@ end one_rec_tb;
 
 
 architecture Behavioral of one_rec_tb is
-component global_controller Port (
+component global_controller 
+Port (
     clk_sys : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    clear : in STD_LOGIC;
-        micro_clk : out STD_LOGIC;
+    reset : in STD_LOGIC;  -- BTNU
+    clear : in STD_LOGIC; -- BTNC
+    rec_enable : in STD_LOGIC; -- BNTL
+    play_enable : in STD_LOGIC;  -- BNTR
+    fil_on : in STD_LOGIC; -- SW1
+    s_type : in STD_LOGIC; --SW0
+    micro_clk : out STD_LOGIC;
     micro_data : in STD_LOGIC;
-        micro_LR : out STD_LOGIC;
+    micro_LR : out STD_LOGIC;
     --To/From the mini-jack
-        jack_sd : out STD_LOGIC;
-        jack_pwm : out STD_LOGIC;
-        ready : out STD_LOGIC ; --led for waiting NOP
-    rec_enable : in STD_LOGIC;
-    play_enable : in STD_LOGIC;   
-    fil : in STD_LOGIC_VECTOR(1 downto 0)
+    jack_sd : out STD_LOGIC;
+    jack_pwm : out STD_LOGIC;
+    ready : out STD_LOGIC  --led for waiting NOP
 );
 end component;
 
 
 signal clk,rst, micro_data,rec_en, play_en, clear: std_logic := '0';
-signal fil : std_logic_vector(1 downto 0) := (others =>'0');
+
 constant clk_period : time := 10 ns;
 signal micro_clk, micro_LR, jack_sd, jack_pwm, ready : std_logic := '0';
-
+signal fil_on, s_type : std_logic := '0';
 begin
 clk <= not clk after clk_period/2;
 stimuli : process
@@ -86,7 +88,14 @@ wait for 45 us;
 rec_en <= '0';
 wait for 50 us;
 play_en <= '1';
-wait for  1500 us;
+wait for 300 us;
+play_en <= '0';
+wait for 2 us;
+play_en <= '1';
+s_type <= '1';
+wait for  250 us;
+s_type <= '0';
+wait for 200 us;
 play_en <= '0';
 wait;
 end process;
@@ -95,7 +104,8 @@ U1 : global_controller port map (
     clk_sys => clk, 
     reset => rst,
     clear => clear,
-    fil => fil,
+    fil_on => fil_on,
+    s_type => s_type,
     rec_enable => rec_en,
     play_enable => play_en,
     micro_data => micro_data,

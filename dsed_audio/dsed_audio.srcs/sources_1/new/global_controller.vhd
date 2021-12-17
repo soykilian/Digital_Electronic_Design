@@ -34,11 +34,12 @@ use IEEE.NUMERIC_STD.ALL;
 entity global_controller is
 Port (
     clk_sys : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    clear : in STD_LOGIC;
-    rec_enable : in STD_LOGIC;
-    play_enable : in STD_LOGIC; 
-    fil : in STD_LOGIC_VECTOR(1 downto 0);
+    reset : in STD_LOGIC;  -- BTNU
+    clear : in STD_LOGIC; -- BTNC
+    rec_enable : in STD_LOGIC; -- BNTL
+    play_enable : in STD_LOGIC;  -- BNTR
+    fil_on : in STD_LOGIC; -- SW1
+    s_type : in STD_LOGIC; --SW0
     micro_clk : out STD_LOGIC;
     micro_data : in STD_LOGIC;
     micro_LR : out STD_LOGIC;
@@ -83,15 +84,15 @@ Port (
     );
 end component;
 
---component fir_filter port (
-  --  clk : in STD_LOGIC;
-    --reset : in STD_LOGIC;
-    --sample_in : in signed (sample_size-1 downto 0);
-    --sample_in_enable : in STD_LOGIC;
-    --filter_select: in STD_LOGIC; --0 lowpass, 1 highpass
-    --sample_out : out signed (sample_size-1 downto 0);
-    --sample_out_ready : out STD_LOGIC);
---end component;
+component fir_filter port (
+   clk : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    sample_in : in signed (sample_size-1 downto 0);
+    sample_in_enable : in STD_LOGIC;
+    filter_select: in STD_LOGIC; --0 lowpass, 1 highpass
+    sample_out : out signed (sample_size-1 downto 0);
+    sample_out_ready : out STD_LOGIC);
+end component;
 ---Intermediate signals---
 --signal clk_12mhz : std_logic;
 signal reset_sys : std_logic;
@@ -103,10 +104,11 @@ signal data_ram, reg_sample_in, next_sample_in : std_logic_vector(sample_size - 
 signal clk_12mhz : std_logic;
 signal s_sample_ready ,s_sample_request, s_ena: std_logic;
 signal s_wea : std_logic_vector(0 downto 0);
-type state is (idle, rep, rec, clr);
+type state is (idle, play,rep,rev_rep, rec, clr,fil);
 signal state_reg, state_next : state;
 signal addra_reg , addra_next, stack_reg, stack_next: std_logic_vector (18 downto 0);
 --gnal  addrec_reg,addrec_next  :std_logic_vector(18 downto 0);
+signal filter_out, filter_in : signed(sample_size - 1 downto 0);
 begin
 process (clk_12mhz)
 begin
@@ -138,11 +140,9 @@ next_sample_in <= (others => '0');
 case state_reg is
     when idle =>
     ready <= '1';
-    ---para solo grabar un unico audio ---
-    --addra_next <= (others=>'0');
         if (play_enable = '1') then
             addra_next <= (others=>'0');
-            state_next <= rep;
+            state_next <= play;
         elsif (rec_enable = '1') then
             state_next <= rec;
             addra_next  <= stack_reg;
@@ -166,27 +166,57 @@ case state_reg is
          elsif(rec_enable = '0' or unsigned(stack_reg) >= 524287 )then 
             state_next <= idle;
             end if;
+        when play =>
+            if (fil_on = '0') then
+                if (s_type = '0') then
+                    state_next <= rep;
+                    addra_next <= (others=> '0');
+                else
+                    state_next<= rev_rep;
+                    addra_next <= stack_reg;
+                 end if;
+             else
+                state_next <= fil;
+            end if;
         when rep =>
-         if (play_enable = '1') then 
-            play_audio <= '1';
-            s_ena <= '1';
-            next_sample_in <= data_ram;
-            if (s_sample_request = '1') then     
-                --como esta puesto ahora, reproduce desde cero siempre--
-                addra_next<= std_logic_vector(unsigned(addra_reg) + 1);
-             end if;
-         elsif (play_enable = '0' or unsigned(addra_reg) >= 524287) then
-            state_next <= idle;
-        end if;
+            if (play_enable = '1') then
+                play_audio <= '1';
+                s_ena <= '1';
+                next_sample_in <= data_ram;
+                if (s_sample_request = '1') then     
+                     addra_next<= std_logic_vector(unsigned(addra_reg) + 1);
+                end if;
+             elsif (play_enable = '0' or unsigned(addra_reg) >= 524287) then
+                  state_next <= idle;
+            end if;
+          when rev_rep =>
+                if (play_enable = '1') then
+                    play_audio <= '1';
+                    s_ena <= '1';
+                    next_sample_in <= data_ram;
+                if (s_sample_request = '1') then     
+                     addra_next<= std_logic_vector(unsigned(addra_reg) - 1);
+                end if;
+             elsif (play_enable = '0' or unsigned(addra_reg) <= 0) then
+                  state_next <= idle;
+            end if;
+          when fil =>
+          if (play_enable = '1') then
+                play_audio <= '1';
+                 s_ena <= '1';
+                filter_in <= signed(NOT(data_ram(sample_size-1) & data_ram(6 downto 0)));
+                next_sample_in <= std_logic_vector(NOT(filter_out(sample_size - 1) & filter_out(6 downto 0)));
+                if (s_sample_request = '1') then     
+                    addra_next<= std_logic_vector(unsigned(addra_reg) + 1);
+                end if;
+           elsif (play_enable = '0' or unsigned(addra_reg) >= 524287) then
+                 state_next <= idle;
+           end if;
         when clr =>
             stack_next <= (others => '0');
             addra_next <= (others => '0');
-            if (clear = '0') then
-                state_next <= idle;
-            end if;
-            
-        
-end case;
+            state_next <= idle;     
+    end case;
 end process;
 U1: clk_wiz_12 port map(
         clk_in1 => clk_sys,
@@ -215,6 +245,14 @@ U3 : blk_mem_gen_0 port map(
             dina => data_micro,
             douta => data_ram
             );
-        
+U4 :   fir_filter port map(
+                    clk                 => clk_12mhz,
+                    reset               => reset,
+                    sample_in           => filter_in,
+                    sample_in_enable    => s_sample_request,
+                    filter_select       => s_type,
+                    sample_out          => filter_out,
+                    sample_out_ready    => open
+                );
 
 end Behavioral;
