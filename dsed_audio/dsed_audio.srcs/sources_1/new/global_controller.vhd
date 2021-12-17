@@ -204,8 +204,8 @@ case state_reg is
           if (play_enable = '1') then
                 play_audio <= '1';
                  s_ena <= '1';
-                filter_in <= signed(NOT(data_ram(sample_size-1) & data_ram(6 downto 0)));
-                next_sample_in <= std_logic_vector(NOT(filter_out(sample_size - 1) & filter_out(6 downto 0)));
+                filter_in <= signed(NOT(data_ram(sample_size-1)) & data_ram(6 downto 0));
+                next_sample_in <= std_logic_vector(NOT(filter_out(sample_size - 1)) & filter_out(6 downto 0));
                 if (s_sample_request = '1') then     
                     addra_next<= std_logic_vector(unsigned(addra_reg) + 1);
                 end if;

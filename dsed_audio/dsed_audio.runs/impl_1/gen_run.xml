@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1639743552">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1639744046">
   <File Type="PWROPT-DRC" Name="global_controller_drc_pwropted.rpt"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="global_controller_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="global_controller_timing_summary_init.rpt"/>
