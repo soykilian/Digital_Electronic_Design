@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Mon Dec 20 10:56:40 2021
+| Date         : Mon Dec 20 12:37:46 2021
 | Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command      : report_utilization -file display_controller_utilization_placed.rpt -pb display_controller_utilization_placed.pb
 | Design       : display_controller
@@ -31,8 +31,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs              |   17 |     0 |     63400 |  0.03 |
-|   LUT as Logic          |   17 |     0 |     63400 |  0.03 |
+| Slice LUTs              |   18 |     0 |     63400 |  0.03 |
+|   LUT as Logic          |   18 |     0 |     63400 |  0.03 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         |   24 |     0 |    126800 |  0.02 |
 |   Register as Flip Flop |   18 |     0 |    126800 |  0.01 |
@@ -68,19 +68,19 @@ Table of Contents
 |                 Site Type                 | Used | Fixed | Available | Util% |
 +-------------------------------------------+------+-------+-----------+-------+
 | Slice                                     |   12 |     0 |     15850 |  0.08 |
-|   SLICEL                                  |    7 |     0 |           |       |
-|   SLICEM                                  |    5 |     0 |           |       |
-| LUT as Logic                              |   17 |     0 |     63400 |  0.03 |
+|   SLICEL                                  |    9 |     0 |           |       |
+|   SLICEM                                  |    3 |     0 |           |       |
+| LUT as Logic                              |   18 |     0 |     63400 |  0.03 |
 |   using O5 output only                    |    0 |       |           |       |
-|   using O6 output only                    |   12 |       |           |       |
+|   using O6 output only                    |   13 |       |           |       |
 |   using O5 and O6                         |    5 |       |           |       |
 | LUT as Memory                             |    0 |     0 |     19000 |  0.00 |
 |   LUT as Distributed RAM                  |    0 |     0 |           |       |
 |   LUT as Shift Register                   |    0 |     0 |           |       |
-| LUT Flip Flop Pairs                       |    3 |     0 |     63400 | <0.01 |
+| LUT Flip Flop Pairs                       |    4 |     0 |     63400 | <0.01 |
 |   fully used LUT-FF pairs                 |    0 |       |           |       |
 |   LUT-FF pairs with one unused LUT output |    1 |       |           |       |
-|   LUT-FF pairs with one unused Flip Flop  |    3 |       |           |       |
+|   LUT-FF pairs with one unused Flip Flop  |    4 |       |           |       |
 | Unique Control Sets                       |    3 |       |           |       |
 +-------------------------------------------+------+-------+-----------+-------+
 * Note: Review the Control Sets Report for more information regarding control sets.
@@ -115,9 +115,9 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   17 |    16 |       210 |  8.10 |
-|   IOB Master Pads           |    8 |       |           |       |
-|   IOB Slave Pads            |    7 |       |           |       |
+| Bonded IOB                  |   20 |    20 |       210 |  9.52 |
+|   IOB Master Pads           |   10 |       |           |       |
+|   IOB Slave Pads            |    8 |       |           |       |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -139,9 +139,9 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    1 |     0 |        32 |  3.13 |
+| BUFGCTRL   |    2 |     0 |        32 |  6.25 |
 | BUFIO      |    0 |     0 |        24 |  0.00 |
-| MMCME2_ADV |    0 |     0 |         6 |  0.00 |
+| MMCME2_ADV |    1 |     0 |         6 | 16.67 |
 | PLLE2_ADV  |    0 |     0 |         6 |  0.00 |
 | BUFMRCE    |    0 |     0 |        12 |  0.00 |
 | BUFHCE     |    0 |     0 |        96 |  0.00 |
@@ -170,22 +170,23 @@ Table of Contents
 8. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| FDRE     |   18 |        Flop & Latch |
-| OBUF     |   12 |                  IO |
-| LUT6     |    7 |                 LUT |
-| LDCE     |    6 |        Flop & Latch |
-| IBUF     |    5 |                  IO |
-| CARRY4   |    5 |          CarryLogic |
-| LUT2     |    4 |                 LUT |
-| LUT5     |    3 |                 LUT |
-| LUT4     |    3 |                 LUT |
-| LUT3     |    3 |                 LUT |
-| LUT1     |    2 |                 LUT |
-| BUFG     |    1 |               Clock |
-+----------+------+---------------------+
++------------+------+---------------------+
+|  Ref Name  | Used | Functional Category |
++------------+------+---------------------+
+| FDRE       |   18 |        Flop & Latch |
+| OBUF       |   15 |                  IO |
+| LUT6       |    7 |                 LUT |
+| LUT2       |    6 |                 LUT |
+| LDCE       |    6 |        Flop & Latch |
+| IBUF       |    5 |                  IO |
+| CARRY4     |    5 |          CarryLogic |
+| LUT5       |    4 |                 LUT |
+| LUT3       |    3 |                 LUT |
+| LUT4       |    2 |                 LUT |
+| BUFG       |    2 |               Clock |
+| MMCME2_ADV |    1 |               Clock |
+| LUT1       |    1 |                 LUT |
++------------+------+---------------------+
 
 
 9. Black Boxes
@@ -199,8 +200,10 @@ Table of Contents
 10. Instantiated Netlists
 -------------------------
 
-+----------+------+
-| Ref Name | Used |
-+----------+------+
++------------+------+
+|  Ref Name  | Used |
++------------+------+
+| clk_wiz_12 |    1 |
++------------+------+
 
 

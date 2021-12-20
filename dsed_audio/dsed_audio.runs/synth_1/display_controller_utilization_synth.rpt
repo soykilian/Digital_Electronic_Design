@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Mon Dec 20 10:56:09 2021
+| Date         : Mon Dec 20 12:37:12 2021
 | Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command      : report_utilization -file display_controller_utilization_synth.rpt -pb display_controller_utilization_synth.pb
 | Design       : display_controller
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   34 |     0 |     63400 |  0.05 |
-|   LUT as Logic          |   34 |     0 |     63400 |  0.05 |
+| Slice LUTs*             |   35 |     0 |     63400 |  0.06 |
+|   LUT as Logic          |   35 |     0 |     63400 |  0.06 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         |   24 |     0 |    126800 |  0.02 |
 |   Register as Flip Flop |   18 |     0 |    126800 |  0.01 |
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   17 |     0 |       210 |  8.10 |
+| Bonded IOB                  |   19 |     0 |       210 |  9.05 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -112,7 +112,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    1 |     0 |        32 |  3.13 |
+| BUFGCTRL   |    0 |     0 |        32 |  0.00 |
 | BUFIO      |    0 |     0 |        24 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         6 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |         6 |  0.00 |
@@ -146,27 +146,28 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT1     |   19 |                 LUT |
+| LUT1     |   18 |                 LUT |
 | FDRE     |   18 |        Flop & Latch |
-| OBUF     |   12 |                  IO |
+| OBUF     |   15 |                  IO |
 | LUT6     |    7 |                 LUT |
+| LUT2     |    6 |                 LUT |
 | LDCE     |    6 |        Flop & Latch |
-| IBUF     |    5 |                  IO |
 | CARRY4   |    5 |          CarryLogic |
-| LUT2     |    4 |                 LUT |
-| LUT5     |    3 |                 LUT |
-| LUT4     |    3 |                 LUT |
+| LUT5     |    4 |                 LUT |
+| IBUF     |    4 |                  IO |
 | LUT3     |    3 |                 LUT |
-| BUFG     |    1 |               Clock |
+| LUT4     |    2 |                 LUT |
 +----------+------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+----------+------+
-| Ref Name | Used |
-+----------+------+
++------------+------+
+|  Ref Name  | Used |
++------------+------+
+| clk_wiz_12 |    1 |
++------------+------+
 
 
 9. Instantiated Netlists

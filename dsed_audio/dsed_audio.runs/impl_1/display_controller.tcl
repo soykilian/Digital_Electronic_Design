@@ -47,6 +47,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
@@ -55,7 +56,10 @@ set rc [catch {
   set_property parent.project_path C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.xpr [current_project]
   set_property ip_output_repo C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES XPM_CDC [current_project]
   add_files -quiet C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/display_controller.dcp
+  read_ip -quiet C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/ip/clk_wiz_12/clk_wiz_12.xci
+  set_property is_locked true [get_files C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/ip/clk_wiz_12/clk_wiz_12.xci]
   read_xdc C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/constrs_1/imports/dsed_audio/Nexys4DDR_Master.xdc
   link_design -top display_controller -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
@@ -132,6 +136,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_property XPM_LIBRARIES XPM_CDC [current_project]
   catch { write_mem_info -force display_controller.mmi }
   write_bitstream -force display_controller.bit 
   catch {write_debug_probes -no_partial_ltxfile -quiet -force debug_nets}
