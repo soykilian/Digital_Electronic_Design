@@ -2,11 +2,11 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Fri Dec 17 13:27:28 2021
-# Process ID: 12248
-# Current directory: C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1
-# Command line: vivado.exe -log global_controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source global_controller.tcl
-# Log file: C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/global_controller.vds
-# Journal file: C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1\vivado.jou
+# Start of session at: Mon Dec 20 10:55:43 2021
+# Process ID: 10080
+# Current directory: C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1
+# Command line: vivado.exe -log display_controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source display_controller.tcl
+# Log file: C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/display_controller.vds
+# Journal file: C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source global_controller.tcl -notrace
+source display_controller.tcl -notrace

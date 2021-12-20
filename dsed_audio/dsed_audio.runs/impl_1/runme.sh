@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/impl_1'
+HD_PWD='C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log global_controller.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source global_controller.tcl -notrace
+EAStep vivado -log display_controller.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source display_controller.tcl -notrace
 
 

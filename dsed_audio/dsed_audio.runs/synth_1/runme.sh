@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1'
+HD_PWD='C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log global_controller.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source global_controller.tcl
+EAStep vivado -log display_controller.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source display_controller.tcl
