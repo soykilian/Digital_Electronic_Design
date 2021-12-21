@@ -46,6 +46,8 @@ Port (
     --To/From the mini-jack
     jack_sd : out STD_LOGIC;
     jack_pwm : out STD_LOGIC;
+    an : out std_logic_vector(7 downto 0);
+    display : out std_logic_vector(6 downto 0);
     ready : out STD_LOGIC  --led for waiting NOP
 );
 end global_controller;
@@ -83,6 +85,16 @@ Port (
     douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
     );
 end component;
+component display_controller is
+    Port (
+        clk : in std_logic;
+        rst : in std_logic;
+        control : in std_logic_vector(2 downto 0);
+        on_display : in std_logic;
+        an : out std_logic_vector(7 downto 0);
+        display : out std_logic_vector(6 downto 0)
+    );
+ end component;
 
 component fir_filter port (
    clk : in STD_LOGIC;
@@ -108,6 +120,7 @@ type state is (idle, play,rep,rev_rep, rec, clr,fil);
 signal state_reg, state_next : state;
 signal addra_reg , addra_next, stack_reg, stack_next: std_logic_vector (18 downto 0);
 --gnal  addrec_reg,addrec_next  :std_logic_vector(18 downto 0);
+signal s_control : std_logic_vector(2 downto 0);
 signal filter_out, filter_in : signed(sample_size - 1 downto 0);
 begin
 process (clk_12mhz)
@@ -135,10 +148,12 @@ s_ena <= '0';
 s_wea <= "0";
 rec_audio <= '0';
 play_audio <= '0';
+s_control <= "111";
 data_micro<= (others => '0');
 next_sample_in <= (others => '0');
 case state_reg is
     when idle =>
+    s_control <= "001";
     ready <= '1';
         if (play_enable = '1') then
             addra_next <= (others=>'0');
@@ -153,6 +168,7 @@ case state_reg is
             state_next <= clr;
         end if;
       when rec =>
+        s_control <= "011";
         if (rec_enable = '1') then
             rec_audio <= '1';
             data_micro <= s_sample_out;
@@ -167,6 +183,7 @@ case state_reg is
             state_next <= idle;
             end if;
         when play =>
+            s_control <= "010";
             if (fil_on = '0') then
                 if (s_type = '0') then
                     state_next <= rep;
@@ -179,6 +196,7 @@ case state_reg is
                 state_next <= fil;
             end if;
         when rep =>
+            s_control <= "010";
             if (play_enable = '1') then
                 play_audio <= '1';
                 s_ena <= '1';
@@ -190,6 +208,7 @@ case state_reg is
                   state_next <= idle;
             end if;
           when rev_rep =>
+             s_control <= "010";
                 if (play_enable = '1') then
                     play_audio <= '1';
                     s_ena <= '1';
@@ -201,6 +220,7 @@ case state_reg is
                   state_next <= idle;
             end if;
           when fil =>
+             s_control <= "010";
           if (play_enable = '1') then
                 play_audio <= '1';
                  s_ena <= '1';
@@ -213,6 +233,7 @@ case state_reg is
                  state_next <= idle;
            end if;
         when clr =>
+        s_control <= "100";
             stack_next <= (others => '0');
             addra_next <= (others => '0');
             state_next <= idle;     
@@ -254,5 +275,11 @@ U4 :   fir_filter port map(
                     sample_out          => filter_out,
                     sample_out_ready    => open
                 );
-
+U5 : display_controller port map(
+                        clk => clk_12mhz,
+                        rst => reset,
+                        control => s_control,
+                        on_display => '1',
+                        an => an,
+                        display => display);
 end Behavioral;
