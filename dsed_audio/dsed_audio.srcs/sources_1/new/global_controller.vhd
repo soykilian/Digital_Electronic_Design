@@ -48,6 +48,7 @@ Port (
     jack_pwm : out STD_LOGIC;
     an : out std_logic_vector(7 downto 0);
     display : out std_logic_vector(6 downto 0);
+    boom : out std_logic_vector(3 downto 0);
     ready : out STD_LOGIC  --led for waiting NOP
 );
 end global_controller;
@@ -104,6 +105,15 @@ component fir_filter port (
     filter_select: in STD_LOGIC; --0 lowpass, 1 highpass
     sample_out : out signed (sample_size-1 downto 0);
     sample_out_ready : out STD_LOGIC);
+end component;
+
+component boometro is Port ( 
+        clk : in std_logic;
+        audio_in : in std_logic_vector(sample_size-1 downto 0);
+        reset : in std_logic;
+        enable : in std_logic;
+        leds_out : out std_logic_vector(3 downto 0)
+    );
 end component;
 ---Intermediate signals---
 --signal clk_12mhz : std_logic;
@@ -287,4 +297,13 @@ U5 : display_controller port map(
                         on_display => '1',
                         an => an,
                         display => display);
+                        
+U6 : boometro port map(
+    clk => clk_12mhz,
+    audio_in => reg_sample_in,
+    reset => reset,
+    enable => play_enable, -- se puede crear una signal que sea un boton o swtich para activar el boom
+    leds_out => boom
+    );
+                                                       
 end Behavioral;

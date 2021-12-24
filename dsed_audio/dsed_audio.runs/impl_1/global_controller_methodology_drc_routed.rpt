@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Dec 22 12:20:37 2021
-| Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
+| Date         : Fri Dec 24 17:46:21 2021
+| Host         : LAPTOP-N7SO7PIN running 64-bit major release  (build 9200)
 | Command      : report_methodology -file global_controller_methodology_drc_routed.rpt -rpx global_controller_methodology_drc_routed.rpx
 | Design       : global_controller
 | Device       : xc7a100tcsg324-1
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 54
+             Violations found: 58
 +-----------+----------+------------------------------------------------+------------+
 | Rule      | Severity | Description                                    | Violations |
 +-----------+----------+------------------------------------------------+------------+
 | TIMING-6  | Warning  | No common primary clock between related clocks | 2          |
-| TIMING-18 | Warning  | Missing input or output delay                  | 25         |
+| TIMING-18 | Warning  | Missing input or output delay                  | 29         |
 | TIMING-20 | Warning  | Non-clocked latch                              | 27         |
 +-----------+----------+------------------------------------------------+------------+
 
@@ -121,50 +121,70 @@ Related violations: <none>
 
 TIMING-18#16 Warning
 Missing input or output delay  
-An output delay is missing on display[0] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+An output delay is missing on boom[0] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
 Related violations: <none>
 
 TIMING-18#17 Warning
 Missing input or output delay  
-An output delay is missing on display[1] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+An output delay is missing on boom[1] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
 Related violations: <none>
 
 TIMING-18#18 Warning
 Missing input or output delay  
-An output delay is missing on display[2] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+An output delay is missing on boom[2] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
 Related violations: <none>
 
 TIMING-18#19 Warning
 Missing input or output delay  
-An output delay is missing on display[3] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+An output delay is missing on boom[3] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
 Related violations: <none>
 
 TIMING-18#20 Warning
 Missing input or output delay  
-An output delay is missing on display[4] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+An output delay is missing on display[0] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
 Related violations: <none>
 
 TIMING-18#21 Warning
 Missing input or output delay  
-An output delay is missing on display[5] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+An output delay is missing on display[1] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
 Related violations: <none>
 
 TIMING-18#22 Warning
 Missing input or output delay  
-An output delay is missing on display[6] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+An output delay is missing on display[2] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
 Related violations: <none>
 
 TIMING-18#23 Warning
 Missing input or output delay  
-An output delay is missing on jack_pwm relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+An output delay is missing on display[3] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
 Related violations: <none>
 
 TIMING-18#24 Warning
 Missing input or output delay  
-An output delay is missing on micro_clk relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+An output delay is missing on display[4] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
 Related violations: <none>
 
 TIMING-18#25 Warning
+Missing input or output delay  
+An output delay is missing on display[5] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+Related violations: <none>
+
+TIMING-18#26 Warning
+Missing input or output delay  
+An output delay is missing on display[6] relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+Related violations: <none>
+
+TIMING-18#27 Warning
+Missing input or output delay  
+An output delay is missing on jack_pwm relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+Related violations: <none>
+
+TIMING-18#28 Warning
+Missing input or output delay  
+An output delay is missing on micro_clk relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
+Related violations: <none>
+
+TIMING-18#29 Warning
 Missing input or output delay  
 An output delay is missing on ready relative to clock(s) VIRTUAL_clk_out1_clk_12megas 
 Related violations: <none>

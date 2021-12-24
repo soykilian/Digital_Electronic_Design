@@ -14,57 +14,60 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2804 
+INFO: Helper process launched with PID 18208 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 311.656 ; gain = 74.418
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 312.438 ; gain = 75.051
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'global_controller' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:55]
-WARNING: [Synth 8-614] signal 'stack_reg' is read in the process but is not in the sensitivity list [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:142]
-WARNING: [Synth 8-614] signal 'clear' is read in the process but is not in the sensitivity list [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:142]
-WARNING: [Synth 8-614] signal 'fil_on' is read in the process but is not in the sensitivity list [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:142]
-WARNING: [Synth 8-614] signal 's_type' is read in the process but is not in the sensitivity list [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:142]
-WARNING: [Synth 8-614] signal 'filter_out' is read in the process but is not in the sensitivity list [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:142]
-INFO: [Synth 8-3491] module 'clk_wiz_12' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-7632-DESKTOP-Q4GMU0O/realtime/clk_wiz_12_stub.vhdl:5' bound to instance 'U1' of component 'clk_wiz_12' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:247]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_12' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-7632-DESKTOP-Q4GMU0O/realtime/clk_wiz_12_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'audio_interface' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/audio_interface.vhd:34' bound to instance 'U2' of component 'audio_interface' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:251]
-INFO: [Synth 8-638] synthesizing module 'audio_interface' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/audio_interface.vhd:58]
-INFO: [Synth 8-3491] module 'en_4_cycles' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/en_4_cycles.vhd:34' bound to instance 'U1' of component 'en_4_cycles' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/audio_interface.vhd:96]
-INFO: [Synth 8-638] synthesizing module 'en_4_cycles' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/en_4_cycles.vhd:42]
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/en_4_cycles.vhd:47]
-INFO: [Synth 8-256] done synthesizing module 'en_4_cycles' (1#1) [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/en_4_cycles.vhd:42]
-INFO: [Synth 8-3491] module 'FSMD_microphone' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/FSMD_microphone.vhd:35' bound to instance 'U2' of component 'fsmd_microphone' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/audio_interface.vhd:102]
-INFO: [Synth 8-638] synthesizing module 'FSMD_microphone' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/FSMD_microphone.vhd:44]
-WARNING: [Synth 8-6014] Unused sequential element sample_out_ready_next_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/FSMD_microphone.vhd:120]
-INFO: [Synth 8-256] done synthesizing module 'FSMD_microphone' (2#1) [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/FSMD_microphone.vhd:44]
-INFO: [Synth 8-3491] module 'pwm' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/pwm.vhd:35' bound to instance 'U3' of component 'pwm' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/audio_interface.vhd:110]
-INFO: [Synth 8-638] synthesizing module 'pwm' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/pwm.vhd:45]
-INFO: [Synth 8-256] done synthesizing module 'pwm' (3#1) [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/pwm.vhd:45]
-INFO: [Synth 8-256] done synthesizing module 'audio_interface' (4#1) [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/audio_interface.vhd:58]
-INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-7632-DESKTOP-Q4GMU0O/realtime/blk_mem_gen_0_stub.vhdl:5' bound to instance 'U3' of component 'blk_mem_gen_0' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:266]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-7632-DESKTOP-Q4GMU0O/realtime/blk_mem_gen_0_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'fir_filter' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:35' bound to instance 'U4' of component 'fir_filter' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:274]
-INFO: [Synth 8-638] synthesizing module 'fir_filter' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:45]
-INFO: [Synth 8-3491] module 'ctrl_fsm' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:34' bound to instance 'UUT_fsm' of component 'ctrl_fsm' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:119]
-INFO: [Synth 8-638] synthesizing module 'ctrl_fsm' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:44]
-INFO: [Synth 8-256] done synthesizing module 'ctrl_fsm' (5#1) [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:44]
-INFO: [Synth 8-3491] module 'fir_implementation' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:34' bound to instance 'UUT_data_route' of component 'fir_implementation' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:128]
-INFO: [Synth 8-638] synthesizing module 'fir_implementation' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:54]
-INFO: [Synth 8-3491] module 'mux8' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/mux8.vhd:34' bound to instance 'UUT_M1' of component 'mux8' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:100]
-INFO: [Synth 8-638] synthesizing module 'mux8' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/mux8.vhd:49]
-INFO: [Synth 8-256] done synthesizing module 'mux8' (6#1) [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/mux8.vhd:49]
-INFO: [Synth 8-3491] module 'mux8' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/mux8.vhd:34' bound to instance 'UUT_M2' of component 'mux8' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:111]
-INFO: [Synth 8-3491] module 'mux8' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/mux8.vhd:34' bound to instance 'UUT_M3' of component 'mux8' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:122]
-INFO: [Synth 8-256] done synthesizing module 'fir_implementation' (7#1) [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:54]
-WARNING: [Synth 8-6014] Unused sequential element c_3_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:109]
-WARNING: [Synth 8-6014] Unused sequential element c_4_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:110]
-INFO: [Synth 8-256] done synthesizing module 'fir_filter' (8#1) [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:45]
-INFO: [Synth 8-3491] module 'display_controller' declared at 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:34' bound to instance 'U5' of component 'display_controller' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:283]
-INFO: [Synth 8-638] synthesizing module 'display_controller' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:48]
-INFO: [Synth 8-256] done synthesizing module 'display_controller' (9#1) [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:48]
-INFO: [Synth 8-256] done synthesizing module 'global_controller' (10#1) [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:55]
+INFO: [Synth 8-638] synthesizing module 'global_controller' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:56]
+WARNING: [Synth 8-614] signal 'stack_reg' is read in the process but is not in the sensitivity list [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:152]
+WARNING: [Synth 8-614] signal 'clear' is read in the process but is not in the sensitivity list [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:152]
+WARNING: [Synth 8-614] signal 'fil_on' is read in the process but is not in the sensitivity list [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:152]
+WARNING: [Synth 8-614] signal 's_type' is read in the process but is not in the sensitivity list [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:152]
+WARNING: [Synth 8-614] signal 'filter_out' is read in the process but is not in the sensitivity list [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:152]
+INFO: [Synth 8-3491] module 'clk_wiz_12' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-10820-LAPTOP-N7SO7PIN/realtime/clk_wiz_12_stub.vhdl:5' bound to instance 'U1' of component 'clk_wiz_12' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:257]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_12' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-10820-LAPTOP-N7SO7PIN/realtime/clk_wiz_12_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'audio_interface' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/audio_interface.vhd:34' bound to instance 'U2' of component 'audio_interface' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:261]
+INFO: [Synth 8-638] synthesizing module 'audio_interface' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/audio_interface.vhd:58]
+INFO: [Synth 8-3491] module 'en_4_cycles' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/en_4_cycles.vhd:34' bound to instance 'U1' of component 'en_4_cycles' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/audio_interface.vhd:96]
+INFO: [Synth 8-638] synthesizing module 'en_4_cycles' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/en_4_cycles.vhd:42]
+WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/en_4_cycles.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'en_4_cycles' (1#1) [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/en_4_cycles.vhd:42]
+INFO: [Synth 8-3491] module 'FSMD_microphone' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/FSMD_microphone.vhd:35' bound to instance 'U2' of component 'fsmd_microphone' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/audio_interface.vhd:102]
+INFO: [Synth 8-638] synthesizing module 'FSMD_microphone' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/FSMD_microphone.vhd:44]
+WARNING: [Synth 8-6014] Unused sequential element sample_out_ready_next_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/FSMD_microphone.vhd:120]
+INFO: [Synth 8-256] done synthesizing module 'FSMD_microphone' (2#1) [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/FSMD_microphone.vhd:44]
+INFO: [Synth 8-3491] module 'pwm' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/pwm.vhd:35' bound to instance 'U3' of component 'pwm' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/audio_interface.vhd:110]
+INFO: [Synth 8-638] synthesizing module 'pwm' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/pwm.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'pwm' (3#1) [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/pwm.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'audio_interface' (4#1) [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/audio_interface.vhd:58]
+INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-10820-LAPTOP-N7SO7PIN/realtime/blk_mem_gen_0_stub.vhdl:5' bound to instance 'U3' of component 'blk_mem_gen_0' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:276]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-10820-LAPTOP-N7SO7PIN/realtime/blk_mem_gen_0_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'fir_filter' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:35' bound to instance 'U4' of component 'fir_filter' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:284]
+INFO: [Synth 8-638] synthesizing module 'fir_filter' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:45]
+INFO: [Synth 8-3491] module 'ctrl_fsm' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:34' bound to instance 'UUT_fsm' of component 'ctrl_fsm' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:119]
+INFO: [Synth 8-638] synthesizing module 'ctrl_fsm' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'ctrl_fsm' (5#1) [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:44]
+INFO: [Synth 8-3491] module 'fir_implementation' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:34' bound to instance 'UUT_data_route' of component 'fir_implementation' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:128]
+INFO: [Synth 8-638] synthesizing module 'fir_implementation' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:54]
+INFO: [Synth 8-3491] module 'mux8' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/mux8.vhd:34' bound to instance 'UUT_M1' of component 'mux8' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:100]
+INFO: [Synth 8-638] synthesizing module 'mux8' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/mux8.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'mux8' (6#1) [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/mux8.vhd:49]
+INFO: [Synth 8-3491] module 'mux8' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/mux8.vhd:34' bound to instance 'UUT_M2' of component 'mux8' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:111]
+INFO: [Synth 8-3491] module 'mux8' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/mux8.vhd:34' bound to instance 'UUT_M3' of component 'mux8' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:122]
+INFO: [Synth 8-256] done synthesizing module 'fir_implementation' (7#1) [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:54]
+WARNING: [Synth 8-6014] Unused sequential element c_3_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:109]
+WARNING: [Synth 8-6014] Unused sequential element c_4_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:110]
+INFO: [Synth 8-256] done synthesizing module 'fir_filter' (8#1) [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_filter.vhd:45]
+INFO: [Synth 8-3491] module 'display_controller' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:34' bound to instance 'U5' of component 'display_controller' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:293]
+INFO: [Synth 8-638] synthesizing module 'display_controller' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:48]
+INFO: [Synth 8-256] done synthesizing module 'display_controller' (9#1) [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:48]
+INFO: [Synth 8-3491] module 'boometro' declared at 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/boometro.vhd:35' bound to instance 'U6' of component 'boometro' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:301]
+INFO: [Synth 8-638] synthesizing module 'boometro' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/boometro.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'boometro' (10#1) [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/boometro.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'global_controller' (11#1) [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:56]
 WARNING: [Synth 8-3331] design display_controller has unconnected port rst
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 352.738 ; gain = 115.500
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 352.762 ; gain = 115.375
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -74,48 +77,48 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 352.738 ; gain = 115.500
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 352.762 ; gain = 115.375
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-7632-DESKTOP-Q4GMU0O/dcp5/clk_12megas_in_context.xdc] for cell 'U1'
-Finished Parsing XDC File [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-7632-DESKTOP-Q4GMU0O/dcp5/clk_12megas_in_context.xdc] for cell 'U1'
-Parsing XDC File [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-7632-DESKTOP-Q4GMU0O/dcp7/blk_mem_gen_0_in_context.xdc] for cell 'U3'
-Finished Parsing XDC File [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-7632-DESKTOP-Q4GMU0O/dcp7/blk_mem_gen_0_in_context.xdc] for cell 'U3'
-Parsing XDC File [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/constrs_1/imports/dsed_audio/Nexys4DDR_Master.xdc]
-Finished Parsing XDC File [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/constrs_1/imports/dsed_audio/Nexys4DDR_Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/constrs_1/imports/dsed_audio/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/global_controller_propImpl.xdc].
+Parsing XDC File [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-10820-LAPTOP-N7SO7PIN/dcp5/clk_12megas_in_context.xdc] for cell 'U1'
+Finished Parsing XDC File [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-10820-LAPTOP-N7SO7PIN/dcp5/clk_12megas_in_context.xdc] for cell 'U1'
+Parsing XDC File [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-10820-LAPTOP-N7SO7PIN/dcp7/blk_mem_gen_0_in_context.xdc] for cell 'U3'
+Finished Parsing XDC File [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-10820-LAPTOP-N7SO7PIN/dcp7/blk_mem_gen_0_in_context.xdc] for cell 'U3'
+Parsing XDC File [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/constrs_1/imports/dsed_audio/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/constrs_1/imports/dsed_audio/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/constrs_1/imports/dsed_audio/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/global_controller_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/global_controller_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 665.973 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 666.746 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 665.973 ; gain = 428.734
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:25 . Memory (MB): peak = 666.746 ; gain = 429.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 665.973 ; gain = 428.734
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:25 . Memory (MB): peak = 666.746 ; gain = 429.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk_sys. (constraint file  C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-7632-DESKTOP-Q4GMU0O/dcp5/clk_12megas_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_sys. (constraint file  C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-7632-DESKTOP-Q4GMU0O/dcp5/clk_12megas_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clk_sys. (constraint file  {C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-10820-LAPTOP-N7SO7PIN/dcp5/clk_12megas_in_context.xdc}, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_sys. (constraint file  {C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/.Xil/Vivado-10820-LAPTOP-N7SO7PIN/dcp5/clk_12megas_in_context.xdc}, line 4).
 Applied set_property DONT_TOUCH = true for U1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for U3. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 665.973 ; gain = 428.734
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:25 . Memory (MB): peak = 666.746 ; gain = 429.359
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "dato2_next" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "fst_cycle_next" won't be mapped to RAM because it is too sparse
@@ -124,22 +127,23 @@ INFO: [Synth 8-5546] ROM "state_next" won't be mapped to RAM because it is too s
 INFO: [Synth 8-5546] ROM "state_next" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "sample_req_next" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'ctrl_fsm'
-WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:53]
+WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:53]
 INFO: [Synth 8-5544] ROM "sample_out_ready" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ctrl3" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element r3_state_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:89]
+WARNING: [Synth 8-6014] Unused sequential element r3_state_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/fir_implementation.vhd:89]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'display_controller'
-WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:83]
+WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:83]
 INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element counter_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:71]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:154]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:71]
+INFO: [Synth 8-5544] ROM "level_reg" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:164]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'global_controller'
-WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:140]
 INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:53]
-WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:53]
+WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:53]
+WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:53]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -153,9 +157,9 @@ WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C
                      s_6 |                              111 |                              111
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'ctrl_fsm'
-WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:53]
-WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:83]
-WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:83]
+WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/ctrl_fsm.vhd:53]
+WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:83]
+WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:83]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -168,9 +172,9 @@ WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C
                 letter_5 |                              110 |                              110
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'display_controller'
-WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:83]
-WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:130]
-WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:83]
+WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:140]
+WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:140]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -183,11 +187,11 @@ WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C
                      rec |                              110 |                              100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'global_controller'
-WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:130]
-WARNING: [Synth 8-327] inferring latch for variable 'stack_next_reg' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:136]
-WARNING: [Synth 8-327] inferring latch for variable 'filter_in_reg' [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:228]
+WARNING: [Synth 8-6014] Unused sequential element state_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:140]
+WARNING: [Synth 8-327] inferring latch for variable 'stack_next_reg' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:146]
+WARNING: [Synth 8-327] inferring latch for variable 'filter_in_reg' [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/global_controller.vhd:238]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 665.973 ; gain = 428.734
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 666.746 ; gain = 429.359
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -208,6 +212,7 @@ Detailed RTL Component Info :
 	               19 Bit    Registers := 2     
 	                9 Bit    Registers := 2     
 	                8 Bit    Registers := 11    
+	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 3     
 +---Muxes : 
@@ -220,6 +225,9 @@ Detailed RTL Component Info :
 	   7 Input      8 Bit        Muxes := 3     
 	   2 Input      7 Bit        Muxes := 1     
 	   7 Input      7 Bit        Muxes := 7     
+	   5 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   8 Input      3 Bit        Muxes := 2     
 	   9 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
@@ -322,6 +330,14 @@ Detailed RTL Component Info :
 	   7 Input      7 Bit        Muxes := 7     
 	   8 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
+Module boometro 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -342,7 +358,7 @@ INFO: [Synth 8-5546] ROM "U2/U2/fst_cycle_next" won't be mapped to RAM because i
 INFO: [Synth 8-5546] ROM "U2/U2/state_next" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "U2/U3/sample_req_next" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "U5/state_reg" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element U5/counter_reg_reg was removed.  [C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element U5/counter_reg_reg was removed.  [C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/display_controller.vhd:71]
 WARNING: [Synth 8-3917] design global_controller has port micro_LR driven by constant 1
 WARNING: [Synth 8-3917] design global_controller has port jack_sd driven by constant 1
 WARNING: [Synth 8-3332] Sequential element (U4/UUT_data_route/r3_state_reg[6]) is unused and will be removed from module global_controller.
@@ -353,7 +369,7 @@ WARNING: [Synth 8-3332] Sequential element (U4/UUT_data_route/r3_state_reg[2]) i
 WARNING: [Synth 8-3332] Sequential element (U4/UUT_data_route/r3_state_reg[1]) is unused and will be removed from module global_controller.
 WARNING: [Synth 8-3332] Sequential element (U4/UUT_data_route/r3_state_reg[0]) is unused and will be removed from module global_controller.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 665.973 ; gain = 428.734
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:29 . Memory (MB): peak = 666.746 ; gain = 429.359
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -367,13 +383,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'U1/clk_out1' to pin 'U1/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 665.973 ; gain = 428.734
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:41 . Memory (MB): peak = 666.746 ; gain = 429.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 667.609 ; gain = 430.371
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:42 . Memory (MB): peak = 670.391 ; gain = 433.004
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -385,7 +401,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 667.609 ; gain = 430.371
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:43 . Memory (MB): peak = 670.391 ; gain = 433.004
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -409,7 +425,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 667.609 ; gain = 430.371
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:44 . Memory (MB): peak = 670.391 ; gain = 433.004
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -422,7 +438,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 667.609 ; gain = 430.371
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:44 . Memory (MB): peak = 670.391 ; gain = 433.004
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -434,25 +450,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 667.609 ; gain = 430.371
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:44 . Memory (MB): peak = 670.391 ; gain = 433.004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 667.609 ; gain = 430.371
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:44 . Memory (MB): peak = 670.391 ; gain = 433.004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 667.609 ; gain = 430.371
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:44 . Memory (MB): peak = 670.391 ; gain = 433.004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 667.609 ; gain = 430.371
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:44 . Memory (MB): peak = 670.391 ; gain = 433.004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -474,39 +490,40 @@ Report Cell Usage:
 |2     |clk_wiz_12_bbox    |     1|
 |3     |CARRY4             |    29|
 |4     |LUT1               |    25|
-|5     |LUT2               |    67|
-|6     |LUT3               |    42|
-|7     |LUT4               |    71|
-|8     |LUT5               |    83|
-|9     |LUT6               |   130|
+|5     |LUT2               |    71|
+|6     |LUT3               |    44|
+|7     |LUT4               |    64|
+|8     |LUT5               |    99|
+|9     |LUT6               |   129|
 |10    |FDCE               |    13|
-|11    |FDRE               |   172|
+|11    |FDRE               |   176|
 |12    |FDSE               |     1|
 |13    |LD                 |    27|
 |14    |IBUF               |     7|
-|15    |OBUF               |    20|
+|15    |OBUF               |    24|
 +------+-------------------+------+
 
 Report Instance Areas: 
 +------+-------------------+-------------------+------+
 |      |Instance           |Module             |Cells |
 +------+-------------------+-------------------+------+
-|1     |top                |                   |   696|
-|2     |  U2               |audio_interface    |   156|
-|3     |    U1             |en_4_cycles        |     7|
-|4     |    U2             |FSMD_microphone    |   110|
+|1     |top                |                   |   718|
+|2     |  U2               |audio_interface    |   159|
+|3     |    U1             |en_4_cycles        |     6|
+|4     |    U2             |FSMD_microphone    |   114|
 |5     |    U3             |pwm                |    39|
-|6     |  U4               |fir_filter         |   222|
-|7     |    UUT_data_route |fir_implementation |    76|
-|8     |    UUT_fsm        |ctrl_fsm           |   106|
+|6     |  U4               |fir_filter         |   220|
+|7     |    UUT_data_route |fir_implementation |    84|
+|8     |    UUT_fsm        |ctrl_fsm           |    96|
 |9     |  U5               |display_controller |    67|
+|10    |  U6               |boometro           |    16|
 +------+-------------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 667.609 ; gain = 430.371
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:44 . Memory (MB): peak = 670.391 ; gain = 433.004
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 667.609 ; gain = 117.137
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 667.609 ; gain = 430.371
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:31 . Memory (MB): peak = 670.391 ; gain = 119.020
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:44 . Memory (MB): peak = 670.391 ; gain = 433.004
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 63 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -516,9 +533,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 27 instances were transformed.
   LD => LDCE: 27 instances
 
-72 Infos, 36 Warnings, 0 Critical Warnings and 0 Errors encountered.
+76 Infos, 36 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 667.609 ; gain = 438.121
-INFO: [Common 17-1381] The checkpoint 'C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/global_controller.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 667.609 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 22 12:18:56 2021...
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:50 . Memory (MB): peak = 670.391 ; gain = 440.812
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/synth_1/global_controller.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.194 . Memory (MB): peak = 670.391 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 24 17:43:42 2021...

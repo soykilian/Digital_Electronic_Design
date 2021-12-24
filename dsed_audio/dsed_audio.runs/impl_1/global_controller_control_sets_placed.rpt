@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Dec 22 12:19:56 2021
-| Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
+| Date         : Fri Dec 24 17:45:38 2021
+| Host         : LAPTOP-N7SO7PIN running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file global_controller_control_sets_placed.rpt
 | Design       : global_controller
 | Device       : xc7a100t
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    13 |
-| Unused register locations in slices containing registers |    37 |
+| Number of unique control sets                            |    17 |
+| Unused register locations in slices containing registers |    65 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,40 +33,45 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              44 |           23 |
-| No           | No                    | Yes                    |               3 |            2 |
-| No           | Yes                   | No                     |              70 |           23 |
-| Yes          | No                    | No                     |               8 |            4 |
+| No           | No                    | No                     |              44 |           17 |
+| No           | No                    | Yes                    |               3 |            3 |
+| No           | Yes                   | No                     |              70 |           27 |
+| Yes          | No                    | No                     |               8 |            2 |
 | Yes          | No                    | Yes                    |              10 |            4 |
-| Yes          | Yes                   | No                     |              92 |           38 |
+| Yes          | Yes                   | No                     |              96 |           36 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------+---------------------------------+---------------------------+------------------+----------------+
-|        Clock Signal       |          Enable Signal          |      Set/Reset Signal     | Slice Load Count | Bel Load Count |
-+---------------------------+---------------------------------+---------------------------+------------------+----------------+
-|  U1/inst/clk_out1         | U2/U2/dato1_reg_0               | reset_IBUF                |                2 |              8 |
-|  U1/inst/clk_out1         | U2/U2/dato2_reg_1               | reset_IBUF                |                2 |              8 |
-|  U1/inst/clk_out1         | U2/U2/sample_out_reg[7]_i_1_n_0 | reset_IBUF                |                3 |              8 |
-|  U1/inst/clk_out1         | p_0_in                          |                           |                4 |              8 |
-|  filter_in_reg[7]_i_2_n_0 |                                 |                           |                6 |              8 |
-|  U1/inst/clk_out1         | U2/U1/enable_4_cycles           | reset_IBUF                |                4 |              9 |
-|  U1/inst/clk_out1         | U2/U1/E[0]                      | reset_IBUF                |                4 |             10 |
-|  U1/inst/clk_out1         |                                 |                           |                9 |             17 |
-|  U1/inst/clk_out1         |                                 | U5/counter_reg[0]_i_1_n_0 |                5 |             18 |
-|  U1/inst/clk_out1         | U2/U3/addra_reg_reg[0][0]       | reset_IBUF                |               12 |             19 |
-|  U2/U2/E[0]               |                                 |                           |                8 |             19 |
-|  U1/inst/clk_out1         | U2/U3/x_0_reg[7]                | reset_IBUF                |               15 |             40 |
-|  U1/inst/clk_out1         |                                 | reset_IBUF                |               20 |             55 |
-+---------------------------+---------------------------------+---------------------------+------------------+----------------+
++---------------------------+---------------------------+---------------------------+------------------+----------------+
+|        Clock Signal       |       Enable Signal       |      Set/Reset Signal     | Slice Load Count | Bel Load Count |
++---------------------------+---------------------------+---------------------------+------------------+----------------+
+|  U1/inst/clk_out1         | play_enable_IBUF          | U6/leds_out[0]_i_1_n_0    |                1 |              1 |
+|  U1/inst/clk_out1         | play_enable_IBUF          | U6/leds_out[1]_i_1_n_0    |                1 |              1 |
+|  U1/inst/clk_out1         | play_enable_IBUF          | U6/leds_out[2]_i_1_n_0    |                1 |              1 |
+|  U1/inst/clk_out1         | play_enable_IBUF          | U6/leds_out[3]_i_1_n_0    |                1 |              1 |
+|  filter_in_reg[7]_i_2_n_0 |                           |                           |                4 |              8 |
+|  U1/inst/clk_out1         | U2/U2/dato1_reg_1         | reset_IBUF                |                2 |              8 |
+|  U1/inst/clk_out1         | U2/U2/dato2_reg_0         | reset_IBUF                |                3 |              8 |
+|  U1/inst/clk_out1         | U2/U2/sample_out_reg      | reset_IBUF                |                1 |              8 |
+|  U1/inst/clk_out1         | reg_sample_in[7]_i_1_n_0  |                           |                2 |              8 |
+|  U1/inst/clk_out1         | U2/U1/enable_4_cycles     | reset_IBUF                |                3 |              9 |
+|  U1/inst/clk_out1         | U2/U1/E[0]                | reset_IBUF                |                4 |             10 |
+|  U1/inst/clk_out1         |                           |                           |                7 |             17 |
+|  U1/inst/clk_out1         |                           | U5/counter_reg[0]_i_1_n_0 |                5 |             18 |
+|  U2/U2/E[0]               |                           |                           |                6 |             19 |
+|  U1/inst/clk_out1         | U2/U3/addra_reg_reg[0][0] | reset_IBUF                |               11 |             19 |
+|  U1/inst/clk_out1         | U2/U3/x_0_reg[7]          | reset_IBUF                |               12 |             40 |
+|  U1/inst/clk_out1         |                           | reset_IBUF                |               25 |             55 |
++---------------------------+---------------------------+---------------------------+------------------+----------------+
 
 
 +--------+-----------------------+
 | Fanout | Number of ControlSets |
 +--------+-----------------------+
+| 1      |                     4 |
 | 8      |                     5 |
 | 9      |                     1 |
 | 10     |                     1 |

@@ -2,3 +2,11 @@
 *** Running vivado
     with args -log blk_mem_gen_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source blk_mem_gen_0.tcl
 
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source blk_mem_gen_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP blk_mem_gen_0, cache-ID = 7986d749d7b109c6.

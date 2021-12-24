@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/dsed/DSED_6/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/blk_mem_gen_0_synth_1'
+HD_PWD='C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.runs/blk_mem_gen_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
