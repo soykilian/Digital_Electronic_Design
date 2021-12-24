@@ -197,46 +197,51 @@ case state_reg is
             end if;
         when rep =>
             s_control <= "010";
-            if (play_enable = '1') then
-                play_audio <= '1';
+              play_audio <= '1';
                 s_ena <= '1';
                 next_sample_in <= data_ram;
                 if (s_sample_request = '1') then     
                      addra_next<= std_logic_vector(unsigned(addra_reg) + 1);
                 end if;
-             elsif (play_enable = '0' or unsigned(addra_reg) >= 524287) then
+             if (unsigned(addra_reg) >= 524287 or addra_reg >= stack_reg) then
                   state_next <= idle;
             end if;
           when rev_rep =>
              s_control <= "010";
-                if (play_enable = '1') then
                     play_audio <= '1';
                     s_ena <= '1';
                     next_sample_in <= data_ram;
                 if (s_sample_request = '1') then     
                      addra_next<= std_logic_vector(unsigned(addra_reg) - 1);
                 end if;
-             elsif (play_enable = '0' or unsigned(addra_reg) <= 0) then
+             if (unsigned(addra_reg) <= 0) then
                   state_next <= idle;
             end if;
           when fil =>
-             s_control <= "010";
-          if (play_enable = '1') then
+            if (s_type = '1')then
+                s_control <= "110";
+            else
+                s_control <= "101";
+            end if;
                 play_audio <= '1';
-                 s_ena <= '1';
+                s_ena <= '1';
                 filter_in <= signed(NOT(data_ram(sample_size-1)) & data_ram(6 downto 0));
                 next_sample_in <= std_logic_vector(NOT(filter_out(sample_size - 1)) & filter_out(6 downto 0));
                 if (s_sample_request = '1') then     
                     addra_next<= std_logic_vector(unsigned(addra_reg) + 1);
                 end if;
-           elsif (play_enable = '0' or unsigned(addra_reg) >= 524287) then
+           if (unsigned(addra_reg) >= 524287 or addra_reg >= stack_reg) then
                  state_next <= idle;
            end if;
         when clr =>
         s_control <= "100";
             stack_next <= (others => '0');
             addra_next <= (others => '0');
-            state_next <= idle;     
+            if(clear = '0') then
+            state_next <= idle;
+            else
+            state_next<= clr;
+           end if;
     end case;
 end process;
 U1: clk_wiz_12 port map(

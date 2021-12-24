@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Tue Dec 21 22:28:52 2021
+| Date             : Wed Dec 22 12:20:39 2021
 | Host             : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command          : report_power -file global_controller_power_routed.rpt -pb global_controller_power_summary_routed.pb -rpx global_controller_power_routed.rpx
 | Design           : global_controller
@@ -31,7 +31,7 @@ Table of Contents
 
 +--------------------------+-------+
 | Total On-Chip Power (W)  | 0.229 |
-| Dynamic (W)              | 0.125 |
+| Dynamic (W)              | 0.126 |
 | Device Static (W)        | 0.103 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 84.0  |
@@ -50,14 +50,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |      883 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      420 |     63400 |            0.66 |
-|   CARRY4       |    <0.001 |       26 |     15850 |            0.16 |
+| Slice Logic    |    <0.001 |      920 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      446 |     63400 |            0.70 |
+|   CARRY4       |    <0.001 |       29 |     15850 |            0.18 |
 |   Register     |    <0.001 |      227 |    126800 |            0.18 |
 |   F7/F8 Muxes  |    <0.001 |        8 |     63400 |            0.01 |
 |   Others       |     0.000 |      161 |       --- |             --- |
-| Signals        |    <0.001 |      768 |       --- |             --- |
-| Block RAM      |    <0.001 |      128 |       135 |           94.81 |
+| Signals        |    <0.001 |      784 |       --- |             --- |
+| Block RAM      |     0.001 |      128 |       135 |           94.81 |
 | MMCM           |     0.121 |        1 |         6 |           16.67 |
 | I/O            |     0.002 |       28 |       210 |           13.33 |
 | Static Power   |     0.103 |          |           |                 |
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.020 |       0.002 |      0.018 |
+| Vccint    |       1.000 |     0.021 |       0.002 |      0.018 |
 | Vccaux    |       1.800 |     0.085 |       0.067 |      0.018 |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -145,18 +145,18 @@ Table of Contents
 +----------------------------------------------+-----------+
 | Name                                         | Power (W) |
 +----------------------------------------------+-----------+
-| global_controller                            |     0.125 |
+| global_controller                            |     0.126 |
 |   U1                                         |     0.121 |
 |     inst                                     |     0.121 |
 |   U2                                         |    <0.001 |
 |     U1                                       |    <0.001 |
 |     U2                                       |    <0.001 |
 |     U3                                       |    <0.001 |
-|   U3                                         |    <0.001 |
-|     U0                                       |    <0.001 |
-|       inst_blk_mem_gen                       |    <0.001 |
-|         gnbram.gnativebmg.native_blk_mem_gen |    <0.001 |
-|           valid.cstr                         |    <0.001 |
+|   U3                                         |     0.001 |
+|     U0                                       |     0.001 |
+|       inst_blk_mem_gen                       |     0.001 |
+|         gnbram.gnativebmg.native_blk_mem_gen |     0.001 |
+|           valid.cstr                         |     0.001 |
 |             has_mux_a.A                      |    <0.001 |
 |             ramloop[0].ram.r                 |    <0.001 |
 |               prim_noinit.ram                |    <0.001 |

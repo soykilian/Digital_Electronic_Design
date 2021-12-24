@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Tue Dec 21 22:28:48 2021
+| Date         : Wed Dec 22 12:20:34 2021
 | Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command      : report_drc -file global_controller_drc_routed.rpt -pb global_controller_drc_routed.pb -rpx global_controller_drc_routed.rpx
 | Design       : global_controller
@@ -56,7 +56,7 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net U2/U2/stack_reg_reg[0][0] is a gated clock net sourced by a combinational pin U2/U2/stack_next_reg[18]_i_2/O, cell U2/U2/stack_next_reg[18]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net U2/U2/E[0] is a gated clock net sourced by a combinational pin U2/U2/stack_next_reg[18]_i_2/O, cell U2/U2/stack_next_reg[18]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning

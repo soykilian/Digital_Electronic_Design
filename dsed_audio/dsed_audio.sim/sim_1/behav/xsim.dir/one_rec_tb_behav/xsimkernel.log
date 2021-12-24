@@ -2,3 +2,6 @@ Running: xsim.dir/one_rec_tb_behav/xsimk.exe -simmode gui -wdb one_rec_tb_behav.
 Design successfully loaded
 Design Loading Memory Usage: 9524 KB (Peak: 9524 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 10960 KB (Peak: 10960 KB)
+Simulation CPU Usage: 280 ms
