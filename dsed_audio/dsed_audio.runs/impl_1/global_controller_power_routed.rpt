@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Fri Dec 24 17:46:23 2021
-| Host             : LAPTOP-N7SO7PIN running 64-bit major release  (build 9200)
+| Date             : Tue Dec 28 18:04:52 2021
+| Host             : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command          : report_power -file global_controller_power_routed.rpt -pb global_controller_power_summary_routed.pb -rpx global_controller_power_routed.rpx
 | Design           : global_controller
 | Device           : xc7a100tcsg324-1
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.236 |
+| Total On-Chip Power (W)  | 0.229 |
 | Dynamic (W)              | 0.126 |
-| Device Static (W)        | 0.111 |
+| Device Static (W)        | 0.103 |
 | Effective TJA (C/W)      | 4.6   |
-| Max Ambient (C)          | 83.9  |
-| Junction Temperature (C) | 26.1  |
+| Max Ambient (C)          | 84.0  |
+| Junction Temperature (C) | 26.0  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -50,18 +50,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |      938 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      452 |     63400 |            0.71 |
-|   CARRY4       |    <0.001 |       29 |     15850 |            0.18 |
-|   Register     |    <0.001 |      231 |    126800 |            0.18 |
+| Slice Logic    |    <0.001 |     1001 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      475 |     63400 |            0.75 |
+|   CARRY4       |    <0.001 |       35 |     15850 |            0.22 |
+|   Register     |    <0.001 |      266 |    126800 |            0.21 |
 |   F7/F8 Muxes  |    <0.001 |        8 |     63400 |            0.01 |
-|   Others       |     0.000 |      161 |       --- |             --- |
-| Signals        |    <0.001 |      804 |       --- |             --- |
-| Block RAM      |    <0.001 |      128 |       135 |           94.81 |
+|   Others       |     0.000 |      162 |       --- |             --- |
+| Signals        |    <0.001 |      854 |       --- |             --- |
+| Block RAM      |     0.001 |      128 |       135 |           94.81 |
 | MMCM           |     0.121 |        1 |         6 |           16.67 |
-| I/O            |     0.002 |       32 |       210 |           15.24 |
-| Static Power   |     0.111 |          |           |                 |
-| Total          |     0.236 |          |           |                 |
+| I/O            |     0.002 |       43 |       210 |           20.48 |
+| Static Power   |     0.103 |          |           |                 |
+| Total          |     0.229 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,11 +71,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.021 |       0.002 |      0.018 |
+| Vccint    |       1.000 |     0.021 |       0.003 |      0.018 |
 | Vccaux    |       1.800 |     0.085 |       0.067 |      0.018 |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     0.004 |       0.000 |      0.004 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |

@@ -1,0 +1,29 @@
+   if (audio_in >= "11111100") then
+        level_reg <=  "111111111111111";
+   elsif (audio_in >= "11101100") then
+        level_reg <= "011111111111111";
+    elsif (audio_in >= "11100100") then
+        level_reg <= "001111111111111";
+    elsif (audio_in >= "11011100") then
+        level_reg <= "000111111111111";
+    elsif (audio_in >= "11000100") then
+        level_reg <=  "000011111111111";
+    elsif (audio_in >= "10110100") then
+        level_reg <= "000001111111111";
+    elsif (audio_in >= "10101100") then
+        level_reg <= "000000111111111";
+    elsif (audio_in >= "10100100") then
+        level_reg <= "000000111111111";
+    elsif (audio_in >= "10011100") then
+        level_reg <= "000000011111111";
+    elsif (audio_in >="10001100") then
+        level_reg<="000000000111111";
+    elsif (audio_in >= "10000100") then
+        level_reg <= "000000000001111";
+    elsif (audio_in >= "00011011") then
+        level_reg <= "000000000000011";
+    elsif (audio_in >= "00001100") then
+    level_reg <="000000000000001";
+    else 
+    level_reg <= "000000000000000";
+    end if;

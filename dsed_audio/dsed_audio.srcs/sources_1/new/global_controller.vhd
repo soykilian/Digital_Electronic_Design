@@ -48,7 +48,7 @@ Port (
     jack_pwm : out STD_LOGIC;
     an : out std_logic_vector(7 downto 0);
     display : out std_logic_vector(6 downto 0);
-    boom : out std_logic_vector(3 downto 0);
+    boom : out std_logic_vector(14 downto 0);
     ready : out STD_LOGIC  --led for waiting NOP
 );
 end global_controller;
@@ -112,7 +112,7 @@ component boometro is Port (
         audio_in : in std_logic_vector(sample_size-1 downto 0);
         reset : in std_logic;
         enable : in std_logic;
-        leds_out : out std_logic_vector(3 downto 0)
+        leds_out : out std_logic_vector(14 downto 0)
     );
 end component;
 ---Intermediate signals---
@@ -131,6 +131,8 @@ signal state_reg, state_next : state;
 signal addra_reg , addra_next, stack_reg, stack_next: std_logic_vector (18 downto 0);
 --gnal  addrec_reg,addrec_next  :std_logic_vector(18 downto 0);
 signal s_control : std_logic_vector(2 downto 0);
+signal en_500ms, boom_en: std_logic;
+signal en_counter_reg, en_counter_next : unsigned(22 downto 0);
 signal filter_out, filter_in : signed(sample_size - 1 downto 0);
 begin
 process (clk_12mhz)
@@ -140,14 +142,22 @@ if (rising_edge(clk_12mhz)) then
         state_reg <= idle;
             addra_reg <= (others=>'0');
         stack_reg <= (others=>'0');
+        en_counter_reg <= (others =>'0');
     else
     state_reg <= state_next;
     addra_reg <= addra_next;
     stack_reg <= stack_next;
+    en_counter_reg <= en_counter_next;
     reg_sample_in<= next_sample_in;
+    if (en_counter_reg = 3000000) then
+        en_500ms <='1';
+    else
+        en_500ms<= '0';
+        end if;
     end if;
 end if;     
 end process;
+en_counter_next <= en_counter_reg + 1 when (en_counter_reg < 3000000) else (others => '0'); 
 
 process( state_reg, play_enable, rec_enable, addra_reg, s_sample_ready, s_sample_out, data_ram,s_sample_request, reg_sample_in)
 begin
@@ -297,13 +307,13 @@ U5 : display_controller port map(
                         on_display => '1',
                         an => an,
                         display => display);
-                        
+                     
 U6 : boometro port map(
     clk => clk_12mhz,
     audio_in => reg_sample_in,
     reset => reset,
-    enable => play_enable, -- se puede crear una signal que sea un boton o swtich para activar el boom
+    enable => boom_en, -- se puede crear una signal que sea un boton o swtich para activar el boom
     leds_out => boom
     );
-                                                       
+  boom_en <= play_audio and  en_500ms;                                                     
 end Behavioral;

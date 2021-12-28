@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="20" Path="C:/Users/Cristina Conforto/Documents/TELECO/4/DSED/proyecto_final/Digital_Electronic_Design/dsed_audio/dsed_audio.xpr">
+<Project Version="7" Minor="20" Path="C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="c17a5ddc1cd444e3afc95d5baeadfe9e"/>
