@@ -102,7 +102,7 @@ end process;
 --select the filter coeficients --
 process (filter_select)
 begin
-    if (filter_select = '1') then
+    if (filter_select = '0') then
         c_0 <= c0lp;
         c_1 <= c1lp;
         c_2 <= c2lp;

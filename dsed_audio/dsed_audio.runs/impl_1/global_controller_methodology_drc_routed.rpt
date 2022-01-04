@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Tue Dec 28 18:04:51 2021
+| Date         : Tue Jan  4 17:02:24 2022
 | Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command      : report_methodology -file global_controller_methodology_drc_routed.rpt -rpx global_controller_methodology_drc_routed.rpx
 | Design       : global_controller
@@ -23,13 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 69
+             Violations found: 72
 +-----------+----------+------------------------------------------------+------------+
 | Rule      | Severity | Description                                    | Violations |
 +-----------+----------+------------------------------------------------+------------+
 | TIMING-6  | Warning  | No common primary clock between related clocks | 2          |
 | TIMING-18 | Warning  | Missing input or output delay                  | 40         |
-| TIMING-20 | Warning  | Non-clocked latch                              | 27         |
+| TIMING-20 | Warning  | Non-clocked latch                              | 30         |
 +-----------+----------+------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -286,95 +286,110 @@ Related violations: <none>
 
 TIMING-20#9 Warning
 Non-clocked latch  
-The latch stack_next_reg[0] cannot be properly analyzed as its control pin stack_next_reg[0]/G is not reached by a timing clock
+The latch s_control_next_reg[0] cannot be properly analyzed as its control pin s_control_next_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#10 Warning
 Non-clocked latch  
-The latch stack_next_reg[10] cannot be properly analyzed as its control pin stack_next_reg[10]/G is not reached by a timing clock
+The latch s_control_next_reg[1] cannot be properly analyzed as its control pin s_control_next_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#11 Warning
 Non-clocked latch  
-The latch stack_next_reg[11] cannot be properly analyzed as its control pin stack_next_reg[11]/G is not reached by a timing clock
+The latch s_control_next_reg[2] cannot be properly analyzed as its control pin s_control_next_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#12 Warning
 Non-clocked latch  
-The latch stack_next_reg[12] cannot be properly analyzed as its control pin stack_next_reg[12]/G is not reached by a timing clock
+The latch stack_next_reg[0] cannot be properly analyzed as its control pin stack_next_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#13 Warning
 Non-clocked latch  
-The latch stack_next_reg[13] cannot be properly analyzed as its control pin stack_next_reg[13]/G is not reached by a timing clock
+The latch stack_next_reg[10] cannot be properly analyzed as its control pin stack_next_reg[10]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#14 Warning
 Non-clocked latch  
-The latch stack_next_reg[14] cannot be properly analyzed as its control pin stack_next_reg[14]/G is not reached by a timing clock
+The latch stack_next_reg[11] cannot be properly analyzed as its control pin stack_next_reg[11]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#15 Warning
 Non-clocked latch  
-The latch stack_next_reg[15] cannot be properly analyzed as its control pin stack_next_reg[15]/G is not reached by a timing clock
+The latch stack_next_reg[12] cannot be properly analyzed as its control pin stack_next_reg[12]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#16 Warning
 Non-clocked latch  
-The latch stack_next_reg[16] cannot be properly analyzed as its control pin stack_next_reg[16]/G is not reached by a timing clock
+The latch stack_next_reg[13] cannot be properly analyzed as its control pin stack_next_reg[13]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#17 Warning
 Non-clocked latch  
-The latch stack_next_reg[17] cannot be properly analyzed as its control pin stack_next_reg[17]/G is not reached by a timing clock
+The latch stack_next_reg[14] cannot be properly analyzed as its control pin stack_next_reg[14]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#18 Warning
 Non-clocked latch  
-The latch stack_next_reg[18] cannot be properly analyzed as its control pin stack_next_reg[18]/G is not reached by a timing clock
+The latch stack_next_reg[15] cannot be properly analyzed as its control pin stack_next_reg[15]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#19 Warning
 Non-clocked latch  
-The latch stack_next_reg[1] cannot be properly analyzed as its control pin stack_next_reg[1]/G is not reached by a timing clock
+The latch stack_next_reg[16] cannot be properly analyzed as its control pin stack_next_reg[16]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#20 Warning
 Non-clocked latch  
-The latch stack_next_reg[2] cannot be properly analyzed as its control pin stack_next_reg[2]/G is not reached by a timing clock
+The latch stack_next_reg[17] cannot be properly analyzed as its control pin stack_next_reg[17]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#21 Warning
 Non-clocked latch  
-The latch stack_next_reg[3] cannot be properly analyzed as its control pin stack_next_reg[3]/G is not reached by a timing clock
+The latch stack_next_reg[18] cannot be properly analyzed as its control pin stack_next_reg[18]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#22 Warning
 Non-clocked latch  
-The latch stack_next_reg[4] cannot be properly analyzed as its control pin stack_next_reg[4]/G is not reached by a timing clock
+The latch stack_next_reg[1] cannot be properly analyzed as its control pin stack_next_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#23 Warning
 Non-clocked latch  
-The latch stack_next_reg[5] cannot be properly analyzed as its control pin stack_next_reg[5]/G is not reached by a timing clock
+The latch stack_next_reg[2] cannot be properly analyzed as its control pin stack_next_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#24 Warning
 Non-clocked latch  
-The latch stack_next_reg[6] cannot be properly analyzed as its control pin stack_next_reg[6]/G is not reached by a timing clock
+The latch stack_next_reg[3] cannot be properly analyzed as its control pin stack_next_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#25 Warning
 Non-clocked latch  
-The latch stack_next_reg[7] cannot be properly analyzed as its control pin stack_next_reg[7]/G is not reached by a timing clock
+The latch stack_next_reg[4] cannot be properly analyzed as its control pin stack_next_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#26 Warning
 Non-clocked latch  
-The latch stack_next_reg[8] cannot be properly analyzed as its control pin stack_next_reg[8]/G is not reached by a timing clock
+The latch stack_next_reg[5] cannot be properly analyzed as its control pin stack_next_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#27 Warning
+Non-clocked latch  
+The latch stack_next_reg[6] cannot be properly analyzed as its control pin stack_next_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch stack_next_reg[7] cannot be properly analyzed as its control pin stack_next_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch stack_next_reg[8] cannot be properly analyzed as its control pin stack_next_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
 Non-clocked latch  
 The latch stack_next_reg[9] cannot be properly analyzed as its control pin stack_next_reg[9]/G is not reached by a timing clock
 Related violations: <none>

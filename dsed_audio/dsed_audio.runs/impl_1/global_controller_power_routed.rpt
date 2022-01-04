@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Tue Dec 28 18:04:52 2021
+| Date             : Tue Jan  4 17:02:25 2022
 | Host             : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command          : report_power -file global_controller_power_routed.rpt -pb global_controller_power_summary_routed.pb -rpx global_controller_power_routed.rpx
 | Design           : global_controller
@@ -31,7 +31,7 @@ Table of Contents
 
 +--------------------------+-------+
 | Total On-Chip Power (W)  | 0.229 |
-| Dynamic (W)              | 0.126 |
+| Dynamic (W)              | 0.125 |
 | Device Static (W)        | 0.103 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 84.0  |
@@ -50,16 +50,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1001 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      475 |     63400 |            0.75 |
-|   CARRY4       |    <0.001 |       35 |     15850 |            0.22 |
-|   Register     |    <0.001 |      266 |    126800 |            0.21 |
+| Slice Logic    |    <0.001 |     1123 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      557 |     63400 |            0.88 |
+|   CARRY4       |    <0.001 |       46 |     15850 |            0.29 |
+|   Register     |    <0.001 |      295 |    126800 |            0.23 |
 |   F7/F8 Muxes  |    <0.001 |        8 |     63400 |            0.01 |
 |   Others       |     0.000 |      162 |       --- |             --- |
-| Signals        |    <0.001 |      854 |       --- |             --- |
+| Signals        |    <0.001 |     1010 |       --- |             --- |
 | Block RAM      |     0.001 |      128 |       135 |           94.81 |
 | MMCM           |     0.121 |        1 |         6 |           16.67 |
-| I/O            |     0.002 |       43 |       210 |           20.48 |
+| I/O            |     0.001 |       43 |       210 |           20.48 |
 | Static Power   |     0.103 |          |           |                 |
 | Total          |     0.229 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.021 |       0.003 |      0.018 |
 | Vccaux    |       1.800 |     0.085 |       0.067 |      0.018 |
-| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
+| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -145,7 +145,7 @@ Table of Contents
 +----------------------------------------------+-----------+
 | Name                                         | Power (W) |
 +----------------------------------------------+-----------+
-| global_controller                            |     0.126 |
+| global_controller                            |     0.125 |
 |   U1                                         |     0.121 |
 |     inst                                     |     0.121 |
 |   U2                                         |    <0.001 |
