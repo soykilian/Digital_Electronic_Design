@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Tue Jan  4 17:02:25 2022
+| Date             : Thu Jan 27 12:09:39 2022
 | Host             : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command          : report_power -file global_controller_power_routed.rpt -pb global_controller_power_summary_routed.pb -rpx global_controller_power_routed.rpx
 | Design           : global_controller
@@ -50,13 +50,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1123 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      557 |     63400 |            0.88 |
+| Slice Logic    |    <0.001 |     1194 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      588 |     63400 |            0.93 |
 |   CARRY4       |    <0.001 |       46 |     15850 |            0.29 |
 |   Register     |    <0.001 |      295 |    126800 |            0.23 |
-|   F7/F8 Muxes  |    <0.001 |        8 |     63400 |            0.01 |
+|   F7/F8 Muxes  |    <0.001 |       27 |     63400 |            0.04 |
 |   Others       |     0.000 |      162 |       --- |             --- |
-| Signals        |    <0.001 |     1010 |       --- |             --- |
+| Signals        |    <0.001 |     1037 |       --- |             --- |
 | Block RAM      |     0.001 |      128 |       135 |           94.81 |
 | MMCM           |     0.121 |        1 |         6 |           16.67 |
 | I/O            |     0.001 |       43 |       210 |           20.48 |

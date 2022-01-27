@@ -212,15 +212,21 @@ case state_reg is
             state_next <= wait_state;
             end if;
         when play =>
-            addra_next <= (others=> '0'); 
+             
             if (fil_on = '0') then
                 if (s_type = '0') then
+                    addra_next <= (others=> '0');
                     state_next <= rep;
                 else
-                    state_next<= rev_rep;
+                    if (unsigned(stack_reg) > 0) then
                     addra_next <= stack_reg;
+                    state_next<= rev_rep;
+                    else
+                        state_next <= idle;
+                    end if;
                  end if;
              else
+              addra_next <= (others=>'0');
                 state_next <= fil;
             end if;
         when rep =>
@@ -234,6 +240,7 @@ case state_reg is
               if (play_enable = '1') then
                 state_next <= play;
              elsif (unsigned(addra_reg) >= 524287 or addra_reg >= stack_reg) then
+                    addra_next <= (others=> '0');
                   state_next <= idle;
             end if;
           when rev_rep =>
@@ -247,6 +254,7 @@ case state_reg is
                     state_next<= play;
                 end if;
              if (unsigned(addra_reg) <= 0) then
+             addra_next <= (others=>'0');
                   state_next <= idle;
             end if;
           when fil => --the way it is designed it can be alterned between lowpass and high pass in the same reproduction                                                                                                                                                                                
@@ -263,6 +271,7 @@ case state_reg is
                     addra_next<= std_logic_vector(unsigned(addra_reg) + 1);
                 end if;
            if (unsigned(addra_reg) >= 524287 or addra_reg >= stack_reg) then
+                addra_next <= (others=> '0');
                  state_next <= idle;
            elsif(play_enable = '1') then
                 state_next <= play;
@@ -272,7 +281,7 @@ case state_reg is
             stack_next <= (others => '0');
             addra_next <= (others => '0');
             state_next <= wait_state;
-        when wait_state => --estado wait de un segundo para representar FULL en el display
+        when wait_state => --estado wait de un segundo para representar FULL&CLEAR en el display
             clear_cnt_next <= clear_cnt_reg + 1;
             s_control_next <= s_control_reg;
             if (clear_cnt_reg = 12000000) then --after a second of clearing
