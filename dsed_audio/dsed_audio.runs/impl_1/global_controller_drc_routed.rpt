@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Thu Jan 27 12:09:35 2022
+| Date         : Thu Jan 27 12:49:58 2022
 | Host         : DESKTOP-Q4GMU0O running 64-bit major release  (build 9200)
 | Command      : report_drc -file global_controller_drc_routed.rpt -pb global_controller_drc_routed.pb -rpx global_controller_drc_routed.rpx
 | Design       : global_controller
@@ -24,13 +24,13 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 25
+             Violations found: 24
 +-----------+----------+-----------------------------------------------------+------------+
 | Rule      | Severity | Description                                         | Violations |
 +-----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1  | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
 | CHECK-3   | Warning  | Report rule limit reached                           | 1          |
-| PDRC-153  | Warning  | Gated clock check                                   | 3          |
+| PDRC-153  | Warning  | Gated clock check                                   | 2          |
 | REQP-1839 | Warning  | RAMB36 async control check                          | 20         |
 +-----------+----------+-----------------------------------------------------+------------+
 
@@ -56,15 +56,10 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net U2/U2/E[0] is a gated clock net sourced by a combinational pin U2/U2/stack_next_reg[18]_i_2/O, cell U2/U2/stack_next_reg[18]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net U2/U2/stack_reg_reg[0][0] is a gated clock net sourced by a combinational pin U2/U2/stack_next_reg[18]_i_2/O, cell U2/U2/stack_next_reg[18]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
-Gated clock check  
-Net filter_in_reg[7]_i_2_n_0 is a gated clock net sourced by a combinational pin filter_in_reg[7]_i_2/O, cell filter_in_reg[7]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#3 Warning
 Gated clock check  
 Net s_control_next_reg[2]_i_2_n_0 is a gated clock net sourced by a combinational pin s_control_next_reg[2]_i_2/O, cell s_control_next_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>

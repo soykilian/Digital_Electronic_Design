@@ -38,6 +38,7 @@ entity boometro is
         audio_in : in std_logic_vector(sample_size-1 downto 0);
         reset : in std_logic;
         enable : in std_logic;
+        play_boom : in std_logic;
         leds_out : out std_logic_vector(14 downto 0)
     );
 end boometro;
@@ -53,11 +54,13 @@ clk_process: process(clk, audio_in)
             if(reset = '1') then
                 leds_out <= (others=>'0');
             else
+            if (play_boom = '1') then
                 if (enable='1') then
                     leds_out <= level_reg;
-                 
                 end if;
-                
+            else
+                leds_out <= (others=>'0');  
+                end if;             
             end if;
         end if;
     end process;

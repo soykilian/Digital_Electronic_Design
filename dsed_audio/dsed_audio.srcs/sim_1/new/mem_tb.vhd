@@ -77,7 +77,7 @@ begin
     wait for 200 ns;
     addres <= "1100000010110011010";
     wait for 200 ns;
-    addres <= "0000000000000010000";
+    addres <= "0000000000000000000";
     wait for 200 ns;
     en <= '0';
     wait;   

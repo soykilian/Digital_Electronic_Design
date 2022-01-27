@@ -73,217 +73,216 @@ begin
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+       wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "01111111";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+       wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         -----------------------------
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;        
+        sample_in_enable <= '1';
+        sample_in <= "00000000";
+        wait for clk_period;
+        sample_in_enable <= '0';
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
-        
-        sample_in_enable <= '1';
-        sample_in <= "00000000";
-        wait for clk_period;
-        sample_in_enable <= '0';
-        wait for 1500ns;
+       wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "11111111";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+       wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         -----------------------------
                 sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+       wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+       wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "10000001";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         ---------------------------------
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+       wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         
         sample_in_enable <= '1';
         sample_in <= "00000000";
         wait for clk_period;
         sample_in_enable <= '0';
-        wait for 1500ns;
+        wait for clk_period * 7;
         wait;
         end process;
     ff :   fir_filter

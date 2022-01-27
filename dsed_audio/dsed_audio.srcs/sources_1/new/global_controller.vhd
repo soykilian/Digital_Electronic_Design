@@ -112,6 +112,7 @@ component boometro is Port (
         audio_in : in std_logic_vector(sample_size-1 downto 0);
         reset : in std_logic;
         enable : in std_logic;
+        play_boom : in std_logic;
         leds_out : out std_logic_vector(14 downto 0)
     );
 end component;
@@ -132,7 +133,7 @@ signal addra_reg , addra_next, stack_reg, stack_next: std_logic_vector (18 downt
 --gnal  addrec_reg,addrec_next  :std_logic_vector(18 downto 0);
 signal s_control_reg, s_control_next : std_logic_vector(2 downto 0); --next state logic to keep the previous value while in wait state
 signal clear_cnt_reg, clear_cnt_next : unsigned(23 downto 0); --wait state between clear and idle
-signal en_500ms, boom_en: std_logic;
+signal en_500ms : std_logic;
 signal en_counter_reg, en_counter_next : unsigned(21 downto 0);
 signal filter_out, filter_in : signed(sample_size - 1 downto 0);
 begin
@@ -340,8 +341,9 @@ U6 : boometro port map( --The boometer is more sensitive to normal, reverse and 
     clk => clk_12mhz,
     audio_in => reg_sample_in,
     reset => reset,
-    enable => boom_en, -- se puede crear una signal que sea un boton o swtich para activar el boom
+    play_boom => play_audio,
+    enable => en_500ms, -- se puede crear una signal que sea un boton o swtich para activar el boom
     leds_out => boom
     );
-  boom_en <= play_audio and  en_500ms;                                                     
+                                                 
 end Behavioral;
