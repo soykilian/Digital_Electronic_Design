@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Thu Jan 27 12:50:24 2022'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Thu Jan 27 17:01:48 2022'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="1909853" description="" />
-  <keyValuePair key="date_generated" value="Thu Jan 27 12:50:24 2022" description="" />
+  <keyValuePair key="date_generated" value="Thu Jan 27 17:01:48 2022" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2017.2 (64-bit)" description="" />
   <keyValuePair key="project_id" value="c17a5ddc1cd444e3afc95d5baeadfe9e" description="" />
-  <keyValuePair key="project_iteration" value="63" description="" />
+  <keyValuePair key="project_iteration" value="64" description="" />
   <keyValuePair key="random_id" value="29b6648631b75c249eb92199faa488af" description="" />
   <keyValuePair key="registration_id" value="29b6648631b75c249eb92199faa488af" description="" />
   <keyValuePair key="route_design" value="TRUE" description="" />
@@ -259,7 +259,7 @@
    <keyValuePair key="output_load" value="5.000000" description="" />
    <keyValuePair key="output_toggle" value="12.500000" description="" />
    <keyValuePair key="package" value="csg324" description="" />
-   <keyValuePair key="pct_clock_constrained" value="3.000000" description="" />
+   <keyValuePair key="pct_clock_constrained" value="2.000000" description="" />
    <keyValuePair key="pct_inputs_defined" value="12" description="" />
    <keyValuePair key="platform" value="nt64" description="" />
    <keyValuePair key="process" value="typical" description="" />
@@ -631,10 +631,10 @@
    <keyValuePair key="-verilog_define" value="default::[not_specified]" description="" />
   </section>
   <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="elapsed" value="00:00:27s" description="" />
+   <keyValuePair key="elapsed" value="00:00:25s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
-   <keyValuePair key="memory_gain" value="468.621MB" description="" />
-   <keyValuePair key="memory_peak" value="698.387MB" description="" />
+   <keyValuePair key="memory_gain" value="469.355MB" description="" />
+   <keyValuePair key="memory_peak" value="697.719MB" description="" />
   </section>
  </section>
  <section name="unisim_transformation" level="1" order="11" description="">
@@ -693,22 +693,22 @@
    <keyValuePair key="editundo" value="11" description="" />
    <keyValuePair key="fileprintcmdhandler" value="3" description="" />
    <keyValuePair key="launchopentarget" value="1" description="" />
-   <keyValuePair key="launchprogramfpga" value="60" description="" />
+   <keyValuePair key="launchprogramfpga" value="61" description="" />
    <keyValuePair key="newproject" value="1" description="" />
    <keyValuePair key="openhardwaremanager" value="16" description="" />
    <keyValuePair key="openproject" value="6" description="" />
    <keyValuePair key="openrecenttarget" value="1" description="" />
    <keyValuePair key="recustomizecore" value="4" description="" />
    <keyValuePair key="refreshdevice" value="4" description="" />
-   <keyValuePair key="runbitgen" value="110" description="" />
+   <keyValuePair key="runbitgen" value="113" description="" />
    <keyValuePair key="runimplementation" value="5" description="" />
    <keyValuePair key="runsynthesis" value="5" description="" />
    <keyValuePair key="savefileproxyhandler" value="15" description="" />
-   <keyValuePair key="settopnode" value="35" description="" />
+   <keyValuePair key="settopnode" value="39" description="" />
    <keyValuePair key="showview" value="47" description="" />
    <keyValuePair key="simulationclose" value="1" description="" />
-   <keyValuePair key="simulationrelaunch" value="98" description="" />
-   <keyValuePair key="simulationrun" value="111" description="" />
+   <keyValuePair key="simulationrelaunch" value="100" description="" />
+   <keyValuePair key="simulationrun" value="114" description="" />
    <keyValuePair key="simulationrunfortime" value="1" description="" />
    <keyValuePair key="toggleviewnavigator" value="1" description="" />
    <keyValuePair key="toolssettings" value="1" description="" />
@@ -742,7 +742,7 @@
    <keyValuePair key="launch_simulation_questa" value="0" description="" />
    <keyValuePair key="launch_simulation_riviera" value="0" description="" />
    <keyValuePair key="launch_simulation_vcs" value="0" description="" />
-   <keyValuePair key="launch_simulation_xsim" value="446" description="" />
+   <keyValuePair key="launch_simulation_xsim" value="452" description="" />
    <keyValuePair key="simulator_language" value="Mixed" description="" />
    <keyValuePair key="srcsetcount" value="16" description="" />
    <keyValuePair key="synthesisstrategy" value="Vivado Synthesis Defaults" description="" />
