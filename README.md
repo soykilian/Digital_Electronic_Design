@@ -14,7 +14,7 @@ The global module consist of several entities:
 ### How to use it:
 Clone the repository:
 ```sh 
-git clone 
+git clone git@github.com:soykilian/Digital_Electronic_Design.git
 ```
 The design sources can be found in:
 ```sh
