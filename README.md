@@ -34,7 +34,7 @@ If you have a different model, change de file:
 
 Be aware that the modules may need modification.
 
-### Interesting links:
+### Related links:
 
 - [Vivado Tutorial](https://www.xilinx.com/support/documentation/university/Vivado-Teaching/HDL-Design/2015x/VHDL/docs-pdf/Vivado_Tutorial.pdf)
 - [Nexys 4 DDR Reference Manual](https://digilent.com/reference/_media/nexys4-ddr:nexys4ddr_rm.pdf)
