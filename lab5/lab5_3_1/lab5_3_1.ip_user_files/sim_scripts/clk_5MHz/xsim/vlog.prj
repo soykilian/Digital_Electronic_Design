@@ -1,4 +1,0 @@
-verilog xil_defaultlib "../../../../lab5_3_1.srcs/sources_1/ip/clk_5MHz/clk_5MHz_clk_wiz.v" --include "../../../ipstatic"
-verilog xil_defaultlib "../../../../lab5_3_1.srcs/sources_1/ip/clk_5MHz/clk_5MHz.v" --include "../../../ipstatic"
-verilog xil_defaultlib "glbl.v"
-nosort

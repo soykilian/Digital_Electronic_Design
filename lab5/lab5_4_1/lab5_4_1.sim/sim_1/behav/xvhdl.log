@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab5_4_1/lab5_4_1.srcs/sources_1/new/param_adder.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity param_adder
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab5_4_1/lab5_4_1.srcs/sim_1/new/param_adder_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity param_adder_tb

@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "E:/DSED/DSED_Group6/lab4_2_2/LAB4_2_2/LAB4_2_2.srcs/sources_1/new/lab4_2_2.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity lab4_2_2
-INFO: [VRFC 10-163] Analyzing VHDL file "E:/DSED/DSED_Group6/lab4_2_2/LAB4_2_2/LAB4_2_2.srcs/sim_1/new/lab4_2_2_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity lab4_2_2_tb

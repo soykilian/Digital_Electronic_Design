@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<Runs Version="1" Minor="0">
-	<Run Id="clk_5MHz_synth_1" LaunchDir="C:/Users/mv/Downloads/lab4-20211014T204009Z-001/lab4/lab5_3_1/lab5_3_1.runs/clk_5MHz_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-</Runs>
-

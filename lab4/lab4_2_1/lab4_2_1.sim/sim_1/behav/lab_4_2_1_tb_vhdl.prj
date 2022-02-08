@@ -1,9 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  "../../../lab4_2_1.srcs/sources_1/new/d_ff.vhd"
-vhdl xil_defaultlib  "../../../lab4_2_1.srcs/sources_1/new/d_latch.vhd"
-vhdl xil_defaultlib  "../../../lab4_2_1.srcs/sources_1/new/dn_ff.vhd"
-vhdl xil_defaultlib  "../../../lab4_2_1.srcs/sources_1/new/lab4_2_1.vhd"
-vhdl xil_defaultlib  "../../../lab4_2_1.srcs/sim_1/new/lab_4_2_1_tb.vhd"
-
-# Do not sort compile order
-nosort
