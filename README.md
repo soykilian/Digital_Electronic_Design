@@ -1,5 +1,5 @@
 # Digital_Electronic_Design
-This is a audio processing project designed for academic purposes at the Universidad Politécnica de Madrid to be used on the FPGA [NEXYS 4 DDR](https://digilent.com/reference/programmable-logic/nexys-4-ddr/reference-manual).
+This is a audio processing project was designed for academic purposes at the Universidad Politécnica de Madrid to be used on the FPGA [NEXYS 4 DDR](https://digilent.com/reference/programmable-logic/nexys-4-ddr/reference-manual).
 The global module consist of several entities:
 - 12 MHz Clock.
 - Microphone.
