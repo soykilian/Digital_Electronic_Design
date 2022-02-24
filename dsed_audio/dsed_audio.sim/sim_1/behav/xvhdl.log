@@ -1,3 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sources_1/new/package_dsed.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mv/Documents/DSED/Digital_Electronic_Design/dsed_audio/dsed_audio.srcs/sim_1/new/mem_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity mem_tb
