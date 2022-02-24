@@ -18,14 +18,16 @@ git clone git@github.com:soykilian/Digital_Electronic_Design.git
 ```
 The design sources can be found in:
 ```sh
-cd dsed_audio/dsed_audio.srcs/sources_1/new
+cd src
 ````
 The test benches are located in:
 ```sh
-cd dsed_audio/dsed_audio.srcs/sim_1/new
+cd testbenches
 ```
-
-
+The IP_Wizard can be found int :
+```sh
+cd ip
+````
 To use design on yout FPGAas it is, open it on Vivado,  go to Open Hardware Manager and implement the file:
 *global_controller.bit*.
 
