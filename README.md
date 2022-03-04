@@ -20,15 +20,9 @@ The design sources can be found in:
 ```sh
 cd src
 ````
-The test benches are located in:
-```sh
-cd testbenches
-```
-The IP_Wizard can be found int :
-```sh
-cd ip
-````
-To use design on yout FPGAas it is, open it on Vivado,  go to Open Hardware Manager and implement the file:
+The IP_Wizard sources i implemented were de system clock at 12 MHz and a RAM Memory for the audio saving
+
+To use design on yout FPGA as it is, open it on Vivado,  go to Open Hardware Manager, connect to yopur board (make sure is the same one or change the .xdc file) and implement the file, :
 *global_controller.bit*.
 
 If you have a different model, change de file:
